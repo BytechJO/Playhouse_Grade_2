@@ -10,9 +10,8 @@ var _data = {
 
        "grammer_icon":"./images/icons/gram-icon.png",
        "grammer_link":"./views/slide_7.html", 
-
        "vocabulary_icon":"./images/icons/voc-icon.png", 
-       "vocabulary_link":"./views/slide_11.html",
+       "vocabulary_link":"./views/slide_G.html",
 
        "poster_icon":"./images/icons/poster-icon.png", 
        "poster_link":"./views/playhouse_intro.html", 

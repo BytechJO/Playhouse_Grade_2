@@ -84,7 +84,24 @@ function buildSnapShotContent(snapshotObj, snapshotPopup_data, Popups_data) {
 	}
 	showImg()
 }
+$(document)
+  .off("click.wordPowerMainTitle")
+  .on("click.wordPowerMainTitle", ".main_title.audioTile", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
 
+    var audioSrc = $(this).attr("data-audio");
+
+    console.log("WORD POWER MAIN TITLE AUDIO:", audioSrc);
+
+    if (!audioSrc || audioSrc === "undefined" || audioSrc === "null") {
+      return;
+    }
+
+    var audio = new Audio(audioSrc);
+    audio.currentTime = 0;
+    audio.play();
+  });
 // -------------------- [ audio icon control ]----------------        
 
 function checkSnapShotBuilt() {

@@ -85,16 +85,15 @@
 }
 
 .drag_drop_options {
-  /* -webkit-box-shadow: inset 2px -14px 36px 28px rgba(179, 197, 225, 1); */
-  /* -moz-box-shadow: inset 2px -14px 36px 28px rgba(179, 197, 225, 1); */
-  /* box-shadow: inset 1px 1px 13px 7px rgba(179, 197, 225, 1); */
-  /* background-image: url(../../images/pages/activities/Lamitie/back-opt.PNG); */
   background-size: 100% 100%;
   display: flex;
   background: #fdd1b0;
   padding: 14px;
   border-radius: 10px;
-  margin: 0px auto;
+
+  margin-left: auto;
+  margin-right: 200px; /* زيدها لليمين أكثر */
+
   width: 810px;
   min-width: 810px;
   height: 70px;
@@ -206,16 +205,15 @@
   margin-right: 19px;
 }
 
-.drag_drop_questions .que .item{
+.drag_drop_questions .que .item {
   width: 320px;
   height: 250px;
   margin: 0px auto !important;
-} 
+}
 
 .drag_drop_top_image_activity .drag_drop_questions ul li {
   width: 300px;
   margin-top: 25px;
-
 }
 
 .drag_drop_top_image_activity .drag_drop_questions input[type="text"] {
@@ -1601,4 +1599,20 @@
   .drag_drop_color_activity .drag_drop_questions {
     background: none !important;
   }
+}
+/* fix title click over options */
+.activityHeading {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+}
+
+
+.audioQuestionTitle,
+.page_sub_title {
+  cursor: pointer;
+  display: inline-flex;
+  width: fit-content;
+  position: relative;
+  z-index: 2;
 }

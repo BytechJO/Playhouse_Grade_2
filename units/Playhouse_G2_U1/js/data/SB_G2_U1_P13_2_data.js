@@ -4,7 +4,7 @@ var mcq_tick_data = {
     "mainTitle"             : "../images/icons/gramprac_main_title.png",
     "mainTitleIcon"         : "../images/pages/sb-icons/conv_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "72px !important;"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../audios/page_13/GRAMMAR_PRACTICE.mp3",
     "subTitleTextLeft"      : "<span class='red_text'>2</span> Read and choose.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : ["../images/pages/sb-icons/phonics_3_icon.png"],

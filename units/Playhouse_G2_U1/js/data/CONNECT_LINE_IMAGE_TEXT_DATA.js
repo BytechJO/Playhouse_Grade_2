@@ -22,11 +22,11 @@ var linedraw_data = {
     "layout"                : 1,
     "mainTitle": "../images/icons/conv_main_title.png",
     "mainTitleIcon": "../images/pages/sb-icons/conv_main_title_icon.png",
-    "mainTitleAudio": "../audios/page_11/2_Listen_and_match.mp3",
+    "mainTitleAudio": "../audios/page_11/CONVERSATION.mp3",
     "subTitleTextLeft"      : "<span class='red_text'>2</span>  Listen and match.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : ["../images/pages/sb-icons/conv_1_icon.png"],
-    "subTitleAudio"         : "../audios/under.mp3",
+    "subTitleAudio"         : "../audios/page_11/2_Listen_and_match.mp3",
     "activitysubheading"    : "",
     "activityicon"          : "../images/icons/mouse_icon.png",
     "connect"               : "single", // single (or) multiple

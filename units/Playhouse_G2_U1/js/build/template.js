@@ -36,7 +36,7 @@ function buildHeader(aObj) {
         fStmt += "</div>";
 
         if (typeof (aObj.title).text != undefined && (aObj.title).text != null) {
-            fStmt += "<div class='unitTitle d-flex align-items-center justify-content-center mx-2'>";
+            fStmt += "<div class='unitTitle d-flex align-items-center justify-content-center mx-2' style='width: fit-content; max-width: fit-content;'>";
             if (typeof aObj.audio != undefined && aObj.audio != null) {
                 fStmt += "<div class='audioIcon off my-auto' data-audio='" + _templatePath + aObj.audio + "'>"
                 fStmt += "<div class='unitTitleText' rel='tooltip' data-placement='bottom' title='' data-original-title='" + (aObj.title).text + "'>" + (aObj.title).text + "</div>";        
@@ -47,7 +47,7 @@ function buildHeader(aObj) {
 
         fStmt += "<div class='col-1 col-xs-1 col-md-2 d-flex flex-wrap justify-content-between'>";
         
-            fStmt += "<div class='d-flex flex-wrap justify-content-between' style='width: 100%;'>";
+            fStmt += "<div class='d-flex' style='width: 100%;'>";
                 fStmt += '<img src="../images/icons/draw_icon.png"  class="toolbarToggleBtn" data-point="show_slide" >';
                 fStmt += "<div class='homeBtn my-auto " + ((homeVisible == 'yes') ? 'd-block' : 'd-none') + "'>";
                 fStmt += "<a href='" + homeLink + "?u=" + aObj.unitno + "'>";
@@ -104,7 +104,7 @@ function buildFooter(aObj) {
     if (typeof aObj.buttons != undefined && aObj.buttons != null && typeof aObj.filetoload != undefined && aObj.filetoload != null) {
         fStmt += "<div class='container footer_wrap'>";
         fStmt += "<div class='d-flex justify-content-between mt-2'>";
-        fStmt += "<div class='d-flex col-3 col-xs-3 col-md-3 flex-wrap justify-content-between align-items-center'>";
+        fStmt += "<div class='d-flex col-3 col-xs-3 col-md-3 gap-2 align-items-center'>";
             fStmt += '<a href="' + aObj.booksbutton.studentbook.link + '">';
             fStmt += '<img src="' + aObj.booksbutton.studentbook.icon + '">';
             fStmt += '</a>';

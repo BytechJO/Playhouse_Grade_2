@@ -22,10 +22,10 @@
   position: relative;
   width: 47% !important;
   height: 238px;
-  margin: 0px auto;
-
 }
-
+.que:nth-child(n + 3) {
+  margin-top: 40px;
+}
 .que .image_wrap {
   width: 170px;
   height: 145px;
@@ -51,7 +51,6 @@
 .tick_fields {
   width: fit-content;
 }
-
 
 .pick {
   width: intrinsic;
@@ -183,7 +182,8 @@
 /* ------------------------------------------------ */
 /* M Q max-width: 575.98px */
 /* ------------------------------------------------*/
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 475.98px             */

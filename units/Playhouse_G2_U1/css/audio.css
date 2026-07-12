@@ -354,3 +354,15 @@
     border-radius: 2px;
     outline: none;
 }
+.mainTitleAudioBtn {
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 9999;
+}
+
+.mainTitleAudioBtn img,
+.mainTitle {
+  cursor: pointer;
+  pointer-events: auto;
+}

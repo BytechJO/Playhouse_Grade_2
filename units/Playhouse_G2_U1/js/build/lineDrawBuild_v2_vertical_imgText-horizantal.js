@@ -31,8 +31,8 @@ function buildLineDrawBody(aObj) {
                 htmlStmt += '</div>';
             htmlStmt += '</div>';
 
-            htmlStmt += '<div class="activityHeading">'
-                htmlStmt += '<div class="audioIcon off contant audioQuestionTitle" data-slideNum="' + 1 + '" data-audio="' + aObj.subTitleAudio + '">';
+          htmlStmt += '<div class="activityHeading">';
+htmlStmt += '<div class="audioIcon off contant audioQuestionTitle" data-slideNum="1" data-audio="' + aObj.subTitleAudio + '">';
                 htmlStmt += "<div class='page_sub_title d-flex'>";
                     htmlStmt += "<p> " + aObj.subTitleTextLeft + " </p>";
                     for (var sicons = 0 ; sicons < aObj.subTitleIcons.length ; sicons++) {
@@ -124,3 +124,42 @@ function buildLineDrawBody(aObj) {
         setLoadedStatus(getCurrFileOrDirectory('file'));
     }
 }
+$(document)
+  .off("click.wordPower", ".main_title.audioIcon")
+  .on("click.wordPower", ".main_title.audioIcon", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var audioSrc = $(this).attr("data-audio");
+
+    console.log("WORD POWER CLICKED:", audioSrc);
+
+    if (!audioSrc || audioSrc === "undefined" || audioSrc === "null") {
+      console.log("No audio on word power");
+      return;
+    }
+
+    var audio = new Audio(audioSrc);
+    audio.currentTime = 0;
+
+    audio.play().catch(function (err) {
+      console.log("Word Power audio play error:", err);
+    });
+  });
+  $(document)
+  .off("click.wordPowerTitle", ".activityHeading.audioIcon")
+  .on("click.wordPowerTitle", ".activityHeading.audioIcon", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    var audioSrc = $(this).attr("data-audio");
+
+    if (!audioSrc || audioSrc === "undefined" || audioSrc === "null" || audioSrc === "no") {
+      return;
+    }
+
+    var audio = new Audio(audioSrc);
+    audio.currentTime = 0;
+    audio.play();
+  });

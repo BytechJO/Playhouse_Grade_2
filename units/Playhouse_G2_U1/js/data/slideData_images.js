@@ -22,7 +22,7 @@ var reading_data = {
     "mainTitle": "../images/icons/conv_main_title.png",
     "mainTitleIcon": "../images/pages/sb-icons/conv_main_title_icon.png",
     "mainTitleIconPos": {"right": "100px"},
-    "mainTitleAudio": "../audios/page_11/a.mp3",
+    "mainTitleAudio": "../audios/page_11/CONVERSATION.mp3",
     "subTitleTextLeft": "<span class='red_text'>1</span> Listen and read. Then act it out.",
     "subTitleTextRight": "",
     "subTitleIcons": ["../images/pages/sb-icons/conv_1_icon.png"],

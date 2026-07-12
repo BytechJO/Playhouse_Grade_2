@@ -46,6 +46,7 @@
 
 .all_picks {
     width: 100%;
+    
 }
 
 .picks_grp {
@@ -77,6 +78,7 @@
 .q_grp
 {
     width: 100%;
+    margin-top: 10px;
 }
 
 .icon_wrap {
