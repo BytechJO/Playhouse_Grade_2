@@ -121,7 +121,51 @@ function buildFillInBody(aObj) {
 		htmlStmt += '</div></div></div>'; // end - all_cont / options 
 		
 	}
+// ================================================================ [ SentenceBuilding ]
+    // ================================================================ [ SentenceBuilding ]
+    if (aObj.main_title_text != undefined && aObj.items != undefined) {
+      htmlStmt += '<div class="SentenceBuilding_container">';
+      htmlStmt += '<div class="cont_items d-flex flex-wrap">';
 
+      var sentenceTitleAudio =
+        aObj.sentenceTitleAudio ||
+        aObj.sentenceTitle_audio ||
+        aObj.mainTitleAudio ||
+        aObj.mainTitle_audio ||
+        aObj.main_title_audio ||
+        "";
+
+      htmlStmt +=
+        '<div class="main_title_container sentence_title_audio" audioIcon  data-audio="' +
+        sentenceTitleAudio +
+        '">';
+
+      htmlStmt += '<div class="main_title_text">';
+
+      if (aObj.main_title_text.length > 1) {
+        for (let x = 0; x < aObj.main_title_text.length; x++) {
+          htmlStmt +=
+            "<div class='letter letter-" +
+            x +
+            " pulse'>" +
+            aObj.main_title_text[x] +
+            "</div>";
+        }
+      } else {
+        htmlStmt += "<div>" + aObj.main_title_text + "</div>";
+      }
+
+      htmlStmt += "</div>";
+      htmlStmt += "</div>";
+
+      for (let i = 0; i < aObj.items.length; i++) {
+        htmlStmt +=
+          '<div class="item item-' + i + '">' + aObj.items[i] + "</div>";
+      }
+
+      htmlStmt += "</div>";
+      htmlStmt += "</div>";
+    }
 	console.log('htmlStmt >> fillin Built');
 	$( ".activity_area" ).append( htmlStmt );	
 	
@@ -130,3 +174,32 @@ function buildFillInBody(aObj) {
 function nextChar(c) {
 	return String.fromCharCode(c.charCodeAt(0) + 1);
 }  
+$(document).off("click.sentenceTitleAudio", ".sentence_title_audio");
+
+$(document).on(
+  "click.sentenceTitleAudio",
+  ".sentence_title_audio",
+  function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var audioUrl = $(this).attr("data-audio");
+
+    if (!audioUrl) {
+      return;
+    }
+
+    if (window.sentenceTitleAudioPlayer) {
+      window.sentenceTitleAudioPlayer.pause();
+      window.sentenceTitleAudioPlayer.currentTime = 0;
+    }
+
+    window.sentenceTitleAudioPlayer = new Audio(audioUrl);
+
+    window.sentenceTitleAudioPlayer
+      .play()
+      .catch(function (error) {
+        console.error("Sentence title audio error:", error);
+      });
+  }
+);

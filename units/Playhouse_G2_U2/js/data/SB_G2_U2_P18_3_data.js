@@ -25,7 +25,7 @@ var fillin_data = {
   "mainTitleIcon"         : "../images/pages/sb-icons/gram_main_title_icon.png",
   "mainTitleIconPos"      : {"right": "-18px"},
   "mainTitleAudio"        : "../audios/page_18/GRAMMAR.mp3",
-  "subTitleTextLeft"      : "<span class='red_text'>2</span> Listen and number the pictures.",
+  "subTitleTextLeft"      : "<span class='red_text'>3</span> Listen and number the pictures.",
   "subTitleTextRight"     : "",
   "subTitleIcons"         : ["../images/pages/sb-icons/conv_1_icon.png"],
   "subTitleAudio"         : "../audios/page_18/3_Listen_and_number_the_pictures.mp3",

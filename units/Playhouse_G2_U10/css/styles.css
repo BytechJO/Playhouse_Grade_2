@@ -146,7 +146,7 @@ header {
     display: none;
     padding: 10px;
     position: relative;
-    z-index: 1000;
+    z-index: 1000000;
 }
 
 .menu-content-item {

@@ -65,15 +65,20 @@
 .ans_grup {
   justify-content: center !important;
 }
+.question_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(25px);
+}
 
 .heading {
   font-weight: bold;
   font-size: 27px;
-  margin-bottom: 5px;
-  margin-left: 40px;
-  /* color: #00aeef; */
+  margin: 0 0 5px;
+  text-align: center;
 }
-
 .heading span{
   position: absolute;
   top: 385px;

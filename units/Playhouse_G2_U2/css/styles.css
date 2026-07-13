@@ -446,14 +446,14 @@ footer .emt_space.noWidth {
 /* ====================================================== */
 @media (min-width: 1200px) {
 
-    .container,
+    /* .container,
     .container-sm,
     .container-md,
     .container-lg,
     .container-xl {
         max-width: 1360px;
 
-    }
+    } */
 }
 
 /* ------------------------------------------------ */
@@ -628,7 +628,7 @@ footer .emt_space.noWidth {
     display: none;
     padding: 10px;
     position: relative;
-    z-index: 1000;
+    z-index: 100000;
 }
 .menu-content-item {
     width: 55px !important;
