@@ -689,6 +689,7 @@ function doWindowResize() {
         }
 
     }
+    
 
     //-------------
     if (isMobile()) maskWidth = 0;
