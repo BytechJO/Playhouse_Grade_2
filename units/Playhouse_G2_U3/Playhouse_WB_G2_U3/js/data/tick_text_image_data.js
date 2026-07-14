@@ -26,7 +26,7 @@ var mcq_tick_data = {
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='orange_text'>2</span> Look and tick ✓ the correct question and answer.",
+    "subTitleTextLeft"      : "<span class='orange_text'>1</span> Look and tick ✓ the correct question and answer.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [""],
     "subTitleAudio"         : "../audios/under.mp3",

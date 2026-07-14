@@ -704,7 +704,11 @@ function doWindowResize() {
         // $('.mask_left').css('width', maskWidth);
         // $('.mask_right').css('width', maskWidth);
 
-        $('.rotator').css('right', (Number(maskWidth.slice(0, -2)) - 15).toString() + 'px');
+       var maskWidthNumber = parseFloat(maskWidth) || 0;
+
+  $(".rotator").css({
+    right: maskWidthNumber - 15 + "px"
+  });
     }
 }
 function alignStage() {

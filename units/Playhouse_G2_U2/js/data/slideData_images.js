@@ -23,7 +23,7 @@ var reading_data = {
     "mainTitleIcon": "../images/pages/sb-icons/conv_main_title_icon.png",
     "mainTitleIconPos": {"right": "100px"},
     "mainTitleAudio": "../audios/page_17/CONVERSATION.mp3",
-    "subTitleTextLeft": "<span class='red_text'>1</span> Listen and read the story. Then act it out.",
+    "subTitleTextLeft": "<span class='red_text'>1</span> Listen and read. Then act it out.",
     "subTitleTextRight": "",
     "subTitleIcons": ["../images/pages/sb-icons/conv_1_icon.png"],
     "subTitleAudio" : "../audios/page_17/1_Listen_and_read._Then_act_it_out.mp3",

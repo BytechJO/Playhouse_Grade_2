@@ -20,10 +20,10 @@ var stereo_data = {
   }
 var linedraw_data = {    
     "layout"                : 1,
-    "mainTitle"             : "../images/icons/phonics_main_title.png",
+    "mainTitle"             : "../images/icons/adv_main_title.png",
     "mainTitleIcon"         : "../images/pages/sb-icons/phonics_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-20px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../audios/page_27/Playhouse_Adventures!.mp3",
     "subTitleTextLeft"      : "<span class='red_text'>2</span> Read and choose",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : ["../images/pages/sb-icons/phonics_3_icon.png"],

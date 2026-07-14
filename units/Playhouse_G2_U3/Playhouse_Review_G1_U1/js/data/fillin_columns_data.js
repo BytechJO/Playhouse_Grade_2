@@ -34,7 +34,7 @@ var fillin_data = {
     "image"                 :"../images/pages/activities/Asset_26.png",
     "questions": [
         {
-            "textfront": "1 bag of",
+            "textfront": "bag of",
             "audio": "../audios/under.mp3",
             "audioenable": "default", // correct (or) default
             "image": "",
@@ -43,7 +43,7 @@ var fillin_data = {
             "type": "text", // text (or) number
         },
         {
-            "textfront": "2 box of",
+            "textfront": "box of",
             "audio": "../audios/under.mp3",
             "audioenable": "default", // correct (or) default
             "image": "",
@@ -52,7 +52,7 @@ var fillin_data = {
             "type": "text", // text (or) number
         },
         {
-          "textfront": "3 kilo of",
+          "textfront": "kilo of",
           "audio": "../audios/under.mp3",
           "audioenable": "default", // correct (or) default
           "image": "",
@@ -61,7 +61,7 @@ var fillin_data = {
           "type": "text", // text (or) number
         },
         {
-            "textfront": "4 can of",
+            "textfront": "can of",
             "audio": "../audios/under.mp3",
             "audioenable": "default", // correct (or) default
             "image": "",

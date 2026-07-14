@@ -62,7 +62,7 @@ var fillin_data = {
           "options_words_audios":["../audios/under.mp3","../audios/under.mp3","../audios/under.mp3"],
           "audioenable": "default", // correct (or) default
           "image": "",
-          "answer": ["Do they want mayonnaise"],
+          "answer": ["Do they like mayonnaise"],
           "alternateanswer": [[]],
           "strictcase": "no", // yes (or) no     
           "strictorder": "yes", // yes (or) no             
