@@ -68,7 +68,7 @@ function buildFillInBody(aObj) {
 			
 			//textarea
 			htmlStmt += '<div class="textarea-container">';
-				htmlStmt += '<textarea id="paper-textarea" rows="10" cols="50" maxlength="400"></textarea>';
+				htmlStmt += '<textarea id="paper-textarea" rows="10" cols="50" maxlength="695"></textarea>';
 			htmlStmt += '</div>';
 		htmlStmt += '</div>';
 		htmlStmt += '</div></div></div>'; // end - all_cont / options 

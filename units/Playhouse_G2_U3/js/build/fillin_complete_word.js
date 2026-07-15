@@ -235,23 +235,80 @@ function nextChar(c) {
   return String.fromCharCode(c.charCodeAt(0) + 1);
 }
 
-function showSentenceImg() {
-  $(document).ready(function () {
-    $(".imgToggle").click(function () {
-      var imgName = $(this).data("img");
-      $("." + imgName).fadeToggle(1000);
-    });
-  });
-}
-function nextChar(c) {
-  return String.fromCharCode(c.charCodeAt(0) + 1);
-}
-$(document).off("click", ".sentence_title_audio");
-$(document).on("click", ".sentence_title_audio", function () {
-  var audioUrl = $(this).attr("data-audio");
+var currentSentenceAudio = null;
 
+function playSentenceAudio(audioUrl) {
   if (!audioUrl) return;
 
-  var audio = new Audio(audioUrl);
-  audio.play();
+  if (currentSentenceAudio) {
+    currentSentenceAudio.pause();
+    currentSentenceAudio.currentTime = 0;
+  }
+
+  currentSentenceAudio = new Audio(audioUrl);
+
+  currentSentenceAudio.play().catch(function (error) {
+    console.log("Audio play error:", error);
+  });
+
+  currentSentenceAudio.addEventListener("ended", function () {
+    currentSentenceAudio = null;
+  });
+}
+
+function showSentenceImg() {
+  $(document).off("click", ".imgToggle");
+
+  $(document).on("click", ".imgToggle", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var imgName = $(this).attr("data-img");
+    var $targetImage = $("." + imgName);
+
+    if (!$targetImage.length) return;
+
+    var audioUrl = $targetImage.attr("data-audio");
+    var willShow = !$targetImage.is(":visible");
+
+    $targetImage.stop(true, true).fadeToggle(1000);
+
+    if (willShow && audioUrl) {
+      playSentenceAudio(audioUrl);
+    }
+
+    if (!willShow && currentSentenceAudio) {
+      currentSentenceAudio.pause();
+      currentSentenceAudio.currentTime = 0;
+      currentSentenceAudio = null;
+    }
+  });
+}
+
+// صوت عنوان Sentence Building
+$(document).off("click", ".sentence_title_audio");
+
+$(document).on("click", ".sentence_title_audio", function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  var audioUrl = $(this).attr("data-audio");
+
+  playSentenceAudio(audioUrl);
 });
+
+// صوت person و people عند الضغط على الكلمة أو الصورة
+$(document).off("click", ".person_audio_trigger, .people_audio_trigger");
+
+$(document).on(
+  "click",
+  ".person_audio_trigger, .people_audio_trigger",
+  function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var audioUrl = $(this).attr("data-audio");
+
+    playSentenceAudio(audioUrl);
+  },
+);

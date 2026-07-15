@@ -21,8 +21,8 @@ var stereo_data = {
 var fillin_data = {    
     "layout"                : 1,
     "numinrow"              : [[1,1,1,1,1]],
-    "mainTitle"             : "../images/pages/sb-icons/word_main_title.png",
-    "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
+    "mainTitle"             : "../images/pages/sb-icons/WRITING.jpg",
+    "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
     "subTitleTextLeft"      : '<span class="blue_text">1</span> Look at the picture and write sentences about what you see. Use <b>verb +ing</b> to describe what they are doing.  <span class="end">The Lopez Family Has a Good Day!</span>',

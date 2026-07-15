@@ -22,8 +22,8 @@ var fillin_data = {
   layout: 1,
   numinrow: [[1, 1, 1, 1]],
   mainTitle: "../images/icons/phonics_main_title.png",
-  mainTitleIcon: "../images/pages/sb-icons/conv_main_title_icon.png",
-  mainTitleIconPos: { right: "-45px" },
+  mainTitleIcon: "../images/pages/sb-icons/phonics_main_title_icon.png",
+  mainTitleIconPos: { right: "-25px" },
   mainTitleAudio: "../audios/page_14/PHONICS.mp3",
   subTitleTextLeft:
     "<span class='red_text'>3</span> Write <span class='red'>‘a’</span> and the  <span class='red'>‘magic e’</span> to complete the words. Then write the words.",
@@ -131,16 +131,18 @@ var fillin_data = {
   items: [
     "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg1'>",
 
-    "<img src='../images/G2-U1-images/page-5/sent-build-conv-1.png' class='showImg1 bubble_img left_bubble_img'>",
-
+    "<img src='../images/G2-U1-images/page-5/sent-build-conv-1.png' " +
+      "class='showImg1 bubble_img left_bubble_img conv_audio_img' " +
+      "data-audio='../audios/page_14/A_complete_sentence_begins_with_a_noun.mp3'>",
     "<span class='middle_sentence'>" +
       "<span class='label'>noun</span><span class='label'>verb</span><br>" +
       "<span class='red_text'>Runners wear</span> <b>trainers.</b>" +
       "</span>",
     "<img src='../images/G2-U1-images/page-5/image.png' class='inner_img'>",
 
-    "<img src='../images/G2-U1-images/page-5/sent-build-conv-2.png' class='showImg2 bubble_img right_bubble_img'>",
-
+    "<img src='../images/G2-U1-images/page-5/sent-build-conv-2.png' " +
+      "class='showImg2 bubble_img right_bubble_img conv_audio_img' " +
+      "data-audio='../audios/page_14/A_complete_sentence_has_got_a_verb.mp3'>",
     "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg2'>",
   ],
 };

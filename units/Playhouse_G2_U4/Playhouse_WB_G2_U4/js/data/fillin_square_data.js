@@ -5,7 +5,7 @@ var stereo_data = {
     "type":"text",
     "playListData" : [
         {
-          'audiourl': '../audios/page_39/PLAYHOUSE_2_WB_UNIT_8_TRACK_02_01.mp3',
+          'audiourl': '../audios/page_22/PLAYHOUSE_2_WB_UNIT_4_TRACK_06_01.mp3',
         },
         {
           'url': '',
@@ -22,8 +22,8 @@ var stereo_data = {
 var wordsearch_data = { 
     "layout"                : 1,
     "numinrow"              : [[1,1,1]],
-    "mainTitle"             : "../images/pages/sb-icons/word_main_title.png",
-    "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
+    "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
+    "mainTitleIcon"         : "../images/pages/sb-icons/readwrite_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
     "subTitleTextLeft"      : '<span class="blue_text">1</span> Find the words.',

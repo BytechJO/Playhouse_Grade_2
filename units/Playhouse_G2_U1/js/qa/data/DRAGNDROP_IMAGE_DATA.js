@@ -7,7 +7,7 @@ var _activity_json =
     "subTitleTextLeft"      : "<span class='red_text'>2</span> Write the correct phrase.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
-    "subTitleAudio"         : "../audios/page_12/GRAMMAR.mp3",
+    "subTitleAudio"         : "",
         "image": "new_drag_drop.png",
         "activityheading": "Write thethe correctcorrect phrase",
         "activityheading_audio" : "../audios/under.mp3",

@@ -185,3 +185,8 @@
     gap: 18px;
   }
 }
+.nounverb_img img {
+  border: 2px solid #20bdf2;
+  border-radius: 15px;
+  box-sizing: border-box;
+}

@@ -175,11 +175,19 @@ function buildSnapShotContent(snapshotObj, snapshotPopup_data, Popups_data) {
   }
   showImg();
 }
+/* =========================================================
+   Word Power main-title audio
+   مشغل واحد فقط حتى يوقف الصوت السابق
+   ========================================================= */
+
+var wordPowerAudio = new Audio();
+
 $(document)
   .off("click.wordPowerMainTitle")
   .on("click.wordPowerMainTitle", ".main_title.audioTile", function (e) {
     e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
 
     var audioSrc = $(this).attr("data-audio");
 
@@ -189,9 +197,35 @@ $(document)
       return;
     }
 
-    var audio = new Audio(audioSrc);
-    audio.currentTime = 0;
-    audio.play();
+    /*
+        يوقف أي صوت عادي شغال من النظام
+      */
+
+    if (typeof stopPlaying === "function") {
+      stopPlaying();
+    }
+
+    /*
+        يوقف صوت Word Power السابق
+      */
+
+    wordPowerAudio.pause();
+    wordPowerAudio.currentTime = 0;
+
+    /*
+        تشغيل الصوت الجديد
+      */
+
+    wordPowerAudio.src = audioSrc;
+    wordPowerAudio.load();
+
+    var playPromise = wordPowerAudio.play();
+
+    if (playPromise !== undefined && playPromise !== null) {
+      playPromise.catch(function (error) {
+        console.error("Word Power audio failed:", error);
+      });
+    }
   });
 // -------------------- [ audio icon control ]----------------
 

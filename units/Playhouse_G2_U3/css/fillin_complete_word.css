@@ -650,3 +650,14 @@
   transform: translateX(-50%);
   width: 230px;
 }
+.person_audio_trigger,
+.people_audio_trigger {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.person_audio_trigger:hover,
+.people_audio_trigger:hover {
+  transform: scale(1.1);
+}

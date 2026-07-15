@@ -17,7 +17,7 @@ body {
 
 .options {
   position: relative;
-  margin-top: -98px;
+  /* margin-top: -98px; */
   /* padding: 5px 30px; */
   border: 4px dashed #00aeef;
   background: #fff;

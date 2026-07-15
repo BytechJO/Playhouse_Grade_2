@@ -5,6 +5,8 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by any browser but < IE9 */
+  margin-top: -50px;
+
 }
 
 :root{
@@ -17,7 +19,7 @@ body {
 
 .options {
   position: relative;
-  margin-top: -98px;
+  /* margin-top: -98px; */
   /* padding: 5px 30px; */
   border: 4px dashed #00aeef;
   background: #fff;

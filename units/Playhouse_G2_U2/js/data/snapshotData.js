@@ -176,7 +176,7 @@ var Popups_data = {
     "left: 63%; top: 72.5%;",
     "left: 42.19%; top: 88.75%;",
     "left: 25%; top: 90%;",
-    "left: 50.25%; top: 93.75%;",
+    "left: 50.25%; top: 91.75%;",
   ],
   imagesAudio: [
     "../audios/page_16/1_shining.mp3",

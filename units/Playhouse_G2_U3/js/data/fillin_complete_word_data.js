@@ -113,22 +113,36 @@ var fillin_data = {
   ],
 
   items: [
-    "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg1'>",
+    "<img src='../images/pages/sb-icons/conv_main_title_icon.png' " +
+      "class='readHighlightsBtn imgToggle gelatine' " +
+      "data-img='showImg1'>",
 
-    "<img src='../images/pages/activities/conv3.png' class='showImg1 bubble_img left_bubble_img'>",
+    "<img src='../images/pages/activities/conv3.png' " +
+      "class='showImg1 bubble_img left_bubble_img' " +
+      "data-audio='../audios/page_26/Regular_plural_nouns_end_in_-s.mp3'>",
 
     "<div class='middle_sentence person_people_titles'>" +
-      "<span class='person_title'>person</span>" +
-      "<span class='people_title'>people</span>" +
+      "<span class='person_title person_audio_trigger' " +
+      "data-audio='../audios/page_26/person.mp3'>person</span>" +
+      "<span class='people_title people_audio_trigger' " +
+      "data-audio='../audios/page_26/people.mp3'>people</span>" +
       "</div>",
 
     "<div class='person_people_images'>" +
-      "<img src='../images/pages/activities/conv1.png' class='inner_img person_img'>" +
-      "<img src='../images/pages/activities/conv2.png' class='inner_img people_img'>" +
+      "<img src='../images/pages/activities/conv1.png' " +
+      "class='inner_img person_img person_audio_trigger' " +
+      "data-audio='../audios/page_26/person.mp3'>" +
+      "<img src='../images/pages/activities/conv2.png' " +
+      "class='inner_img people_img people_audio_trigger' " +
+      "data-audio='../audios/page_26/people.mp3'>" +
       "</div>",
 
-    "<img src='../images/pages/activities/conv4.png' class='showImg2 bubble_img right_bubble_img'>",
+    "<img src='../images/pages/activities/conv4.png' " +
+      "class='showImg2 bubble_img right_bubble_img' " +
+      "data-audio='../audios/page_26/Irregular_plural.mp3'>",
 
-    "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg2'>",
+    "<img src='../images/pages/sb-icons/conv_main_title_icon.png' " +
+      "class='readHighlightsBtn imgToggle gelatine' " +
+      "data-img='showImg2'>",
   ],
 };

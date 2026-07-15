@@ -130,10 +130,14 @@ var fillin_data = {
   items: [
     "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg1'>",
 
-    "<img src='../images/G2-U1-images/page-5/sent-build-conv-1.png' class='showImg1 bubble_img left_bubble_img'>",
-
+    "<img src='../images/pages/page-6/sent-build-conv-1.png' " +
+      "class='showImg1 bubble_img left_bubble_img' " +
+      "data-audio='../audios/page_20/CVC_=_consonant_-_vowel_-_consonant.mp3'>",
     "<span class='middle_sentence'>" +
-      "<span class='red_text'>-ing</span> <b> verbs show actions that are happening now.</b>" +
+      "<span class='middle_sentence_audio' data-audio='../audios/page_20/‘-ing’_verbs_show_actions_that_are_happening_now.mp3'>" +
+      "<span class='red_text'>-ing</span> " +
+      "<b>verbs show actions that are happening now.</b>" +
+      "</span>" +
       "</span>",
     "<div class='sentence_image_block'>" +
       "<div class='word_rule'>" +
@@ -144,7 +148,8 @@ var fillin_data = {
       "src='../images/pages/inner.png' " +
       "class='inner_img'" +
       ">" +
-      "<div class='image_sentence'>" +
+      "<div class='image_sentence image_sentence_audio' " +
+      "data-audio='../audios/page_20/He_is_swimming.mp3'>" +
       "<b>He is </b>" +
       "<span class='word_black'>swim</span>" +
       "<span class='word_red'>ming</span>" +
@@ -152,8 +157,9 @@ var fillin_data = {
       "</div>" +
       "</div>",
 
-    "<img src='../images/G2-U1-images/page-5/sent-build-conv-2.png' class='showImg2 bubble_img right_bubble_img'>",
-
+    "<img src='../images/pages/page-6/sent-build-conv-2.png' " +
+      "class='showImg2 bubble_img right_bubble_img' " +
+      "data-audio='../audios/page_20/PLAYHOUSE_2_SB_UNIT_2_TRACK_06_01.mp3'>",
     "<img src='../images/pages/sb-icons/conv_main_title_icon.png' class='readHighlightsBtn imgToggle gelatine' data-img='showImg2'>",
   ],
 };

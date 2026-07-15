@@ -20,10 +20,10 @@ var stereo_data = {
   }
 var linedraw_data = {    
     "layout"                : 1,
-    "mainTitle": "../images/icons/conv_main_title.png",
-    "mainTitleIcon": "../images/pages/sb-icons/conv_main_title_icon.png",
-    "mainTitleAudio": "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='red_text'>3</span>  Match.",
+    "mainTitle": "../images/icons/gramprac_main_title.png",
+    "mainTitleIcon": "../images/pages/sb-icons/gram_main_title_icon.png",
+    "mainTitleAudio": "../audios/page_34/GRAMMAR_PRACTICE.mp3",
+    "subTitleTextLeft"      : "<span class='red_text'>1</span>  Match.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
     "subTitleAudio"         : "../audios/under.mp3",

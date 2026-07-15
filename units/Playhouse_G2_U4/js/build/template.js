@@ -36,7 +36,7 @@ function buildHeader(aObj) {
         fStmt += "</div>";
 
         if (typeof (aObj.title).text != undefined && (aObj.title).text != null) {
-            fStmt += "<div class='unitTitle d-flex align-items-center justify-content-center mx-2'>";
+            fStmt += "<div class='unitTitle d-flex align-items-center justify-content-center mx-2' style='width: fit-content; max-width: fit-content;'>";
             if (typeof aObj.audio != undefined && aObj.audio != null) {
                 fStmt += "<div class='audioIcon off my-auto' data-audio='" + _templatePath + aObj.audio + "'>"
                 fStmt += "<div class='unitTitleText' rel='tooltip' data-placement='bottom' title='' data-original-title='" + (aObj.title).text + "'>" + (aObj.title).text + "</div>";        
@@ -47,7 +47,7 @@ function buildHeader(aObj) {
 
         fStmt += "<div class='col-1 col-xs-1 col-md-2 d-flex flex-wrap justify-content-between'>";
         
-            fStmt += "<div class='d-flex flex-wrap justify-content-between' style='width: 100%;'>";
+            fStmt += "<div class='d-flex' style='width: 100%;'>";
                 fStmt += '<img src="../images/icons/draw_icon.png"  class="toolbarToggleBtn" data-point="show_slide" >';
                 fStmt += "<div class='homeBtn my-auto " + ((homeVisible == 'yes') ? 'd-block' : 'd-none') + "'>";
                 fStmt += "<a href='" + homeLink + "?u=" + aObj.unitno + "'>";
@@ -93,8 +93,6 @@ function isMobile() {
 function buildFooter(aObj) {
     var reviewVisible = (typeof (aObj.reviewbutton).visible != undefined && (aObj.reviewbutton).visible != null) ? (aObj.reviewbutton).visible : 'yes';
     var reviewLink = ((_templatePath == '.') ? '../' : '') + (aObj.reviewbutton).link;
-    console.log("=====================")
-    console.log(reviewLink)
     var fStmt = '';
     if (typeof aObj != undefined && aObj != null) {
         if (typeof aObj.bgcolor != undefined && aObj.bgcolor != null) {
@@ -106,7 +104,7 @@ function buildFooter(aObj) {
     if (typeof aObj.buttons != undefined && aObj.buttons != null && typeof aObj.filetoload != undefined && aObj.filetoload != null) {
         fStmt += "<div class='container footer_wrap'>";
         fStmt += "<div class='d-flex justify-content-between mt-2'>";
-        fStmt += "<div class='d-flex col-10 col-xs-10 col-md-10 flex-wrap align-items-center'>";
+        fStmt += "<div class='d-flex col-3 col-xs-3 col-md-3 gap-2 align-items-center'>";
             fStmt += '<a href="' + aObj.booksbutton.studentbook.link + '">';
             fStmt += '<img src="' + aObj.booksbutton.studentbook.icon + '">';
             fStmt += '</a>';
@@ -115,55 +113,55 @@ function buildFooter(aObj) {
             fStmt += '</a>';
         fStmt += "</div>";
 
-        // fStmt += "<div class='d-flex col-7 col-xs-6 col-md-7 flex-wrap justify-content-center'>";
-        // if ((aObj.buttons.length > 0) && (aObj.filetoload.length > 0) && (aObj.buttons.length == aObj.filetoload.length)) {
-        //     for (var f = 0; f < aObj.buttons.length; f++) {
-        //         fStmt += "<div class='footer_nav_btn " + (aObj.buttons[f].toLowerCase()) + "_btn my-auto d-none d-lg-block'>";
-        //         var _tFile = getThisFileName((aObj.filetoload[f]));
-        //         var _tPath = '';
-        //         var _tFileToLoad = '';
-        //         if (getCurrFileOrDirectory('directory') == 'views') {
-        //             if ((aObj.filetoload[f]) == "index.html" && (getCurrFileOrDirectory('directory') == 'views')) {
-        //                 _tPath = '../';
-        //                 _tFileToLoad = (aObj.filetoload[f]);
-        //             } else {
-        //                 _tFileToLoad = getCurrFileOrDirectory('file', (aObj.filetoload[f]));
-        //             }
-        //         } else {
-        //             _tFileToLoad = (aObj.filetoload[f]);
-        //         }
-        //         var _tNeedLink = (aObj.filetoload[f] != "" && getCurrFileOrDirectory('file') != _tFile);
-        //         if (_tNeedLink) {
-        //             fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
-        //         }
-        //         fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + ".png'>";
-        //         if (_tNeedLink) {
-        //             fStmt += '</a>';
-        //         }
-        //         fStmt += "</div>";
+        fStmt += "<div class='d-flex col-7 col-xs-6 col-md-7 flex-wrap justify-content-center'>";
+        if ((aObj.buttons.length > 0) && (aObj.filetoload.length > 0) && (aObj.buttons.length == aObj.filetoload.length)) {
+            for (var f = 0; f < aObj.buttons.length; f++) {
+                fStmt += "<div class='footer_nav_btn " + (aObj.buttons[f].toLowerCase()) + "_btn my-auto d-none d-lg-block'>";
+                var _tFile = getThisFileName((aObj.filetoload[f]));
+                var _tPath = '';
+                var _tFileToLoad = '';
+                if (getCurrFileOrDirectory('directory') == 'views') {
+                    if ((aObj.filetoload[f]) == "index.html" && (getCurrFileOrDirectory('directory') == 'views')) {
+                        _tPath = '../';
+                        _tFileToLoad = (aObj.filetoload[f]);
+                    } else {
+                        _tFileToLoad = getCurrFileOrDirectory('file', (aObj.filetoload[f]));
+                    }
+                } else {
+                    _tFileToLoad = (aObj.filetoload[f]);
+                }
+                var _tNeedLink = (aObj.filetoload[f] != "" && getCurrFileOrDirectory('file') != _tFile);
+                if (_tNeedLink) {
+                    fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
+                }
+                fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + ".png'>";
+                if (_tNeedLink) {
+                    fStmt += '</a>';
+                }
+                fStmt += "</div>";
 
-        //         fStmt += "<div class='footer_nav_btn small_nav " + (aObj.buttons[f].toLowerCase()) + "_small_btn my-auto d-none d-md-block d-lg-none' data-toggle='tooltip' data-placement='top' title='' data-original-title='" + (aObj.buttons[f]) + "'>";
-        //         if (_tNeedLink) {
-        //             fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
-        //         }
-        //         fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + "_small.png'>";
-        //         if (_tNeedLink) {
-        //             fStmt += '</a>';
-        //         }
-        //         fStmt += "</div>";
+                fStmt += "<div class='footer_nav_btn small_nav " + (aObj.buttons[f].toLowerCase()) + "_small_btn my-auto d-none d-md-block d-lg-none' data-toggle='tooltip' data-placement='top' title='' data-original-title='" + (aObj.buttons[f]) + "'>";
+                if (_tNeedLink) {
+                    fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
+                }
+                fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + "_small.png'>";
+                if (_tNeedLink) {
+                    fStmt += '</a>';
+                }
+                fStmt += "</div>";
 
-        //         fStmt += "<div class='footer_nav_btn mini_nav " + (aObj.buttons[f].toLowerCase()) + "_mini_btn my-auto mx-1 d-md-none' data-toggle='tooltip' data-placement='top' title='' data-original-title='" + (aObj.buttons[f]) + "'>";
-        //         if (_tNeedLink) {
-        //             fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
-        //         }
-        //         fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + "_mini.png'>";
-        //         if (_tNeedLink) {
-        //             fStmt += '</a>';
-        //         }
-        //         fStmt += "</div>";
-        //     }
-        // }
-        // fStmt += "</div>";
+                fStmt += "<div class='footer_nav_btn mini_nav " + (aObj.buttons[f].toLowerCase()) + "_mini_btn my-auto mx-1 d-md-none' data-toggle='tooltip' data-placement='top' title='' data-original-title='" + (aObj.buttons[f]) + "'>";
+                if (_tNeedLink) {
+                    fStmt += "<a href='" + _tPath + _tFileToLoad + "'>";
+                }
+                fStmt += "<img class='h-100 ' src='" + _templatePath + _assetsPath + "foo_" + (aObj.buttons[f].toLowerCase()) + "_mini.png'>";
+                if (_tNeedLink) {
+                    fStmt += '</a>';
+                }
+                fStmt += "</div>";
+            }
+        }
+        fStmt += "</div>";
         fStmt += "<div class='d-flex col-2 col-xs-2 col-md-2 flex-wrap justify-content-end'>";
             fStmt += "<div class='reviewBtn my-auto " + ((reviewVisible == 'yes') ? 'd-block' : 'd-none') + "'>";
             fStmt += "<a href=" + reviewLink + ">";
@@ -227,8 +225,6 @@ function buildSubFooter(aObj, aVal) {
     }
 
 }
-
-
 function buildCoreFrame(ob) {
     _templatePath = buildTemplatePath();
     if (typeof ob !== undefined && ob != null) {

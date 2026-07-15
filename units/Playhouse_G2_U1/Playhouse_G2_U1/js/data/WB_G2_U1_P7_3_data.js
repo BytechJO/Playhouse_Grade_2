@@ -29,8 +29,8 @@ var mcq_data = {
 
   questions: [
     {
-      leftImage: "../images/pages/activities/p8_1.png",
-      rightImage: "../images/pages/activities/p8_1.png",
+      leftImage: "../images/pages/activities/girl.png",
+      rightImage: "../images/pages/activities/boy.png",
 
       lines: [
         [

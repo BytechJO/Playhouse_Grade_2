@@ -49,7 +49,7 @@
   object-fit: contain;
 }
 
-.textFront{
+.textFront {
   margin: 2px auto;
   font-weight: bolder;
   font-size: 32px;
@@ -78,11 +78,9 @@
   justify-content: center;
   align-items: center;
 }
-.q_space{
+.q_space {
   margin: 0px auto;
 }
-
-
 
 .fillin_gr input {
   width: 48px;
@@ -100,7 +98,7 @@
   outline: none;
 }
 
-.fillin_gr input:last-child{
+.fillin_gr input:last-child {
   width: 195px;
 }
 
@@ -109,7 +107,6 @@
   top: 0px;
   right: 10px;
 }
-
 
 .icon_wrap {
   position: absolute;
@@ -152,13 +149,15 @@
 /*              M Q max-width: 1799.98px */
 /* ------------------------------------------------*/
 /* // Large devices (desktops, less than 1800px) */
-@media (max-width: 1799.98px) {}
+@media (max-width: 1799.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1399.98px */
 /* ------------------------------------------------*/
 /* // Large devices (desktops, less than 1400px) */
-@media (max-width: 1399.98px) {}
+@media (max-width: 1399.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1199.98px */
@@ -172,35 +171,39 @@
   .img_fillin_gr {
     width: 268px;
   }
-  
-.screen_elements {
-  height: 100% !important;
-}
+
+  .screen_elements {
+    height: 100% !important;
+  }
 }
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 991.98px */
 /* ------------------------------------------------*/
 /* // Medium devices (tablets, less than 992px) 768 to 991.98 */
-@media (max-width: 991.98px) {}
+@media (max-width: 991.98px) {
+}
 
 /* ------------------------------------------------ */
 /* M Q max-width: 767.98px */
 /* ------------------------------------------------*/
 /* // Small devices (landscape phones, less than 768px) 576 to 767.98*/
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
+}
 
 /* ------------------------------------------------ */
 /* M Q max-width: 575.98px */
 /* ------------------------------------------------*/
 /* // Extra small devices (portrait phones, less than 576px) 476 to 575*/
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 475.98px             */
 /* ------------------------------------------------*/
 /* body working fine 320 to 475 */
-@media (max-width: 475.98px) {}
+@media (max-width: 475.98px) {
+}
 
 /* ================= Sentence Building ================= */
 
@@ -694,4 +697,15 @@
 }
 .SentenceBuilding_container .main_title_container {
   cursor: pointer;
+}
+.middle_sentence_audio,
+.image_sentence_audio {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.middle_sentence_audio:hover,
+.image_sentence_audio:hover {
+  transform: scale(1.05);
 }
