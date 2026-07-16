@@ -10,10 +10,10 @@ var _data = {
        // "rightIcon": "./images/unit-icon.png", 
 
        "grammer_icon":"./images/icons/gram-icon.png",
-       "grammer_link":"./views/slide_4.html", 
+       "grammer_link":"./views/slide_7.html", 
 
        "vocabulary_icon":"./images/icons/voc-icon.png", 
-       "vocabulary_link":"./views/slide_11.html",
+       "vocabulary_link":"./views/slide_img.html",
 
        "poster_icon":"./images/icons/poster-icon.png", 
        "poster_link":"./views/playhouse_intro.html", 
@@ -50,7 +50,7 @@ var _data = {
         "filetoload" : [],
         "reviewbutton" : {
             'visible'   : 'yes', // yes (or) no
-            'link'      : './Playhouse_Review_G1_U1/views/fillin_square.html'
+            'link'      : './Playhouse_Review_G1_U1/views/look_and_write_body_parts.html'
         },
         "booksbutton" : {
             "workbook": {

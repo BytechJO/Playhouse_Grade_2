@@ -1,6 +1,6 @@
 .all_cont {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   text-align: center;
   align-items: center;
   display: flex;
@@ -10,12 +10,15 @@
 .screen_elements {
   width: 90%;
   height: 100% !important;
+  
 }
 
 .group_elm {
   width: 100%;
   height: 70%;
   font-size: 25px;
+  margin-bottom: 40px;
+
 }
 
 .audio_icon {
@@ -201,3 +204,55 @@
 /* ------------------------------------------------*/
 /* body working fine 320 to 475 */
 @media (max-width: 475.98px) {}
+
+.sentenceTrigger {
+  cursor: pointer;
+}
+
+.sentenceToggleImage {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0s linear 0.35s;
+  pointer-events: none;
+}
+
+.sentenceToggleImage.showSentenceImage {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0s;
+  pointer-events: auto;
+}
+.sentenceAudioGroup {
+  width: 380px;
+  min-width: 380px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.clickableSentence {
+  width: 100%;
+  margin: 4px auto;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.clickableSentence:hover {
+  opacity: 0.75;
+}
+
+.clickableSentence.audioPlaying {
+  opacity: 0.65;
+}
+
+.sentenceBuildingTitle {
+  cursor: pointer;
+}
+

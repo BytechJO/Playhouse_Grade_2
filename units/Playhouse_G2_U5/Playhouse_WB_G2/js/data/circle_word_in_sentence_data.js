@@ -26,7 +26,7 @@ var mcq_data = {
     "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='blue_text'>1</span> Look and circle the correct word. Read.",
+    "subTitleTextLeft"      : "<span class='blue_text'>2</span> Look and circle the correct word. Read.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
     "subTitleAudio"         : "../audios/under.mp3",
