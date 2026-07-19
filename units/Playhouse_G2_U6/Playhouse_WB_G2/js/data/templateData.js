@@ -7,9 +7,13 @@ var _data = {
         // "bgimage": "./images/AGW_1_SB_U15_header.png",
         "bgcolor": "rgb(212,239,253)",
         "icon": "./images/unit-icon.png",       
+        "homebutton" : {
+            'visible'   : 'yes', // yes (or) no
+            'link'      : 'grammar.html'
+        },  
         "audio": "./audios/AGW_1_SB_U15_TitleAudio.mp3",
         "title":{
-            "text": "How Are You Today?",
+            "text": "What’s the Matter?",
             "color":"rgb(255, 255, 255);",
             "text-align": "center",
             "font-size": "44px",
@@ -33,14 +37,14 @@ var _data = {
         "bgcolor": "rgb(212,239,253)",       
         "buttons"    : [],
         "filetoload" : [],
-        "homebutton" : {
+        "reviewbutton" : {
             'visible'   : 'yes', // yes (or) no
             'link'      : 'grammar.html'
         },
         "booksbutton" : {
             "workbook": {
                 'icon'   : '../images/icons/book-2.png',
-                'link'      : './multiple_choice_p29.html'
+                'link'      : './fill_number_or_letter.html'
             },
             "studentbook": {
                 'icon'   : '../images/icons/book-1.png',

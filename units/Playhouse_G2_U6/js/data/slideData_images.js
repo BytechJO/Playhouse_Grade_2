@@ -22,11 +22,11 @@ var reading_data = {
     "mainTitle": "../images/icons/conv_main_title.png",
     "mainTitleIcon": "../images/pages/sb-icons/conv_main_title_icon.png",
     "mainTitleIconPos": {"right": "100px"},
-    "mainTitleAudio": "../audios/under.mp3",
+    "mainTitleAudio": "../audios/page_45/CONVERSATION.mp3",
     "subTitleTextLeft": "<span class='orange_text'>1</span> Listen and read the story. Then act it out.",
     "subTitleTextRight": "",
     "subTitleIcons": ["../images/pages/sb-icons/conv_1_icon.png"],
-    "subTitleAudio" : "../audios/page_11/1_Listen_and_read._Then_act_it_out.mp3",
+    "subTitleAudio" : "../audios/page_45/1_Listen_and_read._Then_act_it_out.mp3",
     "haveAudio": true,
     "video" : "../videos/p45.mp4",
     "slides": [

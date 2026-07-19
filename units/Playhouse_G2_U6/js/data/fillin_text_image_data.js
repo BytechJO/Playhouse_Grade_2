@@ -25,7 +25,7 @@ var fillin_data = {
   "mainTitleIcon"         : "../images/pages/sb-icons/gram_main_title_icon.png",
   "mainTitleAudio"        : "../audios/page_46/GRAMMAR.mp3",
   "mainTitleIconPos"      : {"right": "-18px"},
-  "subTitleTextLeft"      : "<span class='orange_text'>3</span> Listen and write the adverb of frequency.",
+  "subTitleTextLeft"      : "<span >3</span> Listen and write the adverb of frequency.",
   "subTitleTextRight"     : "",
   "subTitleIcons"         : [""],
   "subTitleAudio"         : "../audios/page_46/3_Listen_and_write_the_adverb_of_frequency.mp3",

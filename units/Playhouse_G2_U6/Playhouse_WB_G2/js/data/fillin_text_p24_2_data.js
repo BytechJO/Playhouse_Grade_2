@@ -22,9 +22,9 @@ var stereo_data = {
 var fillin_data = {
     "layout"               : 1,
     "numinrow"              : [[1], [1], [1], [1], [1]],
-    "mainTitle"             : "../images/pages/sb-icons/phonics_main_title.png",
-    "mainTitleIcon"         : "",
-    "mainTitleIconPos"      : {"right": "-18px"},
+    "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
+    "mainTitleIcon"         : "../images/pages/sb-icons/readwrite_main_title_icon.png",
+    "mainTitleIconPos"      : {},
     "mainTitleAudio"        : "../audios/under.mp3",
     "subTitleTextLeft"      : '<span class="red_text">1</span> Unscramble the sentences.',
     "subTitleTextRight"     : "",

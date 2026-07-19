@@ -20,9 +20,9 @@ var stereo_data = {
   }
 var linedraw_data = {     
     "layout"                : 1,
-    "mainTitle"             : "../images/pages/sb-icons/word_main_title.png",
-    "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
-    "mainTitleIconPos"      : {"right": "80px"},
+    "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
+    "mainTitleIcon"         : "../images/pages/sb-icons/readwrite_main_title_icon.png",
+    "mainTitleIconPos"      : {},
     "mainTitleAudio"        : "../audios/under.mp3",
     "subTitleTextLeft"      : "<span class='blue_text'>1</span>  Match each word to the correct picture.",
     "subTitleTextRight"     : "",
