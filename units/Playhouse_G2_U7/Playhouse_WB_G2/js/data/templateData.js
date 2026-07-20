@@ -6,10 +6,26 @@ var _data = {
     "header": {
         // "bgimage": "./images/AGW_1_SB_U15_header.png",
         "bgcolor": "rgb(212,239,253)",
-        "icon": "./images/unit-icon.png",       
+        "icon": "./images/unit-icon.png",   
+
+       "grammer_icon":"./images/icons/gram-icon.png",
+       "grammer_link":"./views/slide_7.html", 
+
+       "vocabulary_icon":"./images/icons/voc-icon.png", 
+       "vocabulary_link":"./views/slide_11.html",
+
+       "poster_icon":"./images/icons/poster-icon.png", 
+       "poster_link":"./views/playhouse_intro.html", 
+
+       "homebutton" : {
+        'visible'   : 'yes', // yes (or) no
+        'link'      : 'grammar.html'
+       }, 
+
+       
         "audio": "./audios/AGW_1_SB_U15_TitleAudio.mp3",
         "title":{
-            "text": "A Visit to Grandma",
+            "text": "Getting Ready for School",
             "color":"rgb(255, 255, 255);",
             "text-align": "center",
             "font-size": "44px",
@@ -33,14 +49,14 @@ var _data = {
         "bgcolor": "rgb(212,239,253)",       
         "buttons"    : [],
         "filetoload" : [],
-        "homebutton" : {
+        "reviewbutton" : {
             'visible'   : 'yes', // yes (or) no
             'link'      : 'grammar.html'
         },
         "booksbutton" : {
             "workbook": {
                 'icon'   : '../images/icons/book-2.png',
-                'link'      : './fillin_number_image.html'
+                'link'      : './WB_G2_U1_P4_1.html'
             },
             "studentbook": {
                 'icon'   : '../images/icons/book-1.png',

@@ -199,4 +199,28 @@
     top: 26px;
     left: 496px;
     height: 120px;
+}.sentenceBuildingAudio,
+.sentenceAudio,
+.imgToggle {
+  cursor: pointer;
+}
+
+.sentenceBuildingAudio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sentenceAudio {
+  display: inline-block;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.sentenceAudio:hover {
+  transform: scale(1.02);
+}
+
+.sentenceToggleImage {
+  display: none;
 }
