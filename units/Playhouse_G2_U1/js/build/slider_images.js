@@ -112,7 +112,6 @@ function buildReadingHTML(aObj) {
                 slideHtml += '</div>'
                 slideHtml += '</div>'
                 slideHtml += '</div>'
-                slideHtml += '<script src="../js/build/video.js"></script>'
                 // end 
             }
             slideHtml += '</div>'; //end - group_elm
