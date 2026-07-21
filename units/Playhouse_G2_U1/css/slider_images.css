@@ -463,8 +463,8 @@ a:hover {
 #monitor {
   position: relative;
 
-  width: 80%;
-  max-width: 1100px;
+   width: 100%;
+    /* max-width: 1450px; */
 
   margin: 25px auto 0;
 
