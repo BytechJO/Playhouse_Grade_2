@@ -10,17 +10,21 @@
 .screen_elements {
   width: 90%;
   height: 100% !important;
+  
 }
 
 .group_elm {
   width: 100%;
   height: 67%;
   font-size: 25px;
+  
+
 }
 
 .audio_icon {
   height: 39px;
   padding: 1px;
+  
 }
 
 .image_gap {
@@ -36,6 +40,7 @@
   position: relative;
   margin: 0px;
   font-size: 28px;
+  
 }
 
 .image_space {

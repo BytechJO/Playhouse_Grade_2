@@ -25,7 +25,7 @@ var fillin_data = {
     "mainTitleIcon": "",
     "mainTitleIconPos": {"right": "-20px"},
     "mainTitleAudio": "../audios/under.mp3",
-    "subTitleTextLeft"      : '<span class="blue_text">4</span>Change the sentences into negative sentences.',
+    "subTitleTextLeft"      : '<span class="blue_text">4</span> Change the sentences into negative sentences.',
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [""],
     "subTitleAudio"         : "../audios/under.mp3",

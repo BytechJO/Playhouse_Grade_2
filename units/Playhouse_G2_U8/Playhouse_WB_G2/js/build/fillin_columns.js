@@ -1,7 +1,7 @@
 function buildFillInBody(aObj) {	
 	var htmlStmt = '';
 	if(typeof aObj !=undefined && aObj !=null){		
-       
+       prepareFillinAnswers(aObj);
 		var layOut = parseInt(aObj.layout);
         var numOfQuestions = (aObj.questions).length;
         var numInRowArray = aObj.numinrow;
@@ -136,9 +136,67 @@ function buildFillInBody(aObj) {
 	}
 	console.log('htmlStmt >> fillin Built');
 	$( ".activity_area" ).append( htmlStmt );	
-	
+	activateIgnorePunctuation();
 	setLoadedStatus(getCurrFileOrDirectory('file'));
 }
 function nextChar(c) {
 	return String.fromCharCode(c.charCodeAt(0) + 1);
 }  
+function normalizeFillinText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    // حذف علامات الترقيم
+    .replace(/[.,!?;:'"’‘“”\-–—()[\]{}]/g, "")
+    // توحيد المسافات
+    .replace(/\s+/g, " ");
+}
+
+function prepareFillinAnswers(aObj) {
+  if (!aObj || !aObj.questions) {
+    return;
+  }
+
+  $.each(aObj.questions, function (index, question) {
+    if (!question.answer || !Array.isArray(question.answer)) {
+      return;
+    }
+
+    question.answer = question.answer.map(function (answer) {
+      return normalizeFillinText(answer);
+    });
+  });
+}
+
+function activateIgnorePunctuation() {
+  $(document)
+    .off("input.ignorePunctuation", ".que input[type='text']")
+    .on(
+      "input.ignorePunctuation",
+      ".que input[type='text']",
+      function () {
+        var originalValue = $(this).val();
+
+        var cleanValue = originalValue
+          // نحذف علامات الترقيم فقط
+          .replace(/[.,!?;:'"’‘“”\-–—()[\]{}]/g, "");
+
+        if (originalValue !== cleanValue) {
+          $(this).val(cleanValue);
+        }
+      }
+    );
+
+  // تنظيف إضافي قبل الخروج من الحقل
+  $(document)
+    .off("blur.ignorePunctuation", ".que input[type='text']")
+    .on(
+      "blur.ignorePunctuation",
+      ".que input[type='text']",
+      function () {
+        $(this).val(
+          normalizeFillinText($(this).val())
+        );
+      }
+    );
+}

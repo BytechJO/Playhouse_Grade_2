@@ -23,7 +23,7 @@ var mcq_tick_data = {
     "mainTitle"             : "../images/icons/adv_main_title.png",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "100px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../audios/page_65/Playhouse_Adventures!.mp3",
     "subTitleTextLeft"      : "<span class='red_text'>2</span> Read and tick.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

@@ -20,86 +20,98 @@ body{
     width:100%;
     /* border: 1px solid green; */
 }
-.wordsearch_wrap{
-	width:100%;
+.wordsearch_wrap {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start !important;
+
+  padding-top: 10px;
+  box-sizing: border-box;
 }
 .wordsearch_wrap{
     position:relative;
 }
-.wordmatrix_holder{
-    position: relative;
-    margin: auto;
-    width: 60%;
-    height: 100%;
-    min-width:320px;
-    min-height:320px;
-    overflow: hidden;
-    /* border: 1px solid blue; */
-}
-.wordmatrix{  
-    position:relative;
-    width: fit-content;
-   
-    /*padding: 1px; */
-    margin: auto;
-}
-.wordmatrix .ws_row{
-    background-color: white;  
-}
-.wordmatrix .ws_row .ws_col{
-    width: 40px;
-    height: 40px;
-    max-width: 60px;
-    max-height: 60px;
-    border: 1px solid var(--temp);
-   /* padding: 5px;*/
-    text-align: center;
-    position: relative;  
-    cursor: pointer;
-    display: table;
-}
-.wordmatrix .ws_row .ws_col p{
-    display:table-cell;
-    height:100%;
-    width:100%;
-    vertical-align:middle;
-	margin:0;
-    font-size: 32px;
-}
-.wordmatrix1 .ws_row .ws_col p{
-    font-family: Arcon;    
-    font-size:35px;   
-    font-weight: 500;
-    
-    position: absolute;
-    text-align: center;
+.wordmatrix_holder {
+  position: relative;
 
-      margin: 0;
-      margin-top: -5px;
-      /* height:100%;
-      width:100%; */
-      /* border: 1px solid #f8a141; */
-    /*height:100%;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top: 0; */
+  width: 60%;
+  height: auto;
 
-    /*font-size: 24px;
-    font-weight: bold;
-    margin: auto;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);*/
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
-    text-transform: capitalize;
+  min-width: 320px;
+  min-height: 380px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  overflow: visible;
+  box-sizing: border-box;
+}
+.wordmatrix {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.wordmatrix .ws_row {
+  display: flex;
+  background-color: white;
+}
+
+.wordmatrix .ws_row .ws_col {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+
+  border: 1px solid var(--temp);
+  box-sizing: border-box;
+
+  position: relative;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+}
+
+.wordmatrix .ws_row .ws_col p,
+.wordmatrix1 .ws_row .ws_col p {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: static;
+
+  font-family: Arcon;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1;
+
+  text-align: center;
+  text-transform: lowercase;
+
+  user-select: none;
+  box-sizing: border-box;
 }
 .wordlist{    
     font-family: Arcon;

@@ -6,7 +6,7 @@ var mcq_data = {
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-20px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='red_text'>5</span> Read and circle the ‘-ss’ words.",
+    "subTitleTextLeft"      : "<span class='blue_text'>5</span> Read and circle the ‘-ss’ words.",
     "subTitleTextRight"     : "",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

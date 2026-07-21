@@ -32,7 +32,10 @@
 }
 
 .blue_text {
-    color: rgb(0, 185, 242);
+   display: inline-block;
+  margin-right: 10px;
+  color: #e3252c;
+  font-weight: bold;
 }
 
 /* //  ActivitiesCSS - Version no: R-02
@@ -330,3 +333,10 @@ footer {
 /* body working fine 320 to 475 */
 
 @media (max-width: 475.98px) {}
+
+.title-order {
+  display: inline-block;
+  margin-right: 10px;
+  color: #e3252c;
+  font-weight: bold;
+}
