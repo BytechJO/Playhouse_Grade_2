@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .que_item {
     width: 1010px;
     /* padding: 5px 10px; */
@@ -72,14 +73,13 @@
     border-radius: 10px;
 }
 
-.text_container{
+.text_container {
     width: 83%;
 }
 
 .text_part,
 .q_part,
-.q_grp
-{
+.q_grp {
     width: 100%;
 }
 
@@ -89,14 +89,26 @@
 
 .icon_wrap {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    right: 500px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tick,
 .cross {
     width: 25px;
     height: 25px;
+}
+
+.tick img,
+.cross img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .text_input_area {
@@ -112,12 +124,12 @@
 
 .img_space {
     /* width: 100%; */
-  
+
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 261px;
-    right: 150px;
+   top: 154px;
+    right: 96px;
 }
 
 .img_space img {
@@ -133,18 +145,22 @@
 /* ====================================================== */
 /*              Media Queries Start                       */
 /* ====================================================== */
+
 /* ------------------------------------------------ */
 /*              M Q max-width: 1799.98px */
 /* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1800px) */
 
 /* // Large devices (desktops, less than 1800px) */
-@media (max-width: 1799.98px) {}
+
+@media (max-width: 1799.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1399.98px */
 /* ------------------------------------------------*/
+
 /* // Large devices (desktops, less than 1400px) */
+
 @media (max-width: 1399.98px) {
     .que {
         margin-bottom: 2px;
@@ -154,21 +170,26 @@
 
     .img_space {
         /* height: 130px;
-    padding: 10px;
-    margin: auto; */
+        padding: 10px;
+        margin: auto; */
     }
 }
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1199.98px */
 /* ------------------------------------------------*/
+
 /* // Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {}
+
+@media (max-width: 1199.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 991.98px */
 /* ------------------------------------------------*/
+
 /* // Medium devices (tablets, less than 992px) 768 to 991.98 */
+
 @media (max-width: 991.98px) {
     .q_part {
         letter-spacing: 1px;
@@ -179,22 +200,28 @@
 /* ------------------------------------------------ */
 /* M Q max-width: 767.98px */
 /* ------------------------------------------------*/
-/* // Small devices (landscape phones, less than 768px) 576 to 767.98*/
+
+/* // Small devices (landscape phones, less than 768px) 576 to 767.98 */
+
 @media (max-width: 767.98px) {
     .question_group {
         width: 100%;
     }
-
 }
 
 /* ------------------------------------------------ */
 /* M Q max-width: 575.98px */
 /* ------------------------------------------------*/
-/* // Extra small devices (portrait phones, less than 576px) 476 to 575*/
-@media (max-width: 575.98px) {}
+
+/* // Extra small devices (portrait phones, less than 576px) 476 to 575 */
+
+@media (max-width: 575.98px) {
+}
 
 /* body working fine 320 to 475 */
-@media (max-width: 475.98px) {}
+
+@media (max-width: 475.98px) {
+}
 
 .border-none {
     border: none !important;
@@ -210,6 +237,6 @@
     pointer-events: all;
 }
 
-/* .mb-70{
+/* .mb-70 {
     margin-bottom: 70px;
 } */

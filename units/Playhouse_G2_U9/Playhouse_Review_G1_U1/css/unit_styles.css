@@ -134,7 +134,9 @@
 .unit_color_border {
     border-color: #3582b4;
 }
-
+.red_text {
+    color: #d2232a;
+}
 
 /**************** Unit Color code end***************/
 
