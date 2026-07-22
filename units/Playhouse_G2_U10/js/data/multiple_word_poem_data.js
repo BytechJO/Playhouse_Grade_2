@@ -24,7 +24,7 @@ var mcq_data = {
     "mainTitle"             : "../images/icons/phonics_main_title.png",
     "mainTitleIcon"         : "../images/pages/sb-icons/phonics_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-20px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../audios/page_80/PHONICS.mp3",
     "subTitleTextLeft"      : "<span class='red_text'>2</span> Circle the ‘<span class='red_text'>ump</span>’ words in the poem.",
     "subTitleTextRight"     : "",
     "subTitleTextRight"     : "",
@@ -41,7 +41,7 @@ var mcq_data = {
         {
             "question"              : "‘<span class='red_text'>-ump</span>’ words",
             "image"                 : "We",
-            "answer"                : [8],
+            "answer"                : [6],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default          
             "options"               : [ 
