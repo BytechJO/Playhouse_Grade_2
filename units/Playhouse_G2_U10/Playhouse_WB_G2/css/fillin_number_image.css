@@ -1,6 +1,6 @@
 .all_cont {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   text-align: center;
   align-items: center;
   display: flex;
@@ -101,7 +101,7 @@
 
 .fillin_gr .icon_wrap_holder {
   position: absolute;
-  top: 0px;
+  top: -40px;
   right: 10px;
 }
 
@@ -125,10 +125,10 @@
   text-align: left;
 }
 
-.textEnd:nth-child(2) .clue_word,
+/* .textEnd:nth-child(2) .clue_word,
 .textEnd:nth-child(4) .clue_word{
   width: 425px;
-}
+} */
 
 .word_options {
   width: 90%;

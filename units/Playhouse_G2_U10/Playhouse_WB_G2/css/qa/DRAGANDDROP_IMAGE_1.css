@@ -1,12 +1,16 @@
 .fixed-top.screen_numbers_wrap {
   z-index: -1;
 }
-
 .activity_container {
   margin-top: 20px;
-  height: 70%;
-}
+  height: calc(100vh - 190px);
+  min-height: 0;
 
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-bottom: 100px;
+}
 .activity_container ul {
   margin: 0px auto;
   padding: 0px;

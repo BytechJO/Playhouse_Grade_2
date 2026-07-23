@@ -50,7 +50,7 @@ var _data = {
     booksbutton: {
       workbook: {
         icon: "../images/icons/book-2.png",
-        link: "../Playhouse_WB_G2/views/fillin_text_number.html",
+        link: "../Playhouse_WB_G2/views/fillin_number_image.html",
       },
       studentbook: {
         icon: "../images/icons/book-1.png",
