@@ -1,5 +1,5 @@
 .all_cont{
-    height: 100%;
+    /* height: 100%; */
     text-align: center;
     align-items: center;
     display: flex;
@@ -13,7 +13,7 @@
 .group_elm{
     width: 100%;
     height: 100%;
-    margin-top: -15px;
+    /* margin-top: -15px; */
 }
 
 .activityHeading b {
@@ -29,14 +29,14 @@
 }
 
 .image_space {
-    width: 534px;
-    height: 530px;
+    width: 558px;
+    height: 290px;
 }
   
 .image_space img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -188,4 +188,6 @@ input[type=number]::-webkit-outer-spin-button {
     /* .fill_in .que {
         width: 200px;
     } */
+}.checkBtn {
+  display: none !important;
 }

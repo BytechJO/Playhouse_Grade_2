@@ -51,7 +51,7 @@ var mcq_data = {
         {
             "question"              : "He is sitting[_]the armchair.",
             "options"               : [["under","on"]],          
-            "answer"                : [1],
+            "answer"                : [2],
 			"inputbox"				:"yes",
 			"image"					: '../images/pages/activities/4-img-3.png',
             "audio"                 : "",

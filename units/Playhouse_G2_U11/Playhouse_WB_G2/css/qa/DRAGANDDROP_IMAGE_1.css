@@ -186,7 +186,8 @@
     width: 50%;*/
   /* font-size: 22px; */
   width: 100%;
-  margin: 0px auto;
+  margin-bottom: 20px;
+  /* margin: 0px auto; */
 }
 
 .drag_drop_questions .que {
@@ -1607,4 +1608,68 @@
   .drag_drop_color_activity .drag_drop_questions {
     background: none !important;
   }
+}
+.drag_drop_questions .que {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 25px;
+  width: 100%;
+  align-items: start;
+  justify-items: center;
+}
+
+.drag_drop_questions .que > .item {
+  width: 100% !important;
+  max-width: 260px;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.drag_drop_questions .que > .item > ul {
+  width: 100%;
+}
+
+.drag_drop_questions .i_container,
+.drag_drop_questions .i_row,
+.drag_drop_questions .l_col,
+.drag_drop_questions .r_col {
+  width: 100%;
+}
+
+.drag_drop_questions .qus_img {
+  width: 100% !important;
+  max-width: 220px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.drag_drop_questions .droppable_text_div {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.drag_drop_questions input.droppable_div,
+.drag_drop_questions .droppable_text_div input[type="text"] {
+  width: 150px !important;
+}.drag_drop_questions .extra_image_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drag_drop_questions .extra_grid_image {
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}.drag_drop_questions input.filled_drop {
+  cursor: pointer;
+}
+
+.drag_drop_questions input.filled_drop:hover {
+  background-color: #e1f4fd;
 }

@@ -14,7 +14,7 @@
 .tick_group {
     /* margin: 5px auto; */
     width: 95%;
-    height: 95%;
+    /* height: 95%; */
     display: flex;
     /* text-align: center; */
     align-items: center;
@@ -95,7 +95,7 @@
 .icon_wrap {
     position: absolute;
     top: 50px;
-    right: -15px;
+    right: 100px;
 }
 
 .tick,

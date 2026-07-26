@@ -23,7 +23,7 @@ var linedraw_data = {
     "mainTitle": "",
     "mainTitleIcon": "",
     "mainTitleAudio": "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='blue_text'>1</span> Match.",
+    "subTitleTextLeft"      : "<span class='red_text'>1</span> Match.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
     "subTitleAudio"         : "",
