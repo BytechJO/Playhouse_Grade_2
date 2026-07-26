@@ -1,242 +1,413 @@
 .all_cont {
-    width: 100%;
-    height: 100%;
-    align-items: center;
+  width: 100%;
+  /* height: 100%; */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow-x: hidden;
 }
+
+/* ======================================================
+   Main questions container
+====================================================== */
 
 .group_elm {
-    width: 85%;
-    height: 100%;
-    margin: 0px auto;
-    flex-wrap: wrap;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
+/* كل الأسئلة تحت بعضها */
 .tick_group {
-    /* margin: 5px auto; */
-    width: 95%;
-    height: 95%;
-    display: flex;
-    /* text-align: center; */
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  flex: 0 0 auto;
 }
 
+/* ======================================================
+   Question row
+====================================================== */
+
+/* الحرف والجملة بنفس السطر */
 .que {
-    width: 100% !important;
-    /* height: 110px; */
-    /* margin: 4px auto; */
-    /* border:1px solid #ececec; */
-    border-radius: 5px;
-    position: relative;
-    /* align-items: center; */
-    font-size: 28px;
-    flex-direction: unset !important;
-    flex-wrap: wrap;
+  position: relative;
+
+  width: 100% !important;
+  height: auto;
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+
+  padding: 10px 4px;
+  margin: 0;
+
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  font-size: 28px;
 }
 
+/* الجزء الذي يحتوي A: أو B: */
 .q_part {
-    /* width: 275px; */
-   /*  height: 90px; */
-    /* font-weight: bold; */
-    letter-spacing: 1px;
-    margin-bottom: 0px;
-    color: #d2232a;
-    align-items: center;
+  width: auto !important;
+  min-width: auto !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: baseline !important;
+
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  letter-spacing: 1px;
+  color: #d2232a;
 }
 
+/* ترقيم السؤال، إن وُجد */
 .q_num_space {
-    width: 52px;
-    /* margin-top: 25px; */
-    font-weight: bolder;
+  width: auto !important;
+  min-width: 38px !important;
+
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-weight: bolder;
 }
 
-.img_space {
-   
-    /* height: 150px; */
+/* نص السؤال مثل A: أو B: */
+.q_part .question {
+  width: auto !important;
+
+  display: inline-block !important;
+
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #d2232a;
+  white-space: nowrap;
 }
 
-.img_space img {
-    width: 180px !important;
-    /* height: 100%; */
-    object-fit: contain;
+/* ======================================================
+   Sentence/options
+====================================================== */
+
+/* الجملة تأتي بجانب A: أو B: */
+.picks_grp {
+  width: auto !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+
+  flex: 1 1 auto !important;
+
+  margin: 0 0 0 10px !important;
+  padding: 0 !important;
+  gap: 10px;
 }
 
 .pick {
-    /* width: 432px; */
-    margin: 3px;
-    /* height: 55px; */
-    text-align: center;
-    border: 2px solid transparent;
-    border-radius: 10px !important;
-    /* font-weight: bold; */
-    align-items: center;
-    /* justify-content: center; */
-    font-size: 24px;
+  width: auto !important;
+  height: auto !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+
+  flex: 0 1 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  text-align: left !important;
+  font-size: 28px;
+
+  border: 2px solid transparent;
+  border-radius: 10px !important;
 }
 
-.roundedCorners {
-    border-radius: 10px;
+/* إخفاء ترقيم الخيارات إن كان موجودًا */
+.pick > .q_num_space {
+  display: none !important;
 }
 
-.picks_grp {
-    /* width: 275px; */
-    flex: 1;
-    /* justify-content: space-around; */
+.pick .txt {
+  width: auto !important;
+
+  display: inline-block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #000;
+  text-align: left;
+  white-space: normal;
 }
 
 .pick img {
-    width: 50% !important;
-    height: 100% !important;
-    padding: 0px 5px;
-    object-fit: contain;
+  width: 50% !important;
+  height: 100% !important;
+
+  padding: 0 5px;
+
+  object-fit: contain;
 }
 
+/* ======================================================
+   Images
+====================================================== */
+
+.img_space {
+  flex: 0 0 auto;
+}
+
+.img_space img {
+  width: 180px !important;
+  object-fit: contain;
+}
+
+.roundedCorners {
+  border-radius: 10px;
+}
+
+/* ======================================================
+   Correct/wrong icons
+====================================================== */
+
 .icon_wrap {
-    position: absolute;
-    top: 50px;
-    right: -15px;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+
+  transform: translateY(-50%);
 }
 
 .tick,
 .cross {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
+.tick img,
+.cross img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* ======================================================
+   Side image
+====================================================== */
 
 .image-container {
-    height: 170px;
-    margin-right: -50px;
-
+  height: 170px;
+  margin-right: -50px;
 }
 
 .image-container img {
-    height: 100%;
-    object-fit: contain;
+  height: 100%;
+  object-fit: contain;
 }
 
-
 #shakingImage {
-    height: 150px;
-    position: absolute;
-    top: -49px;
-    left: -70px;
+  position: absolute;
+  top: -49px;
+  left: -70px;
+
+  height: 150px;
 }
 
 .right_container {
-    position: relative;
+  position: relative;
 }
 
 .right-image-container {
-    margin-top: 0px;
-    margin-right: 35px;
-    position: relative;
-    display: none;
-    width: 291px;
-    height: 253px;
-    background: #f9f9da;
-    border: 4px solid #d2232a;
-    border-radius: 15px;
+  position: relative;
+
+  display: none;
+
+  width: 291px;
+  height: 253px;
+
+  margin-top: 0;
+  margin-right: 35px;
+
+  background: #f9f9da;
+
+  border: 4px solid #d2232a;
+  border-radius: 15px;
 }
 
 .right-image {
-    width: 350px;
+  width: 350px;
 }
 
 .right-image-container .header {
-    display: block;
-    height: 40px;
-    width: 100%;
-    background: #d2232a;
-    border: 1px solid #f9f9da;
-    border-radius: 12px;
+  display: block;
+
+  width: 100%;
+  height: 40px;
+
+  background: #d2232a;
+
+  border: 1px solid #f9f9da;
+  border-radius: 12px;
 }
 
 .textOnImage-container {
-    position: absolute;
-    top: 2px;
-    left: 28px;
-    width: 256px;
-    font-size: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  position: absolute;
+  top: 2px;
+  left: 28px;
+
+  width: 256px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  font-size: 22px;
 }
 
 .right_title {
-    color: #fff;
-    margin-left: 35px;
-    font-size: 26px;
+  margin-left: 35px;
+
+  color: #fff;
+  font-size: 26px;
 }
 
-/* ====================================== */
+/* ======================================================
+   Pulse animation
+====================================================== */
+
 .pulse {
-    animation: pulse 1s infinite ease-in-out alternate;
-  }
-  @keyframes pulse {
-    from { transform: scale(0.95); }
-    to { transform: scale(1.0); }
-  }
-/* ====================================== */
+  animation: pulse 1s infinite ease-in-out alternate;
+}
 
-/* ====================================================== */
-/*              Media Queries Start                       */
-/* ====================================================== */
-/* ------------------------------------------------ */
-/*              M Q max-width: 1799.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1800px) */
+@keyframes pulse {
+  from {
+    transform: scale(0.95);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ======================================================
+   Responsive
+====================================================== */
+
 @media (max-width: 1799.98px) {
-    .que {
-        padding: 10px;
-    }
-
+  .que {
+    padding: 9px 4px;
+  }
 }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 1399.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
-    .que {
-        padding: 4px;
-    }
+  .que {
+    padding: 7px 4px;
+    font-size: 26px;
+  }
 
-    .q_part {
-        margin-bottom: 20px;
-    }
+  .pick {
+    font-size: 26px;
+  }
 }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 1199.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {}
+@media (max-width: 1199.98px) {
+  .group_elm {
+    width: 90%;
+  }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 991.98px */
-/* ------------------------------------------------*/
-/* // Medium devices (tablets, less than 992px) 768 to 991.98 */
-@media (max-width: 991.98px) {}
+  .que,
+  .pick {
+    font-size: 24px;
+  }
+}
 
-/* ------------------------------------------------ */
-/* M Q max-width: 767.98px */
-/* ------------------------------------------------*/
-/* // Small devices (landscape phones, less than 768px) 576 to 767.98*/
-@media (max-width: 767.98px) {}
+@media (max-width: 991.98px) {
+  .group_elm {
+    width: 94%;
+  }
 
-/* ------------------------------------------------ */
-/* M Q max-width: 575.98px */
-/* ------------------------------------------------*/
-/* // Extra small devices (portrait phones, less than 576px) 476 to 575*/
-@media (max-width: 575.98px) {}
+  .que,
+  .pick {
+    font-size: 22px;
+  }
 
-/* body working fine 320 to 475 */
+  .q_num_space {
+    min-width: 34px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .group_elm {
+    width: 96%;
+  }
+
+  .que,
+  .pick {
+    font-size: 20px;
+  }
+
+  .picks_grp {
+    margin-left: 7px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .que,
+  .pick {
+    font-size: 18px;
+  }
+
+  .q_num_space {
+    min-width: 30px !important;
+  }
+}
+
 @media (max-width: 475.98px) {
-    .tickBox {
-        height: 36px;
-        width: 36px;
-        min-width: 36px;
-    }
+  .que {
+    flex-wrap: wrap !important;
+  }
+
+  .pick,
+  .que {
+    font-size: 17px;
+  }
+
+  .tickBox {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+  }
 }

@@ -192,3 +192,10 @@
         width: 200px;
     } */
 }
+/* إخفاء زر Check Answer */
+.checkAnswer,
+.check_answer,
+.checkBtn,
+.check_btn {
+    display: none !important;
+}

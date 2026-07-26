@@ -110,7 +110,7 @@
 
 
 /**************** Scrollbar ***************/
-
+/* 
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -127,7 +127,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #d1242a;
-}
+} */
 
 
 /**************** fonts end ***************/

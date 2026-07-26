@@ -271,6 +271,8 @@ function initiateActivityType(aActTyp, aActSubType) {
     theActivity = new Coloring(quePart, coloring_data);
   } else if (aActTyp == "colourrhyming") {
     theActivity = new ColourRhymingWords(quePart, colour_rhyming_words_data);
+  } else if (aActTyp == "read_colour") {
+    theActivity = new ReadColour(quePart, read_colour_data);
   } else if (aActTyp == "standAlone") {
     theActivity = "standAlone";
   } else {
