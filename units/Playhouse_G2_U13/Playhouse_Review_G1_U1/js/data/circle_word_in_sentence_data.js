@@ -5,7 +5,7 @@ var mcq_data = {
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='blue_text'>2</span> Read and choose.",
+    "subTitleTextLeft"      : "<span class='red_text'>2</span> Read and choose.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
     "subTitleAudio"         : "../audios/under.mp3",

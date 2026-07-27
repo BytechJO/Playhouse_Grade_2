@@ -25,7 +25,7 @@ var fillin_data = {
     "mainTitleIcon": "",
     "mainTitleIconPos": {"right": "-20px"},
     "mainTitleAudio": "../audios/under.mp3",
-    "subTitleTextLeft"      : '<span class="blue_text">5</span> Unscramble the sentences.',
+    "subTitleTextLeft"      : '<span class="red_text">5</span> Unscramble the sentences.',
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [""],
     "subTitleAudio"         : "../audios/under.mp3",

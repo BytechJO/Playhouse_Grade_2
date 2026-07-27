@@ -35,22 +35,26 @@
   position: relative;
 }
 
-.ans_grup {
+/* .ans_grup {
   gap: 0px;
-}
+} */
 
 .tickBox {
-  margin: 7px;
-  margin-right: 15px;
-  border-radius: 20px;
-  border: 1px solid #74cbd8;
-  height: 40px;
-  min-width: 5px !important;
-  width: 63px;
-  border-radius: 5px;
-  /* box-shadow: inset 5px 5px 10px #ccc; */
+  width: 42px;
+  min-width: 42px !important;
+  height: 42px;
+  margin: 7px 15px 7px 0;
+  border: 2px solid #5ac8fa;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
-
+.tickContent {
+  font-family: Arcon;
+  font-size: 22px;
+  color: #000;
+  text-align: left;
+  white-space: nowrap;
+}
 .images-border {
   /* width: 300px; */
   height: 140px;
@@ -74,19 +78,22 @@
 
 /* pick */
 .tick_field {
-  position: relative;
   width: 245px;
-  /* margin: 10px auto; */
+  display: flex;
   align-items: center;
- 
+  justify-content: flex-start;
+  flex-wrap: nowrap !important;
+  position: relative;
 }
 
 .ans_grup {
-  justify-content: center !important;
   width: 100%;
-  display: flex;
-  flex-direction: unset !important;
-  flex-wrap: wrap;
+  display: grid !important;
+  grid-template-columns: repeat(2, 245px);
+  column-gap: 80px;
+  row-gap: 12px;
+  justify-content: center !important;
+  align-items: center;
 }
 
 .heading {

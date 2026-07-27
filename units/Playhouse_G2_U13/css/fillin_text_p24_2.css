@@ -89,9 +89,11 @@
 }
 .options_words div {
     position: absolute;
-    bottom: -28px;
+    bottom: -15px;
     font-weight: bolder;
     color: #d2232a;
+        font-size: 24px;
+
 }
 
 .fillin_set input:focus{
@@ -224,4 +226,7 @@
     /* .fill_in .que {
         width: 200px;
     } */
+}.fillin_set,
+.txt-audioIcon {
+    line-height:2;
 }
