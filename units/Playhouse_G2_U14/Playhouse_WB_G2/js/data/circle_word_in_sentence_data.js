@@ -42,7 +42,7 @@ var mcq_data = {
         {
             "question"              : "<b>1</b> &nbsp; They [_] together.",
             "options"               : [["walked","talked"]],          
-            "answer"                : [1],
+            "answer"                : [2],
 			"inputbox"				:"yes",
 			"image"					: '../images/pages/activities/1-img-1.png',
             "audio"                 : "",
@@ -82,7 +82,7 @@ var mcq_data = {
         {
             "question"              : "<b>5</b> &nbsp; Jenny [_]  to a song.",
             "options"               : [["called","listened"]],          
-            "answer"                : [1],
+            "answer"                : [2],
 			"inputbox"				:"yes",
 			"image"					: '../images/pages/activities/1-img-5.png',
             "audio"                 : "",

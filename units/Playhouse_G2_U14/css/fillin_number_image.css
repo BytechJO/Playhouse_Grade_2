@@ -195,3 +195,73 @@
 /* ------------------------------------------------*/
 /* body working fine 320 to 475 */
 @media (max-width: 475.98px) {}
+.story_wrapper {
+	position: relative;
+	width: fit-content;
+	margin: 0 auto 8px;
+	z-index: 20;
+}
+
+.story_toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 110px;
+	padding: 6px 16px;
+	border: 2px solid #d2232a;
+	border-radius: 20px;
+	background: #fff;
+	color: #222;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.story_toggle:hover {
+	background: #fff4f4;
+}
+
+.story_arrow {
+	font-size: 12px;
+}
+
+.story_box {
+	display: none;
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 50%;
+	transform: translateX(-50%);
+	width: 760px;
+	max-width: 85vw;
+	padding: 12px 18px;
+	background: #fff;
+	border: 2px solid #d2232a;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+	text-align: left;
+	z-index: 100;
+}
+
+.story_sentence {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-bottom: 5px;
+	font-size: 17px;
+	line-height: 1.35;
+}
+
+.story_sentence:last-child {
+	margin-bottom: 0;
+}
+
+.story_number {
+	flex-shrink: 0;
+	font-weight: bold;
+	color: #d2232a;
+}
+
+.story_text {
+	color: #222;
+}

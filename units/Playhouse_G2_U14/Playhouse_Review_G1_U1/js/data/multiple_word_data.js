@@ -6,7 +6,7 @@ var mcq_data = {
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-20px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='red_text'>4</span> Circle the hard ‘s’ words.",
+    "subTitleTextLeft"      : "<span class='red_text'>2</span> Circle the hard ‘s’ words.",
     "subTitleTextRight"     : "",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

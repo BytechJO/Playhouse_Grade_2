@@ -22,7 +22,7 @@ var reading_data = {
     "mainTitle"             : "../images/icons/phonics_main_title.png",
     "mainTitleIcon"         : "../images/pages/sb-icons/phonics_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio": "../audios/under.mp3",
+    "mainTitleAudio": "../audios/page_108/PHONICS.mp3",
     "subTitleTextLeft": "<span class='red_text'>2</span> Listen and sing.",
     "subTitleTextRight": "",
     "subTitleIcons": [""],
