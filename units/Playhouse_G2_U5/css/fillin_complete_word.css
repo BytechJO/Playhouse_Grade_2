@@ -256,3 +256,13 @@
   cursor: pointer;
 }
 
+.clickableSentence {
+  display: inline-block;
+  cursor: pointer;
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.clickableSentence:hover {
+  transform: scale(1.06);
+}

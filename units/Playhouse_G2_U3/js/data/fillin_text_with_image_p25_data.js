@@ -50,7 +50,7 @@ var fillin_data = {
       audio: "",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/p25_1.png",
-      answer: ["Does Jenny", "No she doesn't"],
+      answer: ["Does she", "No she doesn't"],
       alternateanswer: [[]],
       strictcase: "no", // yes (or) no
       strictorder: "yes", // yes (or) no
@@ -78,7 +78,7 @@ var fillin_data = {
       audio: "",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/p25_3.png",
-      answer: ["Does Lilly", "No she doesn't"],
+      answer: ["Does she", "No she doesn't"],
       alternateanswer: [[]],
       strictcase: "no", // yes (or) no
       strictorder: "yes", // yes (or) no
@@ -92,7 +92,7 @@ var fillin_data = {
       audio: "",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/p25_4.png",
-      answer: ["Does Yoshi", "Yes he does"],
+      answer: ["Does he", "Yes he does"],
       alternateanswer: [[]],
       strictcase: "no", // yes (or) no
       strictorder: "yes", // yes (or) no

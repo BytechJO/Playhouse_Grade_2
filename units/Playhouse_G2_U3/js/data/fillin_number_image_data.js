@@ -51,7 +51,7 @@ var fillin_data = {
         "audio": "",
         "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_1.png",
-        "answer": ["1"],
+        "answer": ["2"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no  
         "strictorder": "yes", // yes (or) no              
@@ -83,7 +83,7 @@ var fillin_data = {
         "audio": "",
         "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_3.png",
-        "answer": ["2"],
+        "answer": ["1"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no    
         "strictorder": "yes", // yes (or) no              

@@ -76,7 +76,7 @@ var mcq_data = {
     {
       question: "",
 
-      image: "../images/pages/activities/tick-imperative-2.png",
+      image: "../images/pages/activities/tick-imperative-3.jpg",
 
       answer: [2],
 
@@ -101,7 +101,7 @@ var mcq_data = {
     {
       question: "",
 
-      image: "../images/pages/activities/tick-imperative-3.jpg",
+      image: "../images/pages/activities/tick-imperative-4.jpg",
 
       answer: [1],
 
@@ -126,7 +126,7 @@ var mcq_data = {
     {
       question: "",
 
-      image: "../images/pages/activities/tick-imperative-4.jpg",
+      image: "../images/pages/activities/tick-imperative-2.png",
 
       answer: [2],
 

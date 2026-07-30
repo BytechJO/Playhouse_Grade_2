@@ -603,6 +603,22 @@ function setLoadedStatus(val) {
                 }
               }
               break;
+            case "mcq1":
+              if (_fileSubType == "none") {
+                if (typeof mcq_data != undefined && mcq_data != null) {
+                  buildMcqBody(mcq_data);
+                }
+              } else {
+                if (_fileSubType == "tick") {
+                  if (
+                    typeof mcq_tick_data != undefined &&
+                    mcq_tick_data != null
+                  ) {
+                    buildMcqTickBody(mcq_tick_data);
+                  }
+                }
+              }
+              break;
             case "wordpuzzle":
               if (
                 typeof wordpuzzle_data != undefined &&
@@ -658,6 +674,7 @@ function setLoadedStatus(val) {
             callsnapshotfunctions(_activityData, _actIndx);
             break;
           case "fillin":
+          case "mcq1":
           case "mcq":
           case "wordpuzzle":
           case "wordsearch":

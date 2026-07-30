@@ -45,107 +45,135 @@ var fillin_data = {
   options: [],
   optionsAudios: [],
   defaultAnswer: [1, 6, 8],
+  defaultAnswerAsInput: true,
   questions: [
+    // =========================
+    // What
+    // =========================
     {
       textfronttt: "",
       textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
       answer: ["new shoes"],
       alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: [" coffee"],
+      alternateanswer: [["coffee"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: ["teddy bear"],
+      alternateanswer: [["teddy bear"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
+
+    // =========================
+    // Where
+    // =========================
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: ["shoe shop"],
+      alternateanswer: [["the shoe shop"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: ["food court"],
+      alternateanswer: [["the food court"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
       answer: ["toy shop"],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      alternateanswer: [["the toy shop"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
+
+    // =========================
+    // Size
+    // =========================
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: ["medium"],
+      alternateanswer: [["medium size"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
       answer: ["small"],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      alternateanswer: [["small size"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
     {
+      textfronttt: "",
+      textbackkk: "",
       audio: "",
-      audioenable: "default", // correct (or) default
+      audioenable: "default",
       image: "",
-      answer: [""],
-      alternateanswer: [[]],
-      strictcase: "no", // yes (or) no
-      strictorder: "no", // yes (or) no
+      answer: ["large"],
+      alternateanswer: [["large size"]],
+      strictcase: "no",
+      strictorder: "no",
       maxlength: 50,
-      type: "text", // text (or) number
+      type: "text",
     },
   ],
 };

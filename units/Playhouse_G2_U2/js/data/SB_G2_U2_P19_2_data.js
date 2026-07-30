@@ -66,7 +66,7 @@ var fillin_data = {
       imagesText: [
         {
           src: "../images/pages/activities/p19_3_1.png",
-          text: "sleeping",
+          text: "is",
         },
         {
           src: "../images/pages/activities/p19_3_2.png",
@@ -74,12 +74,11 @@ var fillin_data = {
         },
         {
           src: "../images/pages/activities/p19_3_3.png",
-          text: "is",
+          text: "sleeping",
         },
       ],
 
       audio: "../audios/under.mp3",
-
       audioenable: "default",
 
       image: "../images/pages/activities/p19_C.png",
@@ -87,10 +86,8 @@ var fillin_data = {
       answer: ["She is sleeping"],
 
       strictcase: "no",
-
       type: "text",
     },
-
     {
       imagesText: [
         {

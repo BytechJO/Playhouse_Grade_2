@@ -42,10 +42,9 @@ var _activity_json = {
     "<span class='red_text'>A: </span> ___ has money today!",
     "<span class='red_text'>B: </span> Well, then. Let’s go to my house!",
   ],
-  options: ["nobody,", "don’t", "never,", "no,", "not"],
-  answers: ["nobody,", "don’t", "never,", "no,", "not"],
-  // "default_answer": {1:"apple"},
+  options: ["don’t", "not", "never", "no", "Nobody"],
 
+  answers: ["don’t", "not", "never", "no", "Nobody"],
   // "main_title_text":["S","e","n","t","e","n","c","e","&nbsp;","B","u","i","l","d","i","n","g"],
   // "items":[
   //   "<img src='../images/pages/sb-icons/phonics_main_title_icon.png' class='readHighlightsBtn imgToggle' data-img='showImg1'>",

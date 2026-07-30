@@ -189,7 +189,7 @@ var fillin_data = {
     {
       singleword: false,
 
-      text: "[_] everybody likes burgers.",
+      text: "[_] likes burgers.",
 
       textaudios: ["../audios/under.mp3", "../audios/under.mp3"],
 
@@ -199,7 +199,7 @@ var fillin_data = {
 
       image: "../images/pages/activities/2-img-6.png",
 
-      answer: ["not"],
+      answer: ["nobody"],
 
       alternateanswer: [[]],
 

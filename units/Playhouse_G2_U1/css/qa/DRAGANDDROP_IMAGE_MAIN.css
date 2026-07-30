@@ -1616,3 +1616,10 @@
   position: relative;
   z-index: 2;
 }
+.filled_droppable_div {
+	cursor: pointer;
+}
+
+.filled_droppable_div:hover {
+	opacity: 0.75;
+}

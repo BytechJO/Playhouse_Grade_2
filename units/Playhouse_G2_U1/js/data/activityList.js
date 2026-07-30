@@ -155,7 +155,7 @@ var _activityData = {
       },
       {
          'file'               : 'SB_G2_U1_P14_5.html',
-         'type'               : 'mcq',
+         'type'               : 'mcq1',
          'build'              : 'yes', // yes (or) no
          'activityCtrls'      : 'yes',
          'layout'             : 1,

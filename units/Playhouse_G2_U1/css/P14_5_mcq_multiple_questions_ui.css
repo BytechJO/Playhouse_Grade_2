@@ -1,169 +1,381 @@
 .all_cont {
-    width: 100%;
-    height: 100%;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .group_elm {
-    width: 75%;
-    height: 100%;
-    margin: 0px auto;
+  width: 82%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .tick_group {
-    margin: 5px auto;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* =========================================================
+   Tools
+========================================================= */
+
+.mark_tools {
+  width: fit-content;
+  margin: 8px auto 18px;
+  padding: 8px 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  background-color: #fff4e8;
+  border: 2px solid #f0b77c;
+  border-radius: 16px;
+}
+
+.mark_tool {
+  min-width: 155px;
+  min-height: 58px;
+  padding: 6px 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  background-color: #ffffff;
+  border: 2px solid #b7b7b7;
+  border-radius: 12px;
+
+  font-size: 23px;
+  font-weight: 600;
+  color: #222;
+
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.mark_tool:hover {
+  transform: translateY(-2px);
+}
+
+.mark_tool.active {
+  border-color: #e32636;
+  box-shadow: 0 0 0 3px rgba(227, 38, 54, 0.14);
+}
+
+.tool_title {
+  font-size: 19px;
+}
+
+.underline_example {
+  display: inline-block;
+  padding: 2px 5px;
+  line-height: 1.15;
+  border-bottom: 3px solid #222;
+}
+
+.circle_example {
+  min-width: 58px;
+  min-height: 38px;
+  padding: 2px 9px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 3px solid #222;
+  border-radius: 50%;
+}
+
+/* =========================================================
+   Questions
+========================================================= */
 
 .que {
-    width: 952px !important;
-    /* height: 110px; */
-    margin: 4px auto;
-    /* border:1px solid #ececec; */
-    border-radius: 5px;
-    position: relative;
-    align-items: center;
-    font-size: 28px;
-    display: flex;
-    justify-content: space-between;
-}
+  width: 952px !important;
+  min-height: 155px;
+  margin: 5px auto;
+  padding: 4px 38px 4px 4px;
 
-.q_part {
-    width: 40px;
-    height: 90px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 0px;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 10px;
+  font-size: 28px;
 }
 
 .q_num_space {
-    width: 27px;
-    margin-top: 25px;
-    font-weight: bolder;
-}
-
-.img_space {
-    width: 210px;
-    height: 150px;
-}
-
-.img_space img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.pick {
-    width: fit-content;
-    margin: 3px;
-    height: 55px;
-    text-align: center;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 10px !important;
-    /* font-weight: bold; */
-}
-
-.roundedCorners {
-    border-radius: 10px;
+  width: 42px;
+  min-width: 42px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .picks_grp {
-    border-bottom: 2px solid #7e7e7e;
-    /* width: 600px; */
-    flex: 1;
+  flex: 1;
+  min-height: 67px;
+  padding: 4px 8px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  border-bottom: 2px solid #7e7e7e;
 }
 
+/* =========================================================
+   Words
+========================================================= */
 
+.pick {
+  width: fit-content;
+  min-width: fit-content;
+  min-height: 58px;
+  margin: 2px;
+  padding: 5px 9px;
 
-.pick img {
-    /* width: 65% !important;
-    height: 100% !important;
-    padding: 0px 5px;
-    object-fit: contain; */
+  position: relative;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 28px;
+  color: #222;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease;
 }
+
+.pick:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.pick .txt {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* خط تحت الاسم */
+
+.pick.mark_underline .txt {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+}
+
+/* دائرة حول الفعل */
+
+.pick.mark_circle {
+  border: 3px solid #222;
+  border-radius: 50%;
+  padding: 5px 12px;
+}
+
+/* =========================================================
+   Question Image
+========================================================= */
+
+.img_space {
+  width: 210px;
+  min-width: 210px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+.img_space img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================================
+   Check / Cross
+========================================================= */
 
 .icon_wrap {
-    position: absolute;
-    /* top: 20px; */
-    right: -15px;
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .tick,
 .cross {
-    width: 25px;
-    height: 25px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
-
-.image-container {
-    height: 170px;
-    margin-right: -50px;
-
-}
-.image-container img{
-    height: 100%;
-    object-fit: contain;
-}
-/* ====================================================== */
-/*              Media Queries Start                       */
-/* ====================================================== */
-/* ------------------------------------------------ */
-/*              M Q max-width: 1799.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1800px) */
-@media (max-width: 1799.98px) {
-    .que {
-        padding: 10px;
-    }
-
+.tick img,
+.cross img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 1399.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1400px) */
+/* نتيجة السؤال */
+
+
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
 @media (max-width: 1399.98px) {
-    .que {
-        padding: 4px;
-    }
+  .group_elm {
+    width: 88%;
+  }
 
-    .q_part {
-        margin-bottom: 20px;
-    }
+  .que {
+    width: 100% !important;
+  }
+
+  .pick {
+    font-size: 25px;
+  }
+
+  .img_space {
+    width: 185px;
+    min-width: 185px;
+    height: 135px;
+  }
 }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 1199.98px */
-/* ------------------------------------------------*/
-/* // Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {}
+@media (max-width: 991.98px) {
+  .group_elm {
+    width: 95%;
+  }
 
-/* ------------------------------------------------ */
-/*              M Q max-width: 991.98px */
-/* ------------------------------------------------*/
-/* // Medium devices (tablets, less than 992px) 768 to 991.98 */
-@media (max-width: 991.98px) {}
+  .mark_tools {
+    gap: 10px;
+  }
 
-/* ------------------------------------------------ */
-/* M Q max-width: 767.98px */
-/* ------------------------------------------------*/
-/* // Small devices (landscape phones, less than 768px) 576 to 767.98*/
-@media (max-width: 767.98px) {}
+  .mark_tool {
+    min-width: 130px;
+  }
 
-/* ------------------------------------------------ */
-/* M Q max-width: 575.98px */
-/* ------------------------------------------------*/
-/* // Extra small devices (portrait phones, less than 576px) 476 to 575*/
-@media (max-width: 575.98px) {}
+  .que {
+    padding-right: 32px;
+  }
 
-/* body working fine 320 to 475 */
-@media (max-width: 475.98px) {
-    .tickBox {
-        height: 36px;
-        width: 36px;
-        min-width: 36px;
-    }
+  .img_space {
+    width: 155px;
+    min-width: 155px;
+    height: 120px;
+    margin-left: 8px;
+  }
+
+  .pick {
+    min-height: 50px;
+    padding: 4px 7px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mark_tools {
+    width: 95%;
+  }
+
+  .mark_tool {
+    flex: 1;
+    min-width: 0;
+    padding: 5px 8px;
+  }
+
+  .tool_title {
+    display: none;
+  }
+
+  .que {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .q_num_space {
+    align-self: flex-start;
+  }
+
+  .picks_grp {
+    flex: 1;
+  }
+
+  .img_space {
+    width: 100%;
+    height: 120px;
+    margin: 8px 0 0;
+  }
+}
+/* إزالة بوردر الضغط الافتراضي عن الكلمات */
+.pick,
+.pick:hover,
+.pick:focus,
+.pick:active,
+.pick:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* الكلمات العادية بدون بوردر */
+.pick:not(.mark_circle),
+.pick:not(.mark_circle):hover,
+.pick:not(.mark_circle):focus,
+.pick:not(.mark_circle):active {
+    border: 2px solid transparent !important;
+}
+
+/* الخط تحت الاسم فقط */
+.pick.mark_underline,
+.pick.mark_underline:hover,
+.pick.mark_underline:focus,
+.pick.mark_underline:active {
+    border: 2px solid transparent !important;
+}
+
+.pick.mark_underline .txt {
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 7px;
+}
+
+/* البوردر يبقى فقط عند اختيار Circle */
+.pick.mark_circle,
+.pick.mark_circle:hover,
+.pick.mark_circle:focus,
+.pick.mark_circle:active {
+    border: 3px solid #222 !important;
+    border-radius: 50% !important;
+    outline: none !important;
+    box-shadow: none !important;
 }

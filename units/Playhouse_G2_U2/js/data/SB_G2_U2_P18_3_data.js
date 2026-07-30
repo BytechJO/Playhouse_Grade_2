@@ -51,7 +51,7 @@ var fillin_data = {
         "audio": "",
         "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_1.png",
-        "answer": ["4"],
+        "answer": ["5"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no  
         "strictorder": "yes", // yes (or) no              
@@ -67,7 +67,7 @@ var fillin_data = {
         "audio": "",
         "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_2.png",
-        "answer": ["2"],
+        "answer": ["3"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no     
         "strictorder": "yes", // yes (or) no             
@@ -83,22 +83,6 @@ var fillin_data = {
         "audio": "",
         "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_3.png",
-        "answer": ["3"],
-        "alternateanswer": [[]],
-        "strictcase": "no", // yes (or) no    
-        "strictorder": "yes", // yes (or) no              
-        "maxlength": 1,
-        "type": "number", // text (or) number
-      },
-      {
-        "singleword": false,
-        "text": "[_]",
-        "textFront":"",
-        "textaudios": [""],
-        "textEndAudio":"",
-        "audio": "",
-        "audioenable": "default", // correct (or) default
-        "image": "../images/pages/activities/p18_3_4.png",
         "answer": ["1"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no    
@@ -114,8 +98,24 @@ var fillin_data = {
         "textEndAudio":"",
         "audio": "",
         "audioenable": "default", // correct (or) default
+        "image": "../images/pages/activities/p18_3_4.png",
+        "answer": ["4"],
+        "alternateanswer": [[]],
+        "strictcase": "no", // yes (or) no    
+        "strictorder": "yes", // yes (or) no              
+        "maxlength": 1,
+        "type": "number", // text (or) number
+      },
+      {
+        "singleword": false,
+        "text": "[_]",
+        "textFront":"",
+        "textaudios": [""],
+        "textEndAudio":"",
+        "audio": "",
+        "audioenable": "default", // correct (or) default
         "image": "../images/pages/activities/p18_3_5.png",
-        "answer": ["5"],
+        "answer": ["2"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no    
         "strictorder": "yes", // yes (or) no              
