@@ -1,8 +1,8 @@
 // ******************************************
-// Double Letter Words Activity
+// Old Words Activity
 // ******************************************
 
-window.DoubleLetterWords = function (obj, dataObj) {
+window.OldWordsActivity = function (obj, dataObj) {
   var activityArea = obj;
 
   if (obj && obj.jquery) {
@@ -17,12 +17,15 @@ window.DoubleLetterWords = function (obj, dataObj) {
   this.init(this.settings);
 };
 
-DoubleLetterWords.prototype = {
+OldWordsActivity.prototype = {
   init: function (ob) {
     this.ob = ob;
     this.listen();
   },
 
+  // =====================================================
+  // Events
+  // =====================================================
   listen: function () {
     var self = this;
     var activityArea = this.ob.activity_area;
@@ -31,355 +34,210 @@ DoubleLetterWords.prototype = {
       return;
     }
 
-    // =====================================================
-    // First input
-    // =====================================================
-
+    // اختيار وإلغاء اختيار الكلمات
     $(activityArea)
-      .off(
-        "input.doubleLetterFirst",
-        ".missing_letter_input"
-      )
-      .on(
-        "input.doubleLetterFirst",
-        ".missing_letter_input",
-        function () {
-          if (this.readOnly) {
-            return;
-          }
-
-          this.value = this.value
-            .replace(/[^a-zA-Z]/g, "")
-            .slice(0, 1);
-
-          var question = $(this).closest(
-            ".double_letter_question"
-          );
-
-          self.hideQuestionIcon(question);
-          self.enableButtons();
+      .off("click.oldWords", ".old_word")
+      .on("click.oldWords", ".old_word", function () {
+        if ($(this).prop("disabled")) {
+          return;
         }
-      );
 
-    // =====================================================
-    // Second input
-    // =====================================================
+        $(this).toggleClass("selected");
 
+        self.clearWordResult($(this));
+        self.enableButtons();
+      });
+
+    // الكتابة داخل الحقول
     $(activityArea)
-      .off(
-        "input.doubleLetterSecond",
-        ".suffix_input"
-      )
-      .on(
-        "input.doubleLetterSecond",
-        ".suffix_input",
-        function () {
-          if (this.readOnly) {
-            return;
-          }
-
-          this.value = this.value
-            .replace(/[^a-zA-Z]/g, "")
-            .slice(0, 3);
-
-          var question = $(this).closest(
-            ".double_letter_question"
-          );
-
-          self.hideQuestionIcon(question);
-          self.enableButtons();
+      .off("input.oldWords", ".old_words_input")
+      .on("input.oldWords", ".old_words_input", function () {
+        if (this.readOnly) {
+          return;
         }
-      );
 
-    // =====================================================
-    // Select word
-    // =====================================================
+        this.value = this.value.replace(/[^a-zA-Z]/g, "").slice(0, 30);
 
-    $(activityArea)
-      .off(
-        "click.doubleLetter",
-        ".word_choice"
-      )
-      .on(
-        "click.doubleLetter",
-        ".word_choice",
-        function () {
-          if (this.disabled) {
-            return;
-          }
-
-          var question = $(this).closest(
-            ".double_letter_question"
-          );
-
-          question
-            .find(".word_choice")
-            .removeClass("selected");
-
-          $(this).addClass("selected");
-
-          self.hideQuestionIcon(question);
-          self.enableButtons();
-        }
-      );
+        self.clearInputResult($(this));
+        self.enableButtons();
+      });
   },
 
+  // =====================================================
+  // Normalize values
+  // =====================================================
   normalize: function (value) {
     return String(value || "")
       .toLowerCase()
       .trim();
   },
 
-  hideQuestionIcon: function (question) {
-    question
-      .find(".icon_wrap")
-      .hide();
-
-    question
-      .find(".tick")
-      .hide();
-
-    question
-      .find(".cross")
-      .hide();
+  // =====================================================
+  // Clear word state
+  // =====================================================
+  clearWordResult: function (word) {
+    word.removeClass("correct_answer wrong_answer correct wrong");
   },
 
+  // =====================================================
+  // Clear input state
+  // =====================================================
+  clearInputResult: function (input) {
+    input
+      .removeClass("correct_answer wrong_answer correct wrong")
+      .css("color", "");
+  },
+
+  // =====================================================
+  // Validate activity
+  // =====================================================
   validate: function () {
     var activityArea = this.ob.activity_area;
     var dataObj = this.ob.data_obj;
 
-    var questions =
-      activityArea.querySelectorAll(
-        ".double_letter_question"
-      );
+    if (!activityArea || !dataObj) {
+      return;
+    }
 
+    var self = this;
     var allCorrect = true;
 
-    for (
-      var i = 0;
-      i < questions.length;
-      i++
-    ) {
-      var questionNumber = parseInt(
-        questions[i].dataset.qno
-      );
+    var words = activityArea.querySelectorAll(".old_word");
 
-      var questionData =
-        dataObj.questions[questionNumber - 1];
+    var inputs = activityArea.querySelectorAll(".old_words_input");
 
-      var iconWrap =
-        questions[i].querySelector(".icon_wrap");
+    // إخفاء الصح والإكس قبل الفحص
+    $(activityArea).find(".old_words_tick").hide();
 
-      var tick =
-        questions[i].querySelector(".tick");
+    $(activityArea).find(".old_words_cross").hide();
 
-      var cross =
-        questions[i].querySelector(".cross");
+    // =====================================================
+    // فحص الكلمات المختارة
+    // =====================================================
+    for (var i = 0; i < words.length; i++) {
+      var word = $(words[i]);
 
-      iconWrap.style.display = "none";
-      tick.style.display = "none";
-      cross.style.display = "none";
+      var shouldBeSelected = String(word.attr("data-correct")) === "true";
 
-      // السؤال الأول محلول، لا يتم فحصه ولا نظهر عليه أيقونة
-      if (
-        parseInt(dataObj.defaultAnswer) ===
-        questionNumber
-      ) {
-        continue;
-      }
+      var isSelected = word.hasClass("selected");
 
-      var firstInput =
-        questions[i].querySelector(
-          ".missing_letter_input"
-        );
-
-      var secondInput =
-        questions[i].querySelector(
-          ".suffix_input"
-        );
-
-      var selectedOption =
-        questions[i].querySelector(
-          ".word_choice.selected"
-        );
-
-      var userLetter = this.normalize(
-        firstInput.value
-      );
-
-      var correctLetter = this.normalize(
-        questionData.missingLetter
-      );
-
-      var userSuffix = this.normalize(
-        secondInput.value
-      );
-
-      var correctSuffix = this.normalize(
-        questionData.suffix
-      );
-
-      var selectedNumber = selectedOption
-        ? parseInt(
-            selectedOption.dataset.option
-          )
-        : 0;
-
-      var letterCorrect =
-        userLetter === correctLetter;
-
-      var suffixCorrect =
-        userSuffix === correctSuffix;
-
-      var optionCorrect =
-        selectedNumber ===
-        parseInt(questionData.correctOption);
-
-      if (
-        letterCorrect &&
-        suffixCorrect &&
-        optionCorrect
-      ) {
-        iconWrap.style.display = "block";
-        tick.style.display = "block";
-      } else {
-        iconWrap.style.display = "block";
-        cross.style.display = "block";
+      if (shouldBeSelected !== isSelected) {
         allCorrect = false;
       }
     }
 
-    if (
-      typeof showFeedback === "function"
+    // =====================================================
+    // فحص الكلمات المكتوبة بأي ترتيب
+    // =====================================================
+    var correctAnswers = [];
+
+    for (
+      var answerIndex = 0;
+      answerIndex < dataObj.answers.length;
+      answerIndex++
     ) {
-      showFeedback(true, allCorrect);
+      correctAnswers.push(self.normalize(dataObj.answers[answerIndex]));
     }
 
+    var usedAnswers = [];
+
+    for (var inputIndex = 0; inputIndex < inputs.length; inputIndex++) {
+      var userAnswer = self.normalize(inputs[inputIndex].value);
+
+      var matchingAnswerIndex = -1;
+
+      if (userAnswer !== "") {
+        for (
+          var correctIndex = 0;
+          correctIndex < correctAnswers.length;
+          correctIndex++
+        ) {
+          if (
+            correctAnswers[correctIndex] === userAnswer &&
+            usedAnswers.indexOf(correctIndex) === -1
+          ) {
+            matchingAnswerIndex = correctIndex;
+            break;
+          }
+        }
+      }
+
+      if (matchingAnswerIndex !== -1) {
+        usedAnswers.push(matchingAnswerIndex);
+      } else {
+        allCorrect = false;
+      }
+    }
+
+    if (usedAnswers.length !== correctAnswers.length) {
+      allCorrect = false;
+    }
+
+    // =====================================================
+    // إظهار أيقونة النتيجة
+    // =====================================================
     if (allCorrect) {
+      $(activityArea).find(".old_words_tick").show();
+
+      $(activityArea).find(".old_words_cross").hide();
+
       $(".checkBtn").addClass("disabled");
+    } else {
+      $(activityArea).find(".old_words_tick").hide();
+
+      $(activityArea).find(".old_words_cross").show();
+    }
+
+    if (typeof showFeedback === "function") {
+      showFeedback(true, allCorrect);
     }
   },
 
+  // =====================================================
+  // Reset activity
+  // =====================================================
   reset: function () {
     var activityArea = this.ob.activity_area;
-    var dataObj = this.ob.data_obj;
 
-    var questions =
-      activityArea.querySelectorAll(
-        ".double_letter_question"
-      );
-
-    for (
-      var i = 0;
-      i < questions.length;
-      i++
-    ) {
-      var questionNumber = parseInt(
-        questions[i].dataset.qno
-      );
-
-      var questionData =
-        dataObj.questions[questionNumber - 1];
-
-      var firstInput =
-        questions[i].querySelector(
-          ".missing_letter_input"
-        );
-
-      var secondInput =
-        questions[i].querySelector(
-          ".suffix_input"
-        );
-
-      var choices =
-        questions[i].querySelectorAll(
-          ".word_choice"
-        );
-
-      var iconWrap =
-        questions[i].querySelector(
-          ".icon_wrap"
-        );
-
-      var tick =
-        questions[i].querySelector(".tick");
-
-      var cross =
-        questions[i].querySelector(".cross");
-
-      iconWrap.style.display = "none";
-      tick.style.display = "none";
-      cross.style.display = "none";
-
-      for (
-        var j = 0;
-        j < choices.length;
-        j++
-      ) {
-        choices[j].classList.remove(
-          "selected"
-        );
-
-        choices[j].disabled = false;
-      }
-
-      if (
-        parseInt(dataObj.defaultAnswer) ===
-        questionNumber
-      ) {
-        firstInput.value =
-          questionData.missingLetter;
-
-        firstInput.readOnly = true;
-
-        secondInput.value =
-          questionData.suffix;
-
-        secondInput.readOnly = true;
-
-        for (
-          var k = 0;
-          k < choices.length;
-          k++
-        ) {
-          choices[k].disabled = true;
-        }
-
-        choices[
-          parseInt(
-            questionData.correctOption
-          ) - 1
-        ].classList.add("selected");
-      } else {
-        firstInput.value = "";
-        firstInput.readOnly = false;
-
-        secondInput.value = "";
-        secondInput.readOnly = false;
-      }
+    if (!activityArea) {
+      return;
     }
+
+    $(activityArea)
+      .find(".old_word")
+      .removeClass("selected correct_answer wrong_answer correct wrong")
+      .prop("disabled", false);
+
+    $(activityArea)
+      .find(".old_words_input")
+      .val("")
+      .prop("readOnly", false)
+      .removeClass("correct_answer wrong_answer correct wrong")
+      .css("color", "");
+
+    $(activityArea).find(".old_words_tick").hide();
+
+    $(activityArea).find(".old_words_cross").hide();
 
     $(".checkBtn").addClass("disabled");
     $(".resetBtn").addClass("disabled");
   },
 
+  // =====================================================
+  // Enable buttons
+  // =====================================================
   enableButtons: function () {
-    $(".checkBtn").removeClass(
-      "disabled"
-    );
-
-    $(".resetBtn").removeClass(
-      "disabled"
-    );
+    $(".checkBtn").removeClass("disabled");
+    $(".resetBtn").removeClass("disabled");
   },
 
+  // =====================================================
+  // Initial settings
+  // =====================================================
   initialSettings: function () {
     this.reset();
 
-    if (
-      typeof initialSettingsDone ===
-      "function"
-    ) {
+    if (typeof initialSettingsDone === "function") {
       initialSettingsDone(1);
     }
   },

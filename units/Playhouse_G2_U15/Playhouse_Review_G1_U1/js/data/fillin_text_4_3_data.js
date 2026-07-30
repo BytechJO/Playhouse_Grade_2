@@ -5,7 +5,7 @@ var fillin_data = {
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
     "mainTitleAudio"        : "../audios/under.mp3",
-    "subTitleTextLeft"      : "<span class='red_text'>3</span> Write ‘at’ or ‘o’clock’. Write the letter under the picture it matches.",
+    "subTitleTextLeft"      : "<span class='red_text'>3</span> Write ‘<span class='red_text'>at</span>’ or ‘<span class='red_text'>o’clock</span>’. Write the letter under the picture it matches.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [""],
     "subTitleAudio"         : "../audios/under.mp3",

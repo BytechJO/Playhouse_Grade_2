@@ -22,7 +22,7 @@ var reading_data = {
     "mainTitle": "../images/icons/gramprac_main_title.png",
     "mainTitleIcon": "../images/pages/sb-icons/gram_main_title_icon.png",
     "mainTitleIconPos": {"right": "100px"},
-    "mainTitleAudio": "../audios/under.mp3",
+    "mainTitleAudio": "../audios/page_113/GRAMMAR_PRACTICE.mp3",
     "subTitleTextLeft": "<span class='red_text'>1</span> Practise with a friend. Ask and answer.",
     "subTitleTextRight": "",
     "subTitleIcons": [""],

@@ -85,7 +85,7 @@ var mcq_data = {
         {
             "question"              : "Are we going to the park?",
             "image"                 : "",
-            "answer"                : [1],
+            "answer"                : [2],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
             "options"               : [
