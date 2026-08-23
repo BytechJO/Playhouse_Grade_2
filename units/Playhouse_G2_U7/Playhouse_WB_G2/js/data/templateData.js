@@ -22,9 +22,9 @@ var _data = {
       link: "grammar.html",
     },
 
-    audio: "./audios/AGW_1_SB_U15_TitleAudio.mp3",
+    audio: "./audios/page_34/UNIT_7_-_A_Visit_to_Grandma.mp3",
     title: {
-      text: "Getting Ready for School",
+      text: "A Visit to Grandma",
       color: "rgb(255, 255, 255);",
       "text-align": "center",
       "font-size": "44px",

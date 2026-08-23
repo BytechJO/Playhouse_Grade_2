@@ -46,7 +46,7 @@ var fillin_data = {
       "text": "It [_]",
       "textEnd":"",
       "textaudios": [],
-      "image": "../images/pages/activities/P11_1.png",
+      "image": "../images/pages/activities/p11_1.png",
       "option":"",
       "audio": "../audios/in.mp3",
       "audioenable": "default", // correct (or) default
@@ -62,7 +62,7 @@ var fillin_data = {
       "text": "Yoshi[_]Max[_]",
       "textEnd":"",
       "textaudios": [],
-      "image": "../images/pages/activities/P11_2.png",
+      "image": "../images/pages/activities/p11_2.png",
       "option":"",
       "audio": "../audios/in.mp3",
       "audioenable": "default", // correct (or) default
@@ -78,7 +78,7 @@ var fillin_data = {
       "text": "He[_]",
       "textEnd":"",
       "textaudios": [],
-      "image": "../images/pages/activities/P11_3.png",
+      "image": "../images/pages/activities/p11_3.png",
       "option":"",
       "audio": "../audios/in.mp3",
       "audioenable": "default", // correct (or) default
@@ -94,7 +94,7 @@ var fillin_data = {
       "text": "She[_]",
       "textEnd":"",
       "textaudios": [],
-      "image": "../images/pages/activities/P11_4.png",
+      "image": "../images/pages/activities/p11_4.png",
       "option":"",
       "audio": "../audios/in.mp3",
       "audioenable": "default", // correct (or) default
@@ -110,7 +110,7 @@ var fillin_data = {
       "text": "They[_]",
       "textEnd":"",
       "textaudios": [],
-      "image": "../images/pages/activities/P11_5.png",
+      "image": "../images/pages/activities/p11_5.png",
       "option":"",
       "audio": "../audios/in.mp3",
       "audioenable": "default", // correct (or) default

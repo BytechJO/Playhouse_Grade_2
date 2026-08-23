@@ -41,7 +41,7 @@ var mcq_data = {
     "questions"             : [
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_1.png",
+            "image"                 : "../images/pages/activities/p7_2_1.png",
             "answer"                : [2],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
@@ -62,7 +62,7 @@ var mcq_data = {
         },
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_2.png",
+            "image"                 : "../images/pages/activities/p7_2_2.png",
             "answer"                : [1],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
@@ -83,7 +83,7 @@ var mcq_data = {
         },
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_3.png",
+            "image"                 : "../images/pages/activities/p7_2_3.png",
             "answer"                : [2],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
@@ -104,7 +104,7 @@ var mcq_data = {
         },
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_4.png",
+            "image"                 : "../images/pages/activities/p7_2_4.png",
             "answer"                : [2],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
@@ -125,7 +125,7 @@ var mcq_data = {
         },
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_5.png",
+            "image"                 : "../images/pages/activities/p7_2_5.png",
             "answer"                : [1],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default
@@ -146,7 +146,7 @@ var mcq_data = {
         },
         {
             "question"              : "",
-            "image"                 : "../images/pages/activities/P7_2_6.png",
+            "image"                 : "../images/pages/activities/p7_2_6.png",
             "answer"                : [2],
             "audio"                 : "no",
             "audioenable"           : "default", // correct (or) default

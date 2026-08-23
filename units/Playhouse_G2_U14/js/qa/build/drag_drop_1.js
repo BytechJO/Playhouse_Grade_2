@@ -1,206 +1,546 @@
 function initActivity(activity) {
-  drag_drop_options = "";
-  // text
-  if (activity.text != undefined && activity.text != "") {
+
+  // =========================================================
+  // OPTIONS TEXT
+  // =========================================================
+
+  var drag_drop_options = "";
+
+  if (
+    activity.text != undefined &&
+    activity.text != ""
+  ) {
+
     drag_drop_options += '<div class="">';
+
     drag_drop_options += activity.text;
+
     drag_drop_options += "</div>";
   }
 
-  //Options
-  drag_drop_options += '<div class="drag_drop_options sticky-top">';
-  jQuery.each(activity.options, function (key, value) {
-    drag_drop_options +=
-      '<div class="draggable_div" data-qno="' +
-      key +
-      '" data-value="' +
-      value +
-      '" style="background-color: transparent;">' +
-      value +
-      "</div>";
-  });
-  drag_drop_options += "</div>";
 
-  //Questions
-  drag_drop_questions =
-    '<div class="drag_drop_questions"><ul  class="d-flex flex-column q_group ">';
-  img_array = activity.images;
-  jQuery.each(activity.questions, function (key, values) {
-    drag_drop_questions +=
-      '<li class="que d-flex flex-wrap" style=" width: 950px;"><ul>';
-    if (typeof values == "string") {
-      var has_single_text = "";
-      if ((values[0] == "_") == true) {
-        has_single_text = "has_single_text";
+  // =========================================================
+  // OPTIONS
+  // =========================================================
+
+  drag_drop_options +=
+    '<div class="drag_drop_options sticky-top">';
+
+
+  jQuery.each(
+    activity.options,
+    function (key, value) {
+
+      drag_drop_options +=
+        '<div class="draggable_div" ' +
+        'data-qno="' + key + '" ' +
+        'data-value="' + value + '" ' +
+        'style="background-color: transparent;">' +
+        value +
+        "</div>";
+    }
+  );
+
+
+  drag_drop_options +=
+    "</div>";
+
+
+  // =========================================================
+  // QUESTIONS
+  // =========================================================
+
+  var drag_drop_questions =
+    '<div class="drag_drop_questions">' +
+    '<ul class="d-flex flex-column q_group">';
+
+
+  var img_array =
+    activity.images;
+
+
+  jQuery.each(
+    activity.questions,
+    function (key, values) {
+
+      drag_drop_questions +=
+        '<li class="que d-flex flex-wrap" style="width:950px;">' +
+        '<ul>';
+
+
+      // =====================================================
+      // STRING QUESTION
+      // =====================================================
+
+      if (
+        typeof values == "string"
+      ) {
+
+        var has_single_text =
+          "";
+
+
+        if (
+          values[0] == "_"
+        ) {
+
+          has_single_text =
+            "has_single_text";
+        }
+
+
+        drag_drop_questions +=
+          '<li style="width:100%;" class="' +
+          has_single_text +
+          '">';
+
+
+        drag_drop_questions +=
+          '<div class="droppable_label">';
+
+
+        drag_drop_questions +=
+          '<div class="i_container">' +
+
+          '<div class="i_row d-flex flex-wrap">' +
+
+          '<div class="l_col"></div>' +
+
+          '<div class="r_col">' +
+
+          '<div class="droppable_text_div">';
+
+
+        drag_drop_questions +=
+          values.replace(
+            /___/g,
+
+            '<input readonly ' +
+            'type="text" ' +
+            'class="droppable_div" />' +
+
+            '</div>' +
+
+            '<div class="droppable_label">'
+          );
+
+
+        drag_drop_questions +=
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+
+
+        drag_drop_questions +=
+          "</div>";
+
+
+        drag_drop_questions +=
+          "</li>";
+
+
+      } else {
+
+        // ===================================================
+        // MULTIPLE QUESTION
+        // ===================================================
+
+        jQuery.each(
+          values,
+          function (k, v) {
+
+            var value =
+              v + "";
+
+
+            drag_drop_questions +=
+              '<li class="drag_drop_multiple">' +
+
+              value.replace(
+                "___",
+
+                ' <input readonly ' +
+                'type="text" ' +
+                'class="droppable_div" />'
+              )
+
+              +
+
+              "</li>";
+          }
+        );
       }
 
+
       drag_drop_questions +=
-        '<li style="width: 100%;" class="' +
-        has_single_text +
-        '"><div class="droppable_label">';
-      drag_drop_questions +=
-        '<div class="i_container"><div class="i_row d-flex flex-wrap"><div class="l_col"></div><div class="r_col"><div class="droppable_text_div">';
-      drag_drop_questions += values.replace(
-        /___/g,
-        '<input readonly type="text" class="droppable_div" /></div><div class="droppable_label">',
-      );
-      drag_drop_questions += "</div></div></div></div>";
-      drag_drop_questions += "</div></li>";
-    } else {
-      jQuery.each(values, function (k, v) {
-        var v = v + "";
-        drag_drop_questions +=
-          '<li class="drag_drop_multiple">' +
-          v.replace(
-            "___",
-            ' <input readonly type="text" class="droppable_div" />',
-          ) +
-          "</li>";
-      });
+        "</ul></li>";
     }
-    drag_drop_questions += "</ul></li>";
-  });
-  drag_drop_questions += "</ul></div>";
+  );
 
-  var html = "";
-  html += '<div class="main d-flex flex-column" style="height:100%;">';
 
-  /*if(
-		(typeof(_activity_json.layout)!="undefined")&&
-		(_activity_json.layout=="top")
-	){
-		html += drag_drop_options + drag_drop_questions;
-	} else {
-		html += drag_drop_questions + drag_drop_options;
-	}*/
+  drag_drop_questions +=
+    "</ul></div>";
 
-  html += drag_drop_options + drag_drop_questions;
+
+  // =========================================================
+  // HTML
+  // =========================================================
+
+  var html =
+    "";
+
+
+  html +=
+    '<div class="main d-flex flex-column" style="height:100%;">';
+
+
+  html +=
+    drag_drop_options +
+    drag_drop_questions;
+
+
+  // =========================================================
+  // BACKGROUND IMAGE
+  // =========================================================
 
   if (
     typeof activity.background_image != "undefined" &&
     activity.background_image != ""
   ) {
-    html += '<div class="image_container">';
+
+    html +=
+      '<div class="image_container">';
+
+
     html +=
       '<img src="../images/pages/activities/' +
       activity.background_image +
       '" />';
-    html += "</div>";
+
+
+    html +=
+      "</div>";
   }
 
-  html += "</div>";
-  // ============================================
-  // ============================================
-  // html += '<div class="SentenceBuilding_container">';
-  // 	html += '<div class="cont_items d-flex flex-wrap">';
-  // 		html += '<div class="main_title_container">';
-  // 			html += '<div class="main_title_text">';
-  // 			if(activity.main_title_text.length > 1) {
-  // 				for(let x=0; x < activity.main_title_text.length; x++){
-  // 					html += "<div class='letter letter-"+x+" pulse'>" + activity.main_title_text[x] + "</div>"
-  // 				}
-  // 			}else{
-  // 				html += "<div class=''>" + activity.main_title_text + "</div>"
-  // 			}
-  // 			html += '</div>';
-  // 		html += '</div>';
 
-  // 		for(let i = 0; i < activity.items.length; i++){
-  // 			html += '<div class="item item-'+i+'">'+activity.items[i]+'</div>';
-  // 		}
-  // 	html += '</div>';
-  // html += '</div>';
+  html +=
+    "</div>";
 
-  writeHtml(activity, html);
-  setDefaultAnswerDragDrop(activity);
 
-  //for mobile view
-  if (window.outerWidth <= 600) {
-    //jQuery('.drag_drop_options').css('top', (jQuery('.activity-heading').offset().top + jQuery('.activity-heading').height())+20);
+  // =========================================================
+  // WRITE HTML
+  // =========================================================
+
+  writeHtml(
+    activity,
+    html
+  );
+
+
+  // =========================================================
+  // DEFAULT ANSWERS
+  // =========================================================
+
+  setDefaultAnswerDragDrop(
+    activity
+  );
+
+
+  // =========================================================
+  // MOBILE
+  // =========================================================
+
+  if (
+    window.outerWidth <= 600
+  ) {
+
+    /*
+    jQuery('.drag_drop_options').css(
+      'top',
+      (
+        jQuery('.activity-heading').offset().top +
+        jQuery('.activity-heading').height()
+      ) + 20
+    );
+    */
   }
 
-  jQuery(".drag_drop_options .draggable_div").draggable({
-    container: jQuery(".activity-content"),
-    revert: true,
-    placeholder: true,
 
-    // كل الفراغات تظل قابلة لاستقبال كلمة جديدة
-    droptarget: ".drag_drop_questions input.droppable_div",
+  // =========================================================
+  // MAKE OPTIONS DRAGGABLE
+  // =========================================================
 
-    drop: function (evt, droptarget) {
-      var $newWord = jQuery(this);
-      var $input = jQuery(droptarget);
+  function makeDraggable(element) {
 
-      var newWordValue = $newWord.attr("data-value");
-      var newWordQno = $newWord.attr("data-qno");
+    jQuery(element).draggable({
 
-      // إذا كان الفراغ يحتوي كلمة، رجّع الكلمة القديمة لفوق
-      var oldWordQno = $input.attr("data-word-qno");
-
-      if (oldWordQno !== undefined && oldWordQno !== "") {
+      container:
         jQuery(
-          '.drag_drop_options .draggable_div[data-qno="' + oldWordQno + '"]',
-        ).css({
-          visibility: "visible",
-          pointerEvents: "auto",
-        });
+          ".activity-content"
+        ),
+
+      revert:
+        true,
+
+      placeholder:
+        true,
+
+      // كل الـ inputs تضل تستقبل drag
+      droptarget:
+        ".drag_drop_questions input.droppable_div",
+
+
+      // =====================================================
+      // DROP
+      // =====================================================
+
+      drop: function (
+        evt,
+        droptarget
+      ) {
+
+        var $newWord =
+          jQuery(this);
+
+
+        var $input =
+          jQuery(
+            droptarget
+          );
+
+
+        var newWordValue =
+          $newWord.attr(
+            "data-value"
+          );
+
+
+        var newWordQno =
+          $newWord.attr(
+            "data-qno"
+          );
+
+
+        // =================================================
+        // إذا الخانة فيها كلمة قديمة
+        // رجعها للخيارات أولًا
+        // =================================================
+
+        var oldWordQno =
+          $input.attr(
+            "data-word-qno"
+          );
+
+
+        if (
+          oldWordQno !== undefined &&
+          oldWordQno !== null &&
+          oldWordQno !== ""
+        ) {
+
+          jQuery(
+            '.drag_drop_options .draggable_div[data-qno="' +
+            oldWordQno +
+            '"]'
+          ).css({
+
+            visibility:
+              "visible",
+
+            pointerEvents:
+              "auto"
+          });
+        }
+
+
+        // =================================================
+        // حط الكلمة الجديدة بالخانة
+        // =================================================
+
+        $input
+          .val(
+            newWordValue
+          )
+          .addClass(
+            "filled"
+          )
+          .attr(
+            "data-word-qno",
+            newWordQno
+          )
+          .attr(
+            "data-dropped-value",
+            newWordValue
+          );
+
+
+        // =================================================
+        // اخفي الكلمة من الخيارات
+        // ما بنحذفها حتى ترجع بنفس مكانها
+        // =================================================
+
+        setTimeout(
+          function () {
+
+            $newWord.css({
+
+              visibility:
+                "hidden",
+
+              pointerEvents:
+                "none"
+            });
+
+
+            detectDragend();
+
+          },
+          0
+        );
       }
+    });
+  }
 
-      // ضع الكلمة الجديدة في الفراغ
-      $input
-        .val(newWordValue)
-        .addClass("filled")
-        .attr("data-word-qno", newWordQno)
-        .attr("data-dropped-value", newWordValue);
 
-      // أخفِ الكلمة الجديدة من الخيارات
-      setTimeout(function () {
-        $newWord.css({
-          visibility: "hidden",
-          pointerEvents: "none",
-        });
+  // =========================================================
+  // INITIAL DRAGGABLE
+  // =========================================================
+
+  makeDraggable(
+    jQuery(
+      ".drag_drop_options .draggable_div"
+    )
+  );
+
+
+  // =========================================================
+  // CLICK ON FILLED INPUT
+  // RETURN WORD TO OPTIONS
+  // =========================================================
+
+  jQuery(
+    ".drag_drop_questions"
+  )
+    .off(
+      "click.returnDragOption",
+      "input.droppable_div.filled"
+    )
+    .on(
+      "click.returnDragOption",
+      "input.droppable_div.filled",
+      function () {
+
+        var $input =
+          jQuery(this);
+
+
+        var wordQno =
+          $input.attr(
+            "data-word-qno"
+          );
+
+
+        // ===============================================
+        // رجع الكلمة للخيارات
+        // ===============================================
+
+        if (
+          wordQno !== undefined &&
+          wordQno !== null &&
+          wordQno !== ""
+        ) {
+
+          jQuery(
+            '.drag_drop_options .draggable_div[data-qno="' +
+            wordQno +
+            '"]'
+          ).css({
+
+            visibility:
+              "visible",
+
+            pointerEvents:
+              "auto"
+          });
+        }
+
+
+        // ===============================================
+        // فضي الخانة
+        // ===============================================
+
+        $input
+          .val(
+            ""
+          )
+          .removeClass(
+            "filled"
+          )
+          .removeAttr(
+            "data-word-qno"
+          )
+          .removeAttr(
+            "data-dropped-value"
+          );
+
+
+        // ===============================================
+        // شيل نتيجة check القديمة لو موجودة
+        // ===============================================
+
+        jQuery(
+          ".activity_result"
+        ).remove();
+
+
+        // ===============================================
+        // UPDATE
+        // ===============================================
 
         detectDragend();
-      }, 0);
-    },
-  });
-  jQuery(".drag_drop_questions").on(
-    "click",
-    "input.droppable_div.filled",
-    function () {
-      var $input = jQuery(this);
-      var wordQno = $input.attr("data-word-qno");
-
-      // إظهار الكلمة مرة ثانية في الخيارات
-      if (wordQno !== undefined && wordQno !== "") {
-        jQuery(
-          '.drag_drop_options .draggable_div[data-qno="' + wordQno + '"]',
-        ).css({
-          visibility: "visible",
-          pointerEvents: "auto",
-        });
       }
+    );
 
-      // تفريغ الفراغ
-      $input
-        .val("")
-        .removeClass("filled")
-        .removeAttr("data-word-qno")
-        .removeAttr("data-dropped-value");
 
-      jQuery(".activity_result").remove();
+  // =========================================================
+  // SENTENCE IMAGE
+  // =========================================================
 
-      detectDragend();
-    },
-  );
   showSentenceImg();
 }
 
+
+
+// ===========================================================
+// SHOW SENTENCE IMAGE
+// ===========================================================
+
 function showSentenceImg() {
-  $(document).ready(function () {
-    $(".imgToggle").click(function () {
-      var imgName = $(this).data("img");
-      $("." + imgName).fadeToggle(1000);
-    });
-  });
+
+  $(document).ready(
+    function () {
+
+      $(".imgToggle")
+        .off(
+          "click.sentenceImg"
+        )
+        .on(
+          "click.sentenceImg",
+          function () {
+
+            var imgName =
+              $(this).data(
+                "img"
+              );
+
+
+            $("." + imgName)
+              .fadeToggle(
+                1000
+              );
+          }
+        );
+    }
+  );
 }

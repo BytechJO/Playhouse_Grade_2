@@ -34,7 +34,7 @@ var fillin_data = {
   activityheading_audio: "../audios/under.mp3",
   activitysubheading: "",
   activityicon: "../images/icons/key_icon.png",
-  image: "../images/pages/activities/P8_1.png",
+  image: "../images/pages/activities/p8_1.png",
   imageposition: "back", // "front" (or) "back"
   numbering: "alphabet", // "alphabet" (or) "number"
   numberstartfrom: "a",

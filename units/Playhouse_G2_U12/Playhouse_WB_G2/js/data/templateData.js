@@ -23,10 +23,10 @@ var _data = {
       link: "grammar.html",
     },
 
-    audio: "./audios/AGW_1_SB_U15_TitleAudio.mp3",
+    audio: "./audios/page_59/UNIT_12_-_An_African_Safari.mp3",
 
     title: {
-      text: "At the Dinosaur Museum",
+      text: "An African Safari",
       color: "rgb(255, 255, 255)",
       "text-align": "center",
       "font-size": "44px",

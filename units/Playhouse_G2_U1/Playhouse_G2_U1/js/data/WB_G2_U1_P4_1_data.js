@@ -25,7 +25,7 @@ var fillin_data = {
   "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
   "mainTitleIconPos"      : {"right": "-18px"},
   "mainTitleAudio"        : "../audios/under.mp3",
-  "subTitleTextLeft"      : "<span class='blue_text'>2</span> Read the sentences and put an exclamation mark (<b>!</b>) where it is needed.",
+  "subTitleTextLeft"      : "<span class='blue_text'>1</span> Look and complete each sentence with a Word Power word.",
   "subTitleTextRight"     : "",
   "subTitleIcons"         : [],
   "subTitleAudio"         : "../audios/under.mp3",

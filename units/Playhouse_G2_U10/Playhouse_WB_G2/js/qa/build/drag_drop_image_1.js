@@ -1,158 +1,517 @@
 function initActivity(activity){
 
-	//Options
-	drag_drop_options = '<div class="drag_drop_options sticky-top">';
-	jQuery.each(activity.options, function(key, value){
-		drag_drop_options += '<div class="draggable_div" data-value="'+value+'" style="background-color: transparent;">'+value+'</div>';
-	});
-	drag_drop_options += '</div>';
+	// =========================================================
+	// OPTIONS
+	// =========================================================
+
+	var drag_drop_options =
+		'<div class="drag_drop_options sticky-top">';
+
+	jQuery.each(
+		activity.options,
+		function(key, value){
+
+			drag_drop_options +=
+				'<div class="draggable_div" ' +
+				'data-value="' + value + '" ' +
+				'style="background-color: transparent;">' +
+				value +
+				'</div>';
+		}
+	);
+
+	drag_drop_options +=
+		'</div>';
 
 
-	//Questions
-	drag_drop_questions = '<div class="drag_drop_questions"><ul  class="que d-flex flex-wrap">';
-	img_array = activity.images
-	jQuery.each(activity.questions, function(key, values){
-		drag_drop_questions += '<li class="item d-flex flex-column"><ul style="">';
-		if(typeof(values)=="string"){
-			var has_single_text = '';
-			if((values[0]=='_')==true){
-				has_single_text = 'has_single_text';
+
+	// =========================================================
+	// QUESTIONS
+	// =========================================================
+
+	var drag_drop_questions =
+		'<div class="drag_drop_questions">' +
+		'<ul class="que d-flex flex-wrap">';
+
+
+	var img_array =
+		activity.images;
+
+
+	jQuery.each(
+		activity.questions,
+		function(key, values){
+
+			drag_drop_questions +=
+				'<li class="item d-flex flex-column">' +
+				'<ul>';
+
+
+			// =====================================================
+			// STRING QUESTION
+			// =====================================================
+
+			if(
+				typeof(values) == "string"
+			){
+
+				var has_single_text =
+					'';
+
+
+				if(
+					(values[0] == '_') == true
+				){
+
+					has_single_text =
+						'has_single_text';
+				}
+
+
+				drag_drop_questions +=
+					'<li style="width:100%;" class="' +
+					has_single_text +
+					'">';
+
+
+				drag_drop_questions +=
+					'<div class="droppable_label">';
+
+
+				drag_drop_questions +=
+					'<div class="i_container">' +
+
+					'<div class="i_row d-flex flex-wrap justify-content-center align-items-center">' +
+
+					'<div class="l_col">' +
+
+					'<img src="' +
+					img_array[key] +
+					'" class="qus_img">' +
+
+					'</div>' +
+
+					'<div class="r_col">' +
+
+					'<div class="droppable_text_div">';
+
+
+				drag_drop_questions +=
+					values.replace(
+						/___/g,
+
+						'<input readonly ' +
+						'type="text" ' +
+						'class="droppable_div" />' +
+
+						'</div>' +
+
+						'<div class="droppable_label">'
+					);
+
+
+				drag_drop_questions +=
+					'</div>' +
+					'</div>' +
+					'</div>' +
+					'</div>';
+
+
+				drag_drop_questions +=
+					'</div>';
+
+
+				drag_drop_questions +=
+					'</li>';
+
+
+
+			}else{
+
+				// =================================================
+				// MULTIPLE QUESTIONS
+				// =================================================
+
+				jQuery.each(
+					values,
+					function(k, v){
+
+						var v =
+							v + "";
+
+
+						drag_drop_questions +=
+							'<li class="drag_drop_multiple">' +
+
+							v.replace(
+								'___',
+
+								' <input readonly ' +
+								'type="text" ' +
+								'class="droppable_div" />'
+							)
+
+							+
+
+							'</li>';
+					}
+				);
 			}
 
-			drag_drop_questions += '<li style="width: 100%;" class="'+has_single_text+'"><div class="droppable_label">';
-			drag_drop_questions += '<div class="i_container"><div class="i_row d-flex flex-wrap justify-content-center align-items-center"><div class="l_col"><img src="' + img_array[key] + '" class="qus_img"></div><div class="r_col"><div class="droppable_text_div">'
-			drag_drop_questions += values.replace(/___/g, '<input readonly type="text" class="droppable_div" /></div><div class="droppable_label">')
-			drag_drop_questions += '</div></div></div></div>'
-			drag_drop_questions += '</div></li>';
 
-		} else {
-			jQuery.each(values, function(k, v){
-				var v = v+"";
-				drag_drop_questions += '<li class="drag_drop_multiple">'+ v.replace('___', ' <input readonly type="text" class="droppable_div" />') +'</li>';
-			});
+			drag_drop_questions +=
+				'</ul></li>';
 		}
-		drag_drop_questions += '</ul></li>';
-	});
-	drag_drop_questions += '</ul></div>';
+	);
 
 
-	
+	drag_drop_questions +=
+		'</ul></div>';
 
-	var html = '';
-	html += '<div class="main">';
 
-	/*if(
-		(typeof(_activity_json.layout)!="undefined")&&
-		(_activity_json.layout=="top")
-	){
-		html += drag_drop_options + drag_drop_questions;
-	} else {
-		html += drag_drop_questions + drag_drop_options;
-	}*/
 
-	html += drag_drop_options + drag_drop_questions;
+	// =========================================================
+	// MAIN HTML
+	// =========================================================
 
+	var html =
+		'';
+
+
+	html +=
+		'<div class="main">';
+
+
+	html +=
+		drag_drop_options +
+		drag_drop_questions;
+
+
+
+	// =========================================================
+	// BACKGROUND IMAGE
+	// =========================================================
 
 	if(
-		(typeof(activity.background_image)!='undefined') && 
-		(activity.background_image!='')
-	) {
-		html += '<div class="image_container">';
-		html += '<img src="../images/pages/activities/'+activity.background_image+'" />';
-		html += '</div>';
+		typeof(activity.background_image) != 'undefined' &&
+		activity.background_image != ''
+	){
+
+		html +=
+			'<div class="image_container">';
+
+		html +=
+			'<img src="../images/pages/activities/' +
+			activity.background_image +
+			'" />';
+
+		html +=
+			'</div>';
 	}
 
 
-	html += '</div>';
-	writeHtml(activity, html);
-	setDefaultAnswerDragDrop(activity);
+	html +=
+		'</div>';
 
-	//for mobile view
-	if(window.outerWidth<=600){
-		//jQuery('.drag_drop_options').css('top', (jQuery('.activity-heading').offset().top + jQuery('.activity-heading').height())+20);
+
+
+	// =========================================================
+	// WRITE HTML
+	// =========================================================
+
+	writeHtml(
+		activity,
+		html
+	);
+
+
+
+	// =========================================================
+	// DEFAULT ANSWERS
+	// =========================================================
+
+	setDefaultAnswerDragDrop(
+		activity
+	);
+
+
+
+	// =========================================================
+	// MOBILE
+	// =========================================================
+
+	if(
+		window.outerWidth <= 600
+	){
+
+		/*
+		jQuery('.drag_drop_options').css(
+			'top',
+			(
+				jQuery('.activity-heading').offset().top +
+				jQuery('.activity-heading').height()
+			) + 20
+		);
+		*/
 	}
 
-	jQuery('.drag_drop_options div.draggable_div').draggable({
-	  container: jQuery('.activity-content'),
-      revert: true,
-      placeholder: true,
-      droptarget: '.drag_drop_questions input.droppable_div',
-      drop: function(evt, droptarget) {
-        jQuery(droptarget).val(evt.target.innerText);
-        jQuery(droptarget).removeClass('droppable_div');
 
-        jQuery(this).remove();//('destroy');
-        detectDragend();
-      }
-    });
 
-    // jQuery('.content_wrap').scroll(function(){  
-    // 	console.log(jQuery(this).scrollTop());
-	//      if(jQuery(this).scrollTop()>72){
-	//      	jQuery('.drag_drop_options').addClass('drag_drop_options_fixed');
-	//      } else {
-	//      	jQuery('.drag_drop_options').removeClass('drag_drop_options_fixed');
-	//      }
-	// });
+	// =========================================================
+	// MAKE DRAGGABLE FUNCTION
+	// =========================================================
 
-	// disableBtns();    //may be returned me
+	function makeDraggable(element){
+
+		jQuery(element).draggable({
+
+			container:
+				jQuery(
+					'.activity-content'
+				),
+
+			revert:
+				true,
+
+			placeholder:
+				true,
+
+			droptarget:
+				'.drag_drop_questions input.droppable_div',
+
+
+			// =================================================
+			// DROP
+			// =================================================
+
+			drop: function(
+				evt,
+				droptarget
+			){
+
+				var $dragged =
+					jQuery(this);
+
+
+				var $drop =
+					jQuery(
+						droptarget
+					);
+
+
+				var value =
+					$dragged.attr(
+						'data-value'
+					);
+
+
+				if(
+					value == undefined ||
+					value == null ||
+					value == ''
+				){
+
+					value =
+						evt.target.innerText;
+				}
+
+
+
+				// =============================================
+				// PUT VALUE IN INPUT
+				// =============================================
+
+				$drop.val(
+					value
+				);
+
+
+
+				// =============================================
+				// MARK INPUT AS FILLED
+				// =============================================
+
+				$drop
+					.removeClass(
+						'droppable_div'
+					)
+					.addClass(
+						'filled_drop'
+					)
+					.attr(
+						'data-value',
+						value
+					);
+
+
+
+				// =============================================
+				// REMOVE OPTION FROM TOP
+				// =============================================
+
+				$dragged.remove();
+
+
+
+				// =============================================
+				// DETECT CHANGE
+				// =============================================
+
+				detectDragend();
+			}
+		});
+	}
+
+
+
+	// =========================================================
+	// INITIAL DRAGGABLE OPTIONS
+	// =========================================================
+
+	makeDraggable(
+		jQuery(
+			'.drag_drop_options div.draggable_div'
+		)
+	);
+
+
+
+	// =========================================================
+	// CLICK FILLED INPUT
+	// RETURN OPTION TO TOP
+	// =========================================================
+
+	jQuery(document)
+		.off(
+			'click.returnDragOption',
+			'.drag_drop_questions .filled_drop'
+		)
+		.on(
+			'click.returnDragOption',
+			'.drag_drop_questions .filled_drop',
+			function(){
+
+				var $input =
+					jQuery(this);
+
+
+				var value =
+					$input.attr(
+						'data-value'
+					);
+
+
+
+				if(
+					value == undefined ||
+					value == null ||
+					value == ''
+				){
+
+					value =
+						$input.val();
+				}
+
+
+
+				if(
+					value == undefined ||
+					value == null ||
+					value == ''
+				){
+
+					return;
+				}
+
+
+
+				// =============================================
+				// CREATE OPTION AGAIN
+				// =============================================
+
+				var $newOption =
+					jQuery(
+
+						'<div class="draggable_div" ' +
+
+						'data-value="' +
+						value +
+						'" ' +
+
+						'style="background-color: transparent;">' +
+
+						value +
+
+						'</div>'
+					);
+
+
+
+				// =============================================
+				// RETURN OPTION TO TOP
+				// =============================================
+
+				jQuery(
+					'.drag_drop_options'
+				)
+					.append(
+						$newOption
+					);
+
+
+
+				// =============================================
+				// MAKE IT DRAGGABLE AGAIN
+				// =============================================
+
+				makeDraggable(
+					$newOption
+				);
+
+
+
+				// =============================================
+				// CLEAR INPUT
+				// =============================================
+
+				$input.val(
+					''
+				);
+
+
+				$input.removeAttr(
+					'data-value'
+				);
+
+
+
+				// =============================================
+				// MAKE INPUT DROPPABLE AGAIN
+				// =============================================
+
+				$input
+					.removeClass(
+						'filled_drop'
+					)
+					.addClass(
+						'droppable_div'
+					);
+
+
+
+				// =============================================
+				// DETECT CHANGE
+				// =============================================
+
+				detectDragend();
+			}
+		);
+
+
+
+	// =========================================================
+	// disableBtns();
+	// =========================================================
+
+	// disableBtns();
 }
-
-//Example 1
-/*
-var _activity_json = {
-"image":"new_drag_drop.png",
-"heading":"Complete the rhyme",
-"type":"drag_drop",
-"questions":[
-				[
-					["Pizza, pizza, pizza,<br /> We like it hot or ___."],
-					["Pizza, pizza, pizza,<br /> For people young and ___."]
-				],
-				[
-					["Pizza, pizza, pizza,<br /> Have a slice or ___."],
-					["Pizza, pizza, pizza,<br /> Enough for me and ___!"]
-				]
-			],
-"options": ["cold", "two", "old", "you"],
-"answers": ["cold", "old", "two", "you"],
-"default_answer": {1:"cold"}
-};
-*/
-
-//Example 2
-/*
-var _activity_json = {
-"image":"new_drag_drop.png",
-"heading":"Complete the sentences.",
-"type":"drag_drop",
-"questions":[
-				"The girl’s body ___ the sun from shining on the ground",
-				"ometimes your shadow is in ___ of, in ___ of, or ___you"
-			],
-"options": ["back", "stops", "beside", "front","back", "stops", "beside", "front"],
-"answers": ["stops", "front", "back", "beside"],
-"default_answer":{2:"front"}
-};
-*/
-
-//Example 3
-/*
-var _activity_json = {
-"image":"new_drag_drop.png",
-"heading":"Complete",
-"type":"drag_drop",
-"questions":[
-				"___ choo-choo",
-				"___ Rabbit",
-				"___ cricket",
-				"___ airplane",
-				"___ Bear",
-				"___ cat",
-				"___ pine tree"
-			],
-"options": ["Oliver", "speedy", "green", "fuzzy gray", "ding-a-ling", "little black", "Bubby"],
-"answers": ["ding-a-ling", "Oliver", "little black", "speedy", "Bubby", "fuzzy gray", "green"],
-"default_answer": {3:"little black"}
-};
-*/

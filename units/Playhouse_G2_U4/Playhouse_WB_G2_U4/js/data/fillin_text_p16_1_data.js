@@ -29,7 +29,7 @@ var fillin_data = {
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],
     "subTitleAudio"         : "../audios/under.mp3",
-    "image"                 : "",
+    "image"                 : "../images/pages/activities/1.png",
     "imageposition"         : "back",// "front" (or) "back"
     "defaultAnswer"         : 1,
     "numbering"             : "number", // "alphabet" (or) "number"
