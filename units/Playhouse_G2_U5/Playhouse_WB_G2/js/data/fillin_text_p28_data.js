@@ -43,7 +43,7 @@ var fillin_data = {
         "textaudios": ["../audios/under.mp3"],
         "audio": "",
         "audioenable": "default", // correct (or) default
-        "image": "../images/pages/activities/p25_1.png",
+        "image": "../images/pages/activities/p28_1_1.png",
         "answer": ["has got"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no  
@@ -57,7 +57,7 @@ var fillin_data = {
         "textaudios": ["../audios/under.mp3","../audios/under.mp3"],
         "audio": "",
         "audioenable": "default", // correct (or) default
-        "image": "../images/pages/activities/p25_2.png",
+        "image": "../images/pages/activities/p28_1_2.png",
         "answer": ["have got"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no     
@@ -71,7 +71,7 @@ var fillin_data = {
         "textaudios": ["../audios/under.mp3","../audios/under.mp3"],
         "audio": "",
         "audioenable": "default", // correct (or) default
-        "image": "../images/pages/activities/p25_3.png",
+        "image": "../images/pages/activities/p28_1_3.png",
         "answer": ["feels"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no    
@@ -85,8 +85,8 @@ var fillin_data = {
         "textaudios": ["../audios/under.mp3","../audios/under.mp3"],
         "audio": "",
         "audioenable": "default", // correct (or) default
-        "image": "../images/pages/activities/p25_4.png",
-        "answer": ["feels"],
+        "image": "../images/pages/activities/p28_1_4.png",
+        "answer": ["feel"],
         "alternateanswer": [[]],
         "strictcase": "no", // yes (or) no    
         "strictorder": "yes", // yes (or) no              

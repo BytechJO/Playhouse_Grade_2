@@ -50,7 +50,7 @@ var fillin_data = {
       text: "I like my[_].",
       textEnd: "",
       textaudios: [],
-      image: "../images/pages/activities/P12_1_1.png",
+      image: "../images/pages/activities/p12_1_1.png",
       option: "",
       audio: "../audios/in.mp3",
       audioenable: "default", // correct (or) default
@@ -66,7 +66,7 @@ var fillin_data = {
       text: "I like my big[_]",
       textEnd: "",
       textaudios: [],
-      image: "../images/pages/activities/P12_1_2.png",
+      image: "../images/pages/activities/p12_1_2.png",
       option: "",
       audio: "../audios/in.mp3",
       audioenable: "default", // correct (or) default
@@ -82,7 +82,7 @@ var fillin_data = {
       text: "I can ride in a straight[_]",
       textEnd: "",
       textaudios: [],
-      image: "../images/pages/activities/P12_1_3.png",
+      image: "../images/pages/activities/p12_1_3.png",
       option: "",
       audio: "../audios/in.mp3",
       audioenable: "default", // correct (or) default
@@ -98,7 +98,7 @@ var fillin_data = {
       text: "I can write the number[_]",
       textEnd: "",
       textaudios: [],
-      image: "../images/pages/activities/P12_1_4.png",
+      image: "../images/pages/activities/p12_1_4.png",
       option: "",
       audio: "../audios/in.mp3",
       audioenable: "default", // correct (or) default

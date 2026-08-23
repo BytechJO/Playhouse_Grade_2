@@ -55,7 +55,7 @@ var mcq_data = {
       sentence: "",
       question: "[_]",
       options: [["small", "flat", "round"]],
-      answer: [2],
+      answer: [2, 3],
       inputbox: "yes",
       image: "../images/pages/activities/Asset_4.png",
       audio: "",

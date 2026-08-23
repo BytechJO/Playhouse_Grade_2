@@ -48,7 +48,7 @@ var mcq_data = {
   questions: [
     {
       number: 1,
-      image: "../images/pages/activities/1.png",
+      image: "../images/pages/activities/1.jpeg",
       answer: [1],
       audio: "no",
       audioenable: "default",

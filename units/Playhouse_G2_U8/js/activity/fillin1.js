@@ -16,19 +16,6 @@ window.FillIn = function (obj, dataObj) {
   };
   this.init(this.settings);
 };
-function normalizeAnswer(value) {
-  return (
-    String(value || "")
-      .toLowerCase()
-      // توحيد جميع أنواع الفاصلة العليا
-      .replace(/[’‘‛`´ʼʹʻ＇]/g, "'")
-      // حذف الفراغات
-      .replace(/\s+/g, "")
-      // تجاهل النقطة إذا كانت بآخر الجواب
-      .replace(/\.$/, "")
-      .trim()
-  );
-}
 FillIn.prototype = {
   init: function (ob) {
     this.ob = ob;
@@ -64,79 +51,124 @@ FillIn.prototype = {
     var numOfFillIns = elsQue.length;
     var allCorrect = false;
     var resultArr = [];
+
     for (var i = 0; i < elsQue.length; i++) {
       resultArr[i] = 0;
+
       var fIndx = parseInt(elsQue[i].dataset.qno);
       var fDataObj = ob.data_obj.questions[fIndx - 1];
-      elsQue[i].querySelector(".tick").style.display = "none";
-      elsQue[i].querySelector(".cross").style.display = "none";
+
+      var tick = elsQue[i].querySelector(".tick");
+      var cross = elsQue[i].querySelector(".cross");
+      var iconWrap = elsQue[i].querySelector(".icon_wrap");
+
+      if (tick) {
+        tick.style.display = "none";
+      }
+
+      if (cross) {
+        cross.style.display = "none";
+      }
+
+      if (iconWrap) {
+        iconWrap.style.display = "none";
+      }
+
+      var inputBoxes = elsQue[i].querySelectorAll("input");
+
+      /* ==========================================
+           الجملة الثابتة - ما فيها input
+           نحسبها صح بدون ✓ أو ✕
+        ========================================== */
+
+      if (inputBoxes.length === 0) {
+        resultArr[i] = 1;
+
+        elsQue[i].dataset.showIcon = "false";
+
+        if (iconWrap) {
+          iconWrap.style.display = "none";
+        }
+
+        continue;
+      }
+
+      /* ==========================================
+           الأسئلة اللي فيها input
+        ========================================== */
+
       var _case =
         fDataObj.strictcase != undefined && fDataObj.strictcase != null
           ? fDataObj.strictcase.toLowerCase()
           : "no";
+
       var _cAns = getStrArray(fDataObj.answer, "activity");
+
       var _uAns = [];
       var _isReadOnly = [];
+
       var _corr = 0;
       var _wrong = 0;
-      var inputBoxes = elsQue[i].querySelectorAll("input");
 
-      if (inputBoxes.length > 0) {
-        for (var a = 0; a < inputBoxes.length; a++) {
-          console.log(a, inputBoxes[a].dataset.type);
-          _isReadOnly[a] =
-            inputBoxes[a].getAttribute("disabled") == null &&
-            inputBoxes[a].getAttribute("readonly") == null
-              ? 0
-              : 1;
-          // if ((inputBoxes[a].getAttribute("disabled")==null)&& (inputBoxes[a].getAttribute("readonly")==null)){
-          if (inputBoxes[a].value.length > 0) {
-            if (inputBoxes[a].dataset.type != "number") {
-              _uAns[a] =
-                _case == "yes"
-                  ? inputBoxes[a].value
-                  : inputBoxes[a].value.toLowerCase();
-            } else {
-              _uAns[a] = inputBoxes[a].value;
-            }
+      for (var a = 0; a < inputBoxes.length; a++) {
+        _isReadOnly[a] =
+          inputBoxes[a].getAttribute("disabled") == null &&
+          inputBoxes[a].getAttribute("readonly") == null
+            ? 0
+            : 1;
+
+        if (inputBoxes[a].value.length > 0) {
+          if (inputBoxes[a].dataset.type != "number") {
+            _uAns[a] =
+              _case == "yes"
+                ? inputBoxes[a].value
+                : inputBoxes[a].value.toLowerCase();
+          } else {
+            _uAns[a] = inputBoxes[a].value;
           }
-          //}
         }
       }
-      elsQue[i].dataset.showIcon =
-        _isReadOnly.join("").split("1")[0].length == _cAns.length;
-      console.log(
-        _uAns,
-        _cAns,
-        _isReadOnly.join("").split("1")[0].length == _cAns.length,
-        i,
-        elsQue[i].dataset.showIcon,
-      );
+
+      elsQue[i].dataset.showIcon = "true";
+
+      /* ==========================================
+           مقارنة الإجابة
+        ========================================== */
 
       if (_uAns.length > 0 && _cAns.length == _uAns.length) {
         for (var cc = 0; cc < _cAns.length; cc++) {
           _cAns[cc] = _case == "yes" ? _cAns[cc] : _cAns[cc].toLowerCase();
-          _cAns[cc] = normalizeAnswer(_cAns[cc]);
-          _uAns[cc] = normalizeAnswer(_uAns[cc]);
 
-          if (_cAns[cc] === _uAns[cc]) {
+          /* تجاهل الفراغات */
+          _cAns[cc] = _cAns[cc].replace(/\s/g, "");
+
+          _uAns[cc] = _uAns[cc].replace(/\s/g, "");
+
+          if (_cAns[cc] == _uAns[cc]) {
             _corr++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'green';
-            // }
           } else {
             _wrong++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'red';
-            // }
           }
         }
       } else {
         _wrong++;
       }
+
+      /* ==========================================
+           إظهار ✓ أو ✕
+        ========================================== */
+
       if (_corr == _uAns.length && _wrong == 0) {
         resultArr[i] = 1;
-        elsQue[i].querySelector(".tick").style.display = "block";
+
+        if (tick) {
+          tick.style.display = "block";
+        }
+
+        if (cross) {
+          cross.style.display = "none";
+        }
+
         if (fDataObj.audio != "" && fDataObj.audio != "no") {
           if (
             fDataObj.audioenable == "correct" &&
@@ -147,7 +179,15 @@ FillIn.prototype = {
         }
       } else {
         resultArr[i] = 0;
-        elsQue[i].querySelector(".cross").style.display = "block";
+
+        if (tick) {
+          tick.style.display = "none";
+        }
+
+        if (cross) {
+          cross.style.display = "block";
+        }
+
         if (fDataObj.audio != "" && fDataObj.audio != "no") {
           if (
             fDataObj.audioenable == "correct" &&
@@ -157,14 +197,26 @@ FillIn.prototype = {
           }
         }
       }
-      if (elsQue[i].querySelectorAll(".icon_wrap").length > 0) {
+
+      /* ==========================================
+           إظهار icon_wrap فقط للأسئلة
+        ========================================== */
+
+      if (iconWrap) {
         if (elsQue[i].dataset.showIcon == "true") {
-          elsQue[i].querySelector(".icon_wrap").style.display = "block";
+          iconWrap.style.display = "block";
         }
       }
     }
+
     console.log(resultArr, numOfFillIns);
-    allCorrect = resultArr.join("").split("0")[0].length == numOfFillIns;
+
+    /* ==========================================
+       التقييم النهائي
+    ========================================== */
+
+    allCorrect = resultArr.indexOf(0) === -1;
+
     showFeedback(true, allCorrect);
 
     if (allCorrect) {

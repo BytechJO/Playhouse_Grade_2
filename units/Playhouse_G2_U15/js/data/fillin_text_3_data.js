@@ -45,7 +45,7 @@ var fillin_data = {
       image: "../images/pages/activities/5-img-1.png",
       imagePosition: "back",
 
-      answer: ["It is nine o’clock."],
+      answer: ["It is nine o’clock"],
 
       alternateanswer: [["It is nine o'clock"], ["It is nine o’clock"]],
 
@@ -63,7 +63,7 @@ var fillin_data = {
       image: "../images/pages/activities/5-img-2.png",
       imagePosition: "back",
 
-      answer: ["It is six o’clock."],
+      answer: ["It is six o’clock"],
 
       alternateanswer: [["It is six o'clock"], ["It is six o’clock"]],
 
@@ -82,7 +82,7 @@ var fillin_data = {
       image: "../images/pages/activities/5-img-3.png",
       imagePosition: "back",
 
-      answer: ["It is two o’clock."],
+      answer: ["It is two o’clock"],
 
       alternateanswer: [["It is two o'clock"], ["It is two o’clock"]],
 

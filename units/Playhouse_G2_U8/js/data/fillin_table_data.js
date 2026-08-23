@@ -69,7 +69,7 @@ var fillin_data = {
       audio: "",
       audioenable: "default",
       image: "",
-      answer: [" coffee"],
+      answer: ["coffee"],
       alternateanswer: [["coffee"]],
       strictcase: "no",
       strictorder: "no",

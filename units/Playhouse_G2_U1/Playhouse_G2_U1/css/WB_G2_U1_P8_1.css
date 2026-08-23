@@ -21,7 +21,9 @@
 .image_space {
   width: 474px;
 }
-
+.func_ctrls {
+  display: none !important;
+}
 .text {
   padding: 20px 35px;
   width: 480px;

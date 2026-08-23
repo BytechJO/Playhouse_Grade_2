@@ -13,20 +13,18 @@ function buildWriteSentencesBody(aObj) {
     '<div class="sub_footer_icon sub_footer_icon_left subFooterNav backNav mx-1">';
 
   htmlStmt += '<a href="">';
-
   htmlStmt += '<img src="../images/icons/back_btn.png">';
-
   htmlStmt += "</a>";
+
   htmlStmt += "</div>";
 
   htmlStmt +=
     '<div class="sub_footer_icon sub_footer_icon_right subFooterNav nextNav mx-1">';
 
   htmlStmt += '<a href="">';
-
   htmlStmt += '<img src="../images/icons/next_btn.png">';
-
   htmlStmt += "</a>";
+
   htmlStmt += "</div>";
 
   /* =====================================================
@@ -144,7 +142,12 @@ function buildWriteSentencesBody(aObj) {
       (questionIndex + 1) +
       '">';
 
+    /* =====================================================
+         Image
+      ===================================================== */
+
     htmlStmt += '<div class="question_picture_group">';
+
     htmlStmt += '<div class="question_image_holder">';
 
     htmlStmt +=
@@ -160,21 +163,15 @@ function buildWriteSentencesBody(aObj) {
 
     htmlStmt += "</div>";
 
+    /* =====================================================
+         Answer area
+      ===================================================== */
+
     htmlStmt += '<div class="write_answer_area">';
 
-    htmlStmt += '<div class="write_input_row">';
-
-    htmlStmt +=
-      "<input " +
-      'type="text" ' +
-      'class="write_sentence_input" ' +
-      'maxlength="' +
-      (question.maxlength || 100) +
-      '" ' +
-      'autocomplete="off" ' +
-      'spellcheck="false">';
-
-    htmlStmt += "</div>";
+    /* =====================================================
+         Sentence 1
+      ===================================================== */
 
     htmlStmt += '<div class="write_input_row">';
 
@@ -188,28 +185,63 @@ function buildWriteSentencesBody(aObj) {
       'autocomplete="off" ' +
       'spellcheck="false">';
 
-    htmlStmt += "</div>";
+    /* Icon for sentence 1 */
 
-    htmlStmt += "</div>";
-
-    /* Feedback icon */
-
-    htmlStmt += '<div class="icon_wrap_holder write_icon_holder">';
-
-    htmlStmt += '<div class="icon_wrap">';
+    htmlStmt += '<div class="sentence_icon_wrap">';
 
     htmlStmt +=
-      '<div class="tick">' +
+      '<div class="sentence_tick">' +
       '<img src="../images/icons/check_btn.png">' +
       "</div>";
 
     htmlStmt +=
-      '<div class="cross">' +
+      '<div class="sentence_cross">' +
       '<img src="../images/icons/cross_btn.png">' +
       "</div>";
 
     htmlStmt += "</div>";
+
     htmlStmt += "</div>";
+
+    /* =====================================================
+         Sentence 2
+      ===================================================== */
+
+    htmlStmt += '<div class="write_input_row">';
+
+    htmlStmt +=
+      "<input " +
+      'type="text" ' +
+      'class="write_sentence_input" ' +
+      'maxlength="' +
+      (question.maxlength || 100) +
+      '" ' +
+      'autocomplete="off" ' +
+      'spellcheck="false">';
+
+    /* Icon for sentence 2 */
+
+    htmlStmt += '<div class="sentence_icon_wrap">';
+
+    htmlStmt +=
+      '<div class="sentence_tick">' +
+      '<img src="../images/icons/check_btn.png">' +
+      "</div>";
+
+    htmlStmt +=
+      '<div class="sentence_cross">' +
+      '<img src="../images/icons/cross_btn.png">' +
+      "</div>";
+
+    htmlStmt += "</div>";
+
+    htmlStmt += "</div>";
+
+    /* End answer area */
+
+    htmlStmt += "</div>";
+
+    /* End question */
 
     htmlStmt += "</div>";
   }

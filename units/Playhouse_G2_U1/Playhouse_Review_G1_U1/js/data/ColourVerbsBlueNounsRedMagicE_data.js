@@ -13,7 +13,8 @@ var mcq_data = {
   mainTitleAudio: "../audios/under.mp3",
 
   subTitleTextLeft:
-    "<span class='blue_text'>4</span> Colour the verbs blue. Colour the <br>nouns red. Circle the <span class='red_text'>‘a magic e’</span> <br>words.",
+    "<span class='red_text'>2</span> Colour the verbs blue. Colour the nouns red. Circle the ‘<span class='red_text'>a magic e</span>’ words.",
+
   subTitleTextRight: "",
   subTitleIcons: [],
   subTitleAudio: "../audios/under.mp3",

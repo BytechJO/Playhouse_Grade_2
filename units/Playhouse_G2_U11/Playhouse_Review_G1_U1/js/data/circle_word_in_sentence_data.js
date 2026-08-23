@@ -43,7 +43,7 @@ var mcq_data = {
         {
             "question"              : "She is reading [_] the apple tree.",
             "options"               : [["near","under"]],
-            "answer"                : [1],
+            "answer"                : [2],
 			"inputbox"				: "yes",
 			"image"					: '',
             "audio"                 : "",
