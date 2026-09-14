@@ -51,79 +51,158 @@ FillIn.prototype = {
     var numOfFillIns = elsQue.length;
     var allCorrect = false;
     var resultArr = [];
+
+    // =========================================================
+    // Helper: normalize answer
+    // =========================================================
+    function normalizeAnswer(value, strictCase) {
+      value = value == null ? "" : String(value);
+
+      if (strictCase !== "yes") {
+        value = value.toLowerCase();
+      }
+
+      return value
+        .trim()
+        .replace(/\s+/g, "") // ignore spaces
+        .replace(/\.$/, ""); // ignore final dot
+    }
+
+    // =========================================================
+    // Helper: convert answer / alternateanswer to arrays
+    // =========================================================
+    function prepareAnswerSet(answer) {
+      if (answer == null) return [];
+
+      if (Array.isArray(answer)) {
+        return answer;
+      }
+
+      return [answer];
+    }
+
     for (var i = 0; i < elsQue.length; i++) {
       resultArr[i] = 0;
+
       var fIndx = parseInt(elsQue[i].dataset.qno);
       var fDataObj = ob.data_obj.questions[fIndx - 1];
+
       elsQue[i].querySelector(".tick").style.display = "none";
       elsQue[i].querySelector(".cross").style.display = "none";
+
       var _case =
         fDataObj.strictcase != undefined && fDataObj.strictcase != null
           ? fDataObj.strictcase.toLowerCase()
           : "no";
-      var _cAns = getStrArray(fDataObj.answer, "activity");
+
+      // =========================================================
+      // MAIN ANSWER
+      // =========================================================
+      var mainAnswer = prepareAnswerSet(fDataObj.answer);
+
+      // =========================================================
+      // ALTERNATE ANSWERS
+      // =========================================================
+      var alternateAnswers = [];
+
+      if (
+        fDataObj.alternateanswer != undefined &&
+        fDataObj.alternateanswer != null &&
+        Array.isArray(fDataObj.alternateanswer)
+      ) {
+        for (var alt = 0; alt < fDataObj.alternateanswer.length; alt++) {
+          var altAnswer = fDataObj.alternateanswer[alt];
+
+          // Ignore empty arrays []
+          if (Array.isArray(altAnswer)) {
+            if (altAnswer.length > 0) {
+              alternateAnswers.push(altAnswer);
+            }
+          }
+          // Also allow alternateanswer: ["answer 1", "answer 2"]
+          else if (altAnswer != null && String(altAnswer).trim() !== "") {
+            alternateAnswers.push([altAnswer]);
+          }
+        }
+      }
+
+      // All valid answer possibilities
+      var allPossibleAnswers = [];
+
+      if (mainAnswer.length > 0) {
+        allPossibleAnswers.push(mainAnswer);
+      }
+
+      for (var aa = 0; aa < alternateAnswers.length; aa++) {
+        allPossibleAnswers.push(alternateAnswers[aa]);
+      }
+
       var _uAns = [];
       var _isReadOnly = [];
-      var _corr = 0;
-      var _wrong = 0;
+
       var inputBoxes = elsQue[i].querySelectorAll("input");
 
+      // =========================================================
+      // GET USER ANSWER
+      // =========================================================
       if (inputBoxes.length > 0) {
         for (var a = 0; a < inputBoxes.length; a++) {
-          console.log(a, inputBoxes[a].dataset.type);
           _isReadOnly[a] =
             inputBoxes[a].getAttribute("disabled") == null &&
             inputBoxes[a].getAttribute("readonly") == null
               ? 0
               : 1;
-          // if ((inputBoxes[a].getAttribute("disabled")==null)&& (inputBoxes[a].getAttribute("readonly")==null)){
+
           if (inputBoxes[a].value.length > 0) {
-            if (inputBoxes[a].dataset.type != "number") {
-              _uAns[a] =
-                _case == "yes"
-                  ? inputBoxes[a].value
-                  : inputBoxes[a].value.toLowerCase();
-            } else {
-              _uAns[a] = inputBoxes[a].value;
-            }
-          }
-          //}
-        }
-      }
-      elsQue[i].dataset.showIcon =
-        _isReadOnly.join("").split("1")[0].length == _cAns.length;
-      console.log(
-        _uAns,
-        _cAns,
-        _isReadOnly.join("").split("1")[0].length == _cAns.length,
-        i,
-        elsQue[i].dataset.showIcon,
-      );
-
-      if (_uAns.length > 0 && _cAns.length == _uAns.length) {
-        for (var cc = 0; cc < _cAns.length; cc++) {
-          _cAns[cc] = _case == "yes" ? _cAns[cc] : _cAns[cc].toLowerCase();
-          _cAns[cc] = _cAns[cc].replace(/\s/g, "").replace(/[.,!?;:،؟]+$/g, "");
-
-          _uAns[cc] = _uAns[cc].replace(/\s/g, "").replace(/[.,!?;:،؟]+$/g, "");
-          if (_cAns[cc] == _uAns[cc]) {
-            _corr++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'green';
-            // }
+            _uAns[a] = inputBoxes[a].value;
           } else {
-            _wrong++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'red';
-            // }
+            _uAns[a] = "";
           }
         }
-      } else {
-        _wrong++;
       }
-      if (_corr == _uAns.length && _wrong == 0) {
+
+      elsQue[i].dataset.showIcon =
+        _isReadOnly.join("").split("1")[0].length == mainAnswer.length;
+
+      // =========================================================
+      // CHECK MAIN + ALTERNATE ANSWERS
+      // =========================================================
+      var isCorrect = false;
+
+      for (var p = 0; p < allPossibleAnswers.length; p++) {
+        var possibleAnswer = allPossibleAnswers[p];
+
+        if (possibleAnswer.length != _uAns.length) {
+          continue;
+        }
+
+        var thisAnswerCorrect = true;
+
+        for (var cc = 0; cc < possibleAnswer.length; cc++) {
+          var correctValue = normalizeAnswer(possibleAnswer[cc], _case);
+
+          var userValue = normalizeAnswer(_uAns[cc], _case);
+
+          if (correctValue !== userValue) {
+            thisAnswerCorrect = false;
+            break;
+          }
+        }
+
+        if (thisAnswerCorrect) {
+          isCorrect = true;
+          break;
+        }
+      }
+
+      // =========================================================
+      // CORRECT
+      // =========================================================
+      if (isCorrect) {
         resultArr[i] = 1;
+
         elsQue[i].querySelector(".tick").style.display = "block";
+
         if (fDataObj.audio != "" && fDataObj.audio != "no") {
           if (
             fDataObj.audioenable == "correct" &&
@@ -132,9 +211,16 @@ FillIn.prototype = {
             elsQue[i].querySelector(".audioIcon").classList.remove("disabled");
           }
         }
-      } else {
+      }
+
+      // =========================================================
+      // WRONG
+      // =========================================================
+      else {
         resultArr[i] = 0;
+
         elsQue[i].querySelector(".cross").style.display = "block";
+
         if (fDataObj.audio != "" && fDataObj.audio != "no") {
           if (
             fDataObj.audioenable == "correct" &&
@@ -144,14 +230,22 @@ FillIn.prototype = {
           }
         }
       }
+
+      // =========================================================
+      // ICON
+      // =========================================================
       if (elsQue[i].querySelectorAll(".icon_wrap").length > 0) {
         if (elsQue[i].dataset.showIcon == "true") {
           elsQue[i].querySelector(".icon_wrap").style.display = "block";
         }
       }
     }
-    console.log(resultArr, numOfFillIns);
+
+    // =========================================================
+    // FINAL RESULT
+    // =========================================================
     allCorrect = resultArr.join("").split("0")[0].length == numOfFillIns;
+
     showFeedback(true, allCorrect);
 
     if (allCorrect) {

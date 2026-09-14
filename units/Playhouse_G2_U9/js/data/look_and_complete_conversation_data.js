@@ -112,9 +112,9 @@ var fillin_data = {
 
       audioenable: "default",
 
-      answer: ["How many cows", "three cows"],
+      answer: ["How many cows", "two cows"],
 
-      alternateanswer: [[], ["3 cows", "three", "3"]],
+      alternateanswer: [[], ["2 cows", "two", "2"]],
 
       strictcase: "no",
 

@@ -102,20 +102,86 @@ FillIn.prototype = {
 
       if (_uAns.length > 0 && _cAns.length == _uAns.length) {
         for (var cc = 0; cc < _cAns.length; cc++) {
-          _cAns[cc] = _case == "yes" ? _cAns[cc] : _cAns[cc].toLowerCase();
-          _cAns[cc] = _cAns[cc].replace(/\s/g, "").replace(/[.,!?;:،؟]+$/g, "");
+          // =========================================
+          // USER ANSWER
+          // =========================================
+          var userAnswer = _uAns[cc] || "";
 
-          _uAns[cc] = _uAns[cc].replace(/\s/g, "").replace(/[.,!?;:،؟]+$/g, "");
-          if (_cAns[cc] == _uAns[cc]) {
+          if (_case != "yes") {
+            userAnswer = userAnswer.toLowerCase();
+          }
+
+          userAnswer = userAnswer
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/[.,!?;:،؟]+$/g, "");
+
+          // =========================================
+          // MAIN CORRECT ANSWER
+          // =========================================
+          var correctAnswer = _cAns[cc] || "";
+
+          if (_case != "yes") {
+            correctAnswer = correctAnswer.toLowerCase();
+          }
+
+          correctAnswer = correctAnswer
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/[.,!?;:،؟]+$/g, "");
+
+          // =========================================
+          // CHECK MAIN ANSWER
+          // =========================================
+          var isCorrect = userAnswer == correctAnswer;
+
+          // =========================================
+          // CHECK ALTERNATE ANSWERS
+          // =========================================
+          if (
+            !isCorrect &&
+            fDataObj.alternateanswer != undefined &&
+            fDataObj.alternateanswer != null &&
+            fDataObj.alternateanswer[cc] != undefined
+          ) {
+            var alternatives = fDataObj.alternateanswer[cc];
+
+            if (!Array.isArray(alternatives)) {
+              alternatives = [alternatives];
+            }
+
+            for (var alt = 0; alt < alternatives.length; alt++) {
+              var altAnswer = alternatives[alt];
+
+              if (altAnswer == undefined || altAnswer == null) {
+                continue;
+              }
+
+              altAnswer = String(altAnswer);
+
+              if (_case != "yes") {
+                altAnswer = altAnswer.toLowerCase();
+              }
+
+              altAnswer = altAnswer
+                .trim()
+                .replace(/\s+/g, "")
+                .replace(/[.,!?;:،؟]+$/g, "");
+
+              if (userAnswer == altAnswer) {
+                isCorrect = true;
+                break;
+              }
+            }
+          }
+
+          // =========================================
+          // RESULT
+          // =========================================
+          if (isCorrect) {
             _corr++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'green';
-            // }
           } else {
             _wrong++;
-            // if(_isReadOnly[cc] != 1)  {
-            // inputBoxes[cc].style.color = 'red';
-            // }
           }
         }
       } else {

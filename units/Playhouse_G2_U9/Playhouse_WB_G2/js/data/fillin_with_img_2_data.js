@@ -39,7 +39,7 @@ var fillin_data = {
       audio: "../audios/page_47/under.mp3",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/3-img-1.png",
-      answer: ["paint bucket"],
+      answer: ["black"],
       strictcase: "no", // yes (or) no
       type: "text", // text (or) number
     },
@@ -49,7 +49,7 @@ var fillin_data = {
       audio: "../audios/page_47/under.mp3",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/3-img-2.png",
-      answer: ["chewing gum"],
+      answer: ["blow"],
       strictcase: "no", // yes (or) no
       type: "text", // text (or) number
     },
@@ -59,7 +59,7 @@ var fillin_data = {
       audio: "../audios/page_47/under.mp3",
       audioenable: "default", // correct (or) default
       image: "../images/pages/activities/3-img-3.png",
-      answer: ["sleeping bag"],
+      answer: ["blanket"],
       strictcase: "no", // yes (or) no
       type: "text", // text (or) number
     },

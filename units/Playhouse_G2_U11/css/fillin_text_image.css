@@ -19,7 +19,9 @@
   height: 39px;
   padding: 1px;
 }
-
+.checkBtn {
+  display: none !important;
+}
 .image_gap {
   height: 100%;
   width: intrinsic;
@@ -47,7 +49,7 @@
   object-fit: contain;
 }
 
-.textFront{
+.textFront {
   margin: 2px auto;
   font-weight: bolder;
   font-size: 32px;
@@ -60,7 +62,7 @@
   position: relative;
   text-align: center !important;
 }
-.q_space{
+.q_space {
   margin: 0px auto;
 }
 
@@ -90,7 +92,6 @@
   top: 0px;
   right: 10px;
 }
-
 
 .icon_wrap {
   position: absolute;
@@ -129,8 +130,12 @@
   animation: pulse 1s infinite ease-in-out alternate;
 }
 @keyframes pulse {
-  from { transform: scale(0.95); }
-  to { transform: scale(1.0); }
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 /* ====================================== */
 
@@ -143,13 +148,15 @@
 /*              M Q max-width: 1799.98px */
 /* ------------------------------------------------*/
 /* // Large devices (desktops, less than 1800px) */
-@media (max-width: 1799.98px) {}
+@media (max-width: 1799.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1399.98px */
 /* ------------------------------------------------*/
 /* // Large devices (desktops, less than 1400px) */
-@media (max-width: 1399.98px) {}
+@media (max-width: 1399.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 1199.98px */
@@ -169,22 +176,26 @@
 /*              M Q max-width: 991.98px */
 /* ------------------------------------------------*/
 /* // Medium devices (tablets, less than 992px) 768 to 991.98 */
-@media (max-width: 991.98px) {}
+@media (max-width: 991.98px) {
+}
 
 /* ------------------------------------------------ */
 /* M Q max-width: 767.98px */
 /* ------------------------------------------------*/
 /* // Small devices (landscape phones, less than 768px) 576 to 767.98*/
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
+}
 
 /* ------------------------------------------------ */
 /* M Q max-width: 575.98px */
 /* ------------------------------------------------*/
 /* // Extra small devices (portrait phones, less than 576px) 476 to 575*/
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+}
 
 /* ------------------------------------------------ */
 /*              M Q max-width: 475.98px             */
 /* ------------------------------------------------*/
 /* body working fine 320 to 475 */
-@media (max-width: 475.98px) {}
+@media (max-width: 475.98px) {
+}

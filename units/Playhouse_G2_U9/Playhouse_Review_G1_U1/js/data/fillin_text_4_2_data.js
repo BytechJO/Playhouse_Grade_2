@@ -59,7 +59,7 @@ var fillin_data = {
 
       image: "../images/pages/activities/Asset_31.png",
 
-      answer: ["c", "h", "e", "w"],
+      answer: ["b", "l", "o", "w"],
 
       alternateanswer: [[], [], [], []],
 

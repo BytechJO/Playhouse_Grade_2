@@ -20,9 +20,9 @@
   align-items: center;
 }
 
-/* .func_ctrls {
+.func_ctrls {
     display: none !important;
-} */
+}
 
 .activityHeading b {
   color: #000;

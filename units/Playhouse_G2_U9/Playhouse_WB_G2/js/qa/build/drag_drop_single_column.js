@@ -78,6 +78,11 @@ function initActivity(activity) {
 	}*/
 
   html += drag_drop_options + drag_drop_questions;
+  if (typeof activity.image !== "undefined" && activity.image !== "") {
+    html += '<div class="image_container">';
+    html += '<img src="' + activity.image + '" />';
+    html += "</div>";
+  }
 
   if (
     typeof activity.background_image != "undefined" &&

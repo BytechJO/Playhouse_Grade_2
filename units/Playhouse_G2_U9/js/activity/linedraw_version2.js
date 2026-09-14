@@ -318,7 +318,7 @@ LineDraw.prototype = {
       // =================================================
       // DRAW LINE
       // =================================================
-
+      ob.lineOb.color = ob.lineColor;
       self.drawRect(ob.lineOb, "draw", "");
 
       // =================================================
@@ -376,52 +376,79 @@ LineDraw.prototype = {
       }
     });
   },
-     setValuesForLine:function(lineOb){
-        var ob = this.ob; 
-        var halfWidth = parseInt((((lineOb).startNode).outerWidth()))/2;        
-        (lineOb).height = ob.lineThickness;    
-         var lineHalfHeight =  (lineOb).height/2;  
-        // (lineOb).angle = Math.atan2( ((lineOb).endNode).position().top -((lineOb).startNode).position().top, ((lineOb).endNode).position().left -((lineOb).startNode).position().left ) * 180 / Math.PI;     
-        
-       var st_margin_left = parseInt(((lineOb).startNode).css('margin-left'));
-       var st_margin_top = parseInt(((lineOb).startNode).css('margin-top'));
+  setValuesForLine: function (lineOb) {
+    var ob = this.ob;
+    var halfWidth = parseInt(lineOb.startNode.outerWidth()) / 2;
+    lineOb.height = ob.lineThickness;
+    var lineHalfHeight = lineOb.height / 2;
+    // (lineOb).angle = Math.atan2( ((lineOb).endNode).position().top -((lineOb).startNode).position().top, ((lineOb).endNode).position().left -((lineOb).startNode).position().left ) * 180 / Math.PI;
 
-        (lineOb).startY =((lineOb).startNode).position().top + (st_margin_top+ halfWidth) - lineHalfHeight;
-        (lineOb).startX =((lineOb).startNode).position().left + (st_margin_left+ halfWidth) - lineHalfHeight;
+    var st_margin_left = parseInt(lineOb.startNode.css("margin-left"));
+    var st_margin_top = parseInt(lineOb.startNode.css("margin-top"));
 
-        // console.log('st> ', (lineOb).startX, ((lineOb).startNode).css('margin-left'), (lineOb).startY,((lineOb).startNode).css('margin-top') );
+    lineOb.startY =
+      lineOb.startNode.position().top +
+      (st_margin_top + halfWidth) -
+      lineHalfHeight;
+    lineOb.startX =
+      lineOb.startNode.position().left +
+      (st_margin_left + halfWidth) -
+      lineHalfHeight;
 
-       var ed_margin_left = parseInt(((lineOb).endNode).css('margin-left'));
-        var ed_margin_top = parseInt(((lineOb).endNode).css('margin-top'));
-        
-        (lineOb).endY =((lineOb).endNode).position().top + (ed_margin_top + halfWidth) -lineHalfHeight;
-        (lineOb).endX =((lineOb).endNode).position().left + (ed_margin_left + halfWidth) - lineHalfHeight;
+    // console.log('st> ', (lineOb).startX, ((lineOb).startNode).css('margin-left'), (lineOb).startY,((lineOb).startNode).css('margin-top') );
 
-        // console.log('ed> ', (lineOb).endX, ((lineOb).endNode).css('margin-left'), (lineOb).endY,((lineOb).endNode).css('margin-top') );
-        
-        (lineOb).distance = Math.sqrt(((lineOb).endX-(lineOb).startX) * ((lineOb).endX-(lineOb).startX) + ((lineOb).endY-(lineOb).startY) * ((lineOb).endY-(lineOb).startY));
-        (lineOb).distance =  (lineOb).distance +  (lineOb).height;
-        
-        (lineOb).angle = Math.atan2( (lineOb).endY -(lineOb).startY, (lineOb).endX -(lineOb).startX ) * 180 / Math.PI;     
-        (lineOb).name = 'line-'+ (lineOb).startID+'-'+(lineOb).endID; 
-    },
-    drawRect:function(lineOb, axn, nam){
-        var ob = this.ob; 
-        var e = $(ob.activity_area);
-        var $lines = e.find('.lines');
-         var obj = (lineOb);
-        ($lines).append('<div class="line" id="'+obj.name+'"><div>');
-        rect = ($lines).find('#'+obj.name);
-        if(axn == 'draw'){              
-            rect.css({"top": obj.startY+"px", "left": obj.startX+"px","width": obj.distance+"px", "height":obj.height+"px", 'transform':'rotate(' + (obj.angle)+ 'deg)'});            
-            rect.css({'transform-origin': ((ob).transformPerc + 'px') + ' ' + ((ob).transformPerc + 'px') + ' 0px'});
-        }
-        rect.css({"border-color":obj.color});
-       rect.css({"background-color":obj.color});
+    var ed_margin_left = parseInt(lineOb.endNode.css("margin-left"));
+    var ed_margin_top = parseInt(lineOb.endNode.css("margin-top"));
+
+    lineOb.endY =
+      lineOb.endNode.position().top +
+      (ed_margin_top + halfWidth) -
+      lineHalfHeight;
+    lineOb.endX =
+      lineOb.endNode.position().left +
+      (ed_margin_left + halfWidth) -
+      lineHalfHeight;
+
+    // console.log('ed> ', (lineOb).endX, ((lineOb).endNode).css('margin-left'), (lineOb).endY,((lineOb).endNode).css('margin-top') );
+
+    lineOb.distance = Math.sqrt(
+      (lineOb.endX - lineOb.startX) * (lineOb.endX - lineOb.startX) +
+        (lineOb.endY - lineOb.startY) * (lineOb.endY - lineOb.startY),
+    );
+    lineOb.distance = lineOb.distance + lineOb.height;
+
+    lineOb.angle =
+      (Math.atan2(lineOb.endY - lineOb.startY, lineOb.endX - lineOb.startX) *
+        180) /
+      Math.PI;
+    lineOb.name = "line-" + lineOb.startID + "-" + lineOb.endID;
+  },
+  drawRect: function (lineOb, axn, nam) {
+    var ob = this.ob;
+    var e = $(ob.activity_area);
+    var $lines = e.find(".lines");
+    var obj = lineOb;
+    $lines.append('<div class="line" id="' + obj.name + '"><div>');
+    rect = $lines.find("#" + obj.name);
+    if (axn == "draw") {
+      rect.css({
+        top: obj.startY + "px",
+        left: obj.startX + "px",
+        width: obj.distance + "px",
+        height: obj.height + "px",
+        transform: "rotate(" + obj.angle + "deg)",
+      });
+      rect.css({
+        "transform-origin":
+          ob.transformPerc + "px" + " " + (ob.transformPerc + "px") + " 0px",
+      });
+    }
+    rect.css({ "border-color": obj.color });
+    rect.css({ "background-color": obj.color });
     //    rect.css({"border-color":ob.lineColor});
     //    rect.css({"background-color":ob.lineColor});
-        rect.css({"display": "block"});
-    },
+    rect.css({ display: "block" });
+  },
   validate: function () {
     var ob = this.ob;
     var $area = $(ob.activity_area);

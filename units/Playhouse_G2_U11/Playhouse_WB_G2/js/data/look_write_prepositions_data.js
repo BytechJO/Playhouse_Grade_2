@@ -1,49 +1,144 @@
 var stereo_data = {
   audio: "",
-  exist: false,
-  bgColor_rgb: "rgb(12, 177, 75)",
+  exist: true,
+  bgColor_rgb: "rgb(32, 183, 238)",
   type: "text",
+
   playListData: [
     {
-      audiourl: "../audios/demoo.mp3",
+      audiourl:
+        "../audios/page_55/playhouse-2-wb-unit-11-track-02-01_QnPX3WHQ.mp3",
     },
-    { url: "" },
-    { url: "" },
-    { url: "" },
+    {
+      url: "",
+    },
+    {
+      url: "",
+    },
+    {
+      url: "",
+    },
   ],
 };
 
-var reading_data = {
-  mainTitle: "../images/pages/sb-icons/gramprac_main_title.png",
-  mainTitleIcon: "../images/pages/sb-icons/gram_main_title_icon.png",
-  mainTitleIconPos: { right: "70px" },
-  mainTitleAudio: "../audios/under.mp3",
+var look_write_prepositions_data = {
+  activityName: "look_write_prepositions",
 
-  subTitleTextLeft: "<span class='title-order'>1</span> Pair work!",
+  layout: 1,
 
-  subTitleTextRight:
-    "Take turns saying a statement to your partner about a food you like and have them respond.",
+  mainTitle: "../images/pages/sb-icons/grammer_main_title.png",
 
-  subTitleIcons: [""],
-  subTitleAudio: "../audios/under.mp3",
+  mainTitleIcon: "",
 
-  slides: [
+  mainTitleIconPos: {
+    right: "-18px",
+  },
+
+  mainTitleAudio: "../audios/page_55/GRAMMAR.mp3",
+
+  subTitleAudio: "../audios/page_55/look_and_write_then_say.mp3",
+
+  subTitleTextLeft:
+    "<span class='blue_text'>1</span> Look and write. Then say.",
+
+  subTitleTextRight: "",
+
+  subTitleIcons: [],
+
+  title_position: "beside",
+
+  wordBank: ["under", "on", "near", "above", "in"],
+
+  questions: [
     {
-      layout: "pair_work_conversation",
+      qno: 1,
 
-      leftConversation: {
-        topBubble: "../images/pages/activities/3-img-5.png",
-        person1: "../images/pages/activities/3-img-1.png",
-        person2: "../images/pages/activities/3-img-2.png",
-        bottomBubble: "../images/pages/activities/3-img-7.png",
-      },
+      image: "../images/pages/page_2/1.jpg",
 
-      rightConversation: {
-        topBubble: "../images/pages/activities/3-img-6.png",
-        person1: "../images/pages/activities/3-img-3.png",
-        person2: "../images/pages/activities/3-img-4.png",
-        bottomBubble: "../images/pages/activities/3-img-8.png",
-      },
+      question: "Where is the starfish?",
+
+      answer: "It is under the whale.",
+
+      alternateAnswers: [
+        "It's under the whale.",
+        "The starfish is under the whale.",
+        "It is below the whale.",
+        "It's below the whale.",
+        "The starfish is below the whale.",
+      ],
+
+      example: true,
+    },
+
+    {
+      qno: 2,
+
+      image: "../images/pages/page_2/2.png",
+
+      question: "Where is the food?",
+
+      answer: "It is on the table.",
+
+      alternateAnswers: [
+        "It's on the table.",
+        "The food is on the table.",
+        "Food is on the table.",
+      ],
+
+      example: false,
+    },
+
+    {
+      qno: 3,
+
+      image: "../images/pages/page_2/3.jpg",
+
+      question: "Where is the octopus?",
+
+      answer: "It is above the whale.",
+
+      alternateAnswers: [
+        "It's above the whale.",
+        "The octopus is above the whale.",
+      ],
+
+      example: false,
+    },
+
+    {
+      qno: 4,
+
+      image: "../images/pages/page_2/5.png",
+
+      question: "Where is the TV?",
+
+      answer: "It is in the living room.",
+
+      alternateAnswers: [
+        "It's in the living room.",
+        "The TV is in the living room.",
+        "TV is in the living room.",
+      ],
+
+      example: false,
+    },
+
+    {
+      qno: 5,
+
+      image: "../images/pages/page_2/4.jpg",
+
+      question: "Where is the big fish?",
+
+      answer: "It is near the small fish.",
+
+      alternateAnswers: [
+        "It is near the small fish.",
+        "It's near the small fish.",
+        "The big fish is near the small fish.",
+      ],
+
+      example: false,
     },
   ],
 };
