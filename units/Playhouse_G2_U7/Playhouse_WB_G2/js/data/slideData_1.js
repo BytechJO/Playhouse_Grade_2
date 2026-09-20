@@ -24,7 +24,7 @@ var reading_data = {
     "mainTitle": "../images/pages/sb-icons/WRITING.jpg",
     "mainTitleIcon": "",
     "mainTitleIconPos": {"right": "90px"},
-    "mainTitleAudio": "../audios/under.mp3",
+    "mainTitleAudio": "../../../../../audios/WRITING.mp3",
     "subTitleTextLeft": "<span class='blue_text'>1</span> Read the conversation.",
     "subTitleTextRight": "",
     "subTitleIcons": [""],

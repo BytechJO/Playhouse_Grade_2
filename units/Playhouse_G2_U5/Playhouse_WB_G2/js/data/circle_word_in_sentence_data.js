@@ -25,7 +25,7 @@ var mcq_data = {
     "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
     "mainTitleIcon"         : "../images/pages/sb-icons/word_main_title_icon.png",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
     "subTitleTextLeft"      : "<span class='blue_text'>2</span> Look and circle the correct word. Read.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

@@ -34,7 +34,7 @@ var write_sentences_data = {
     right: "-18px",
   },
 
-  mainTitleAudio: "../audios/page_53/WRITING.mp3",
+  mainTitleAudio: "../../../../../audios/WRITING.mp3",
 
   subTitleTextLeft:
     '<span class="blue_text">1</span> ' +

@@ -23,7 +23,7 @@ var _activity_json = {
   mainTitle: "../images/pages/sb-icons/phonics-sent-build.png",
   mainTitleIcon: "",
   mainTitleIconPos: { right: "90px" },
-  mainTitleAudio: "../audios/under.mp3",
+  mainTitleAudio: "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
   subTitleTextLeft:
     "<span class='title-order'>1</span> Write the words and say them.",
   subTitleTextRight: "",

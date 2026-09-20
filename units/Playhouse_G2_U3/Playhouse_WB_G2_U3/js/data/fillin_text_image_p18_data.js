@@ -6,21 +6,19 @@ var stereo_data = {
 
   playListData: [
     {
-      audiourl:
-        "../audios/page_18/PLAYHOUSE_2_WB_UNIT_3_TRACK_08_01.mp3"
+      audiourl: "../audios/page_18/PLAYHOUSE_2_WB_UNIT_3_TRACK_08_01.mp3",
     },
     {
-      url: ""
+      url: "",
     },
     {
-      url: ""
+      url: "",
     },
     {
-      url: ""
-    }
-  ]
+      url: "",
+    },
+  ],
 };
-
 
 /* =========================================================
    Build all accepted answers
@@ -31,71 +29,34 @@ function buildLikeAnswers(name, pronoun, positiveItems, negativeItems) {
 
   positiveItems.forEach(function (item) {
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? Yes, " +
-        pronoun +
-        " does."
+      "Does " + name + " like " + item + "? Yes, " + pronoun + " does.",
     );
 
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? Yes " +
-        pronoun +
-        " does."
+      "Does " + name + " like " + item + "? Yes " + pronoun + " does.",
     );
   });
 
   negativeItems.forEach(function (item) {
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? No, " +
-        pronoun +
-        " doesn't."
+      "Does " + name + " like " + item + "? No, " + pronoun + " doesn't.",
     );
 
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? No " +
-        pronoun +
-        " doesn't."
+      "Does " + name + " like " + item + "? No " + pronoun + " doesn't.",
     );
 
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? No, " +
-        pronoun +
-        " does not."
+      "Does " + name + " like " + item + "? No, " + pronoun + " does not.",
     );
 
     answers.push(
-      "Does " +
-        name +
-        " like " +
-        item +
-        "? No " +
-        pronoun +
-        " does not."
+      "Does " + name + " like " + item + "? No " + pronoun + " does not.",
     );
   });
 
   return answers;
 }
-
 
 /* =========================================================
    Answers according to the table
@@ -105,30 +66,29 @@ var yoshiAnswers = buildLikeAnswers(
   "Yoshi",
   "he",
   ["chocolate", "crisps"],
-  ["pasta", "biscuits"]
+  ["pasta", "biscuits"],
 );
 
 var maxAnswers = buildLikeAnswers(
   "Max",
   "he",
   ["pasta", "biscuits"],
-  ["chocolate", "crisps"]
+  ["chocolate", "crisps"],
 );
 
 var lillyAnswers = buildLikeAnswers(
   "Lilly",
   "she",
   ["chocolate", "crisps"],
-  ["pasta", "biscuits"]
+  ["pasta", "biscuits"],
 );
 
 var jennyAnswers = buildLikeAnswers(
   "Jenny",
   "she",
   ["chocolate", "pasta"],
-  ["biscuits", "crisps"]
+  ["biscuits", "crisps"],
 );
-
 
 /* =========================================================
    Activity data
@@ -144,10 +104,10 @@ var fillin_data = {
   mainTitleIcon: "",
 
   mainTitleIconPos: {
-    right: "-18px"
+    right: "-18px",
   },
 
-  mainTitleAudio: "../audios/under.mp3",
+  mainTitleAudio: "../../../../../audios/WRITING.mp3",
 
   subTitleTextLeft:
     '<span class="blue_text">1</span> Look at the table and see what each person likes. Write a question and an answer for each.',
@@ -164,11 +124,9 @@ var fillin_data = {
 
   activityicon: "../images/icons/key_icon.png",
 
-  main_activityheading:
-    "../images/pages/activities/WORD_POWER.jpg",
+  main_activityheading: "../images/pages/activities/WORD_POWER.jpg",
 
-  main_activityheading_audio:
-    "../audios/under.mp3",
+  main_activityheading_audio: "../audios/under.mp3",
 
   /*
     السؤال الأول Example جاهز وreadonly
@@ -191,17 +149,13 @@ var fillin_data = {
 
       image: "",
 
-      answer: [
-        "Does Yoshi like pasta? No, he doesn't."
-      ],
+      answer: ["Does Yoshi like pasta? No, he doesn't."],
 
-      alternateanswer: [
-        yoshiAnswers
-      ],
+      alternateanswer: [yoshiAnswers],
 
       strictcase: "no",
 
-      type: "text"
+      type: "text",
     },
 
     {
@@ -213,17 +167,13 @@ var fillin_data = {
 
       image: "",
 
-      answer: [
-        maxAnswers[0]
-      ],
+      answer: [maxAnswers[0]],
 
-      alternateanswer: [
-        maxAnswers.slice(1)
-      ],
+      alternateanswer: [maxAnswers.slice(1)],
 
       strictcase: "no",
 
-      type: "text"
+      type: "text",
     },
 
     {
@@ -235,17 +185,13 @@ var fillin_data = {
 
       image: "",
 
-      answer: [
-        lillyAnswers[0]
-      ],
+      answer: [lillyAnswers[0]],
 
-      alternateanswer: [
-        lillyAnswers.slice(1)
-      ],
+      alternateanswer: [lillyAnswers.slice(1)],
 
       strictcase: "no",
 
-      type: "text"
+      type: "text",
     },
 
     {
@@ -257,17 +203,13 @@ var fillin_data = {
 
       image: "",
 
-      answer: [
-        jennyAnswers[0]
-      ],
+      answer: [jennyAnswers[0]],
 
-      alternateanswer: [
-        jennyAnswers.slice(1)
-      ],
+      alternateanswer: [jennyAnswers.slice(1)],
 
       strictcase: "no",
 
-      type: "text"
-    }
-  ]
+      type: "text",
+    },
+  ],
 };

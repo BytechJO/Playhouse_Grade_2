@@ -31,7 +31,7 @@ var mcq_data = {
     right: "-18px",
   },
 
-  mainTitleAudio: "../audios/under.mp3",
+  mainTitleAudio: "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
 
   subTitleTextLeft:
     "<span class='blue_text'>1</span> Colour the correct ‘<b>ck</b>’ word.",

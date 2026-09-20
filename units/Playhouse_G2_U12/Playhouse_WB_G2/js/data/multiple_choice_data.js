@@ -25,7 +25,7 @@ var mcq_data = {
   mainTitle: "../images/pages/sb-icons/word_main_title.png",
   mainTitleIcon: "",
   mainTitleIconPos: { right: "-18px" },
-  mainTitleAudio: "../audios/page_59/under.mp3",
+  mainTitleAudio: "../../../../../audios/WORD_POWER.mp3",
   subTitleTextLeft:
     "<span class='blue_text'>1</span> Circle the right name for each animal.",
   subTitleTextRight: "",

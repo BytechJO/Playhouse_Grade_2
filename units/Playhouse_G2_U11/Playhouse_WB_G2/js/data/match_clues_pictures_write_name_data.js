@@ -33,7 +33,7 @@ var match_clues_pictures_write_name_data = {
     right: "-18px",
   },
 
-  mainTitleAudio: "../audios/page_54/WORD_POWER.mp3",
+  mainTitleAudio: "../../../../../audios/WORD_POWER.mp3",
 
   subTitleAudio: "../audios/page_54/read_the_clues.mp3",
 

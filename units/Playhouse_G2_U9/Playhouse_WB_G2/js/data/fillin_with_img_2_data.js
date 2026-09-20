@@ -21,10 +21,10 @@ var stereo_data = {
 var fillin_data = {
   layout: 1,
   numinrow: [[1, 1, 1]],
-  mainTitle: "../images/pages/sb-icons/spilling.jpg",
+  mainTitle: "../images/pages/sb-icons/phonics-sent-build.png",
   mainTitleIcon: "",
   mainTitleIconPos: { right: "-18px" },
-  mainTitleAudio: "../audios/page_47/under.mp3",
+  mainTitleAudio: "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
   subTitleTextLeft: "<span class='blue_text'>1</span> Look and write.",
   subTitleTextRight: "",
   subTitleIcons: [],

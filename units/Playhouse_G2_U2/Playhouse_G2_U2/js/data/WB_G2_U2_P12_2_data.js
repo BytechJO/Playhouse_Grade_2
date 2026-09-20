@@ -23,7 +23,7 @@ var mcq_data = {
   mainTitleIcon: "../images/pages/sb-icons/readwrite_main_title_icon.png",
   mainTitleIconPos: { right: "-18px" },
 
-  mainTitleAudio: "",
+  mainTitleAudio: "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
 
   subTitleAudio: "",
 

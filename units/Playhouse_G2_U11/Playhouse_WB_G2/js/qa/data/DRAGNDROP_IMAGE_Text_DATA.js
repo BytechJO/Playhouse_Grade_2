@@ -23,7 +23,7 @@ var _activity_json = {
   mainTitle: "../images/pages/sb-icons/gramprac_main_title.png",
   mainTitleIcon: "",
   mainTitleIconPos: { right: "90px" },
-  mainTitleAudio: "../audios/page_56/under.mp3",
+  mainTitleAudio: "../../../../../audios/GRAMMAR_PRACTICE.mp3",
   subTitleTextLeft:
     "<span class='title-order'>1</span> Label each picture using a word from the box.",
   subTitleTextRight: "",

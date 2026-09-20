@@ -25,7 +25,7 @@ var mcq_tick_data = {
     "mainTitle"             : "../images/pages/sb-icons/grammer_main_title.png",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/GRAMMAR.mp3",
     "subTitleTextLeft"      : "<span class='orange_text'>1</span> Look and tick ✓ the correct question and answer.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [""],

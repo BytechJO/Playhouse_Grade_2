@@ -25,7 +25,7 @@ var mcq_data = {
     "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
     "subTitleTextLeft"      : "<span class='blue_text'>1</span> Circle ‘<b>information</b>’ or ‘<b>yes</b>/<b>no</b>’ for each question.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

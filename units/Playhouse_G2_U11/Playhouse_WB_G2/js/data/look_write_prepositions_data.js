@@ -34,7 +34,7 @@ var look_write_prepositions_data = {
     right: "-18px",
   },
 
-  mainTitleAudio: "../audios/page_55/GRAMMAR.mp3",
+  mainTitleAudio: "../../../../../audios/GRAMMAR.mp3",
 
   subTitleAudio: "../audios/page_55/look_and_write_then_say.mp3",
 

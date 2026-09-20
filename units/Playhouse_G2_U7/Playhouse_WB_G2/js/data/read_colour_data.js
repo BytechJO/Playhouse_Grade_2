@@ -5,7 +5,7 @@ var read_colour_data = {
     right: "0px",
   },
 
-  mainTitleAudio: "../audios/under.mp3",
+  mainTitleAudio: "../../../../../audios/GRAMMAR_PRACTICE.mp3",
   subTitleAudio: "../audios/under.mp3",
 
   subTitleTextLeft:

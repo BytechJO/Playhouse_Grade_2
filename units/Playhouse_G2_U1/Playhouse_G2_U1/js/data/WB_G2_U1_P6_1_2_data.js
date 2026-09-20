@@ -25,7 +25,7 @@ var mcq_tick_data = {
     "mainTitle"             : "../images/pages/sb-icons/gramprac_main_title.png",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/GRAMMAR_PRACTICE.mp3",
     "subTitleTextLeft"      : "<span class='blue_text'>2</span> Look , read and tick the correct picture.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

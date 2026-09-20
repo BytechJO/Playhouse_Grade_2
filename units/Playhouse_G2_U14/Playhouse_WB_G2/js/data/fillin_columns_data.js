@@ -24,7 +24,7 @@ var fillin_data = {
     "mainTitle"             : "../images/pages/sb-icons/WRITING.jpg",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/WRITING.mp3",
     "subTitleTextLeft"      : '<span class="blue_text">1</span> Look at each picture. Write a sentence about it. Use ‘-ed.’',
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

@@ -6,8 +6,7 @@ var stereo_data = {
 
   playListData: [
     {
-      audiourl:
-        "../audios/page_35/PLAYHOUSE 2_WB_UNIT 7_TRACK 02_01.mp3",
+      audiourl: "../audios/page_35/PLAYHOUSE 2_WB_UNIT 7_TRACK 02_01.mp3",
     },
   ],
 };
@@ -24,7 +23,7 @@ var mcq_data = {
     right: "-20px",
   },
 
-  mainTitleAudio: "../audios/grammar.mp3",
+  mainTitleAudio: "../../../../../audios/GRAMMAR.mp3",
 
   subTitleTextLeft:
     '<span class="red_text">1</span> Tick <span class="blue_tick">✓</span> the imperative sentences.',

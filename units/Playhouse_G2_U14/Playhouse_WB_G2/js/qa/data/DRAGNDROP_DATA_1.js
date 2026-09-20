@@ -25,7 +25,7 @@ var _activity_json =
         "numinrow"              : [[1,1,1]],
         "mainTitle"             : "../images/pages/sb-icons/grammer_main_title.png",
         "mainTitleIcon"         : "",
-        "mainTitleAudio"        : "../audios/under.mp3",
+        "mainTitleAudio"        : "../../../../../audios/GRAMMAR.mp3",
         "mainTitleIconPos"      : {"right": "80px"},
         "subTitleTextLeft"      : '<span class="red_text">1</span> Use the word box to complete each sentence correctly.',
         "subTitleTextRight"     : "",

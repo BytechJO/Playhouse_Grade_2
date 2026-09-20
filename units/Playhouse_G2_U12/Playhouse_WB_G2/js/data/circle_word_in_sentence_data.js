@@ -25,7 +25,7 @@ var mcq_data = {
     "mainTitle"             : "../images/pages/sb-icons/phonics-sent-build.png",
     "mainTitleIcon"         : "",
     "mainTitleIconPos"      : {"right": "-18px"},
-    "mainTitleAudio"        : "../audios/page_62/under.mp3",
+    "mainTitleAudio"        : "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
     "subTitleTextLeft"      : "<span class='blue_text'>1</span> Write the correct word to complete each sentence.",
     "subTitleTextRight"     : "",
     "subTitleIcons"         : [],

@@ -25,7 +25,7 @@ var mcq_tick_data = {
   mainTitle: "../images/pages/sb-icons/grammer_main_title.png",
   mainTitleIcon: "",
   mainTitleIconPos: { right: "90px" },
-  mainTitleAudio: "../audios/under.mp3",
+  mainTitleAudio: "../../../../../audios/GRAMMAR.mp3",
   subTitleTextLeft: "<span class='title-order'>1</span>",
   subTitleTextRight:
     "Read each sentence. Tick ✓ the sentence that talks about the past.",

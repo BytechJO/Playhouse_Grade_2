@@ -33,7 +33,7 @@ var colour_picture_write_sentence_data = {
     right: "-18px",
   },
 
-  mainTitleAudio: "../audios/demo.mp3",
+  mainTitleAudio: "../../../../../audios/WRITING.mp3",
 
   subTitleAudio: "../audios/demo.mp3",
 

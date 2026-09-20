@@ -28,7 +28,7 @@ var fill_letters_tick_picture_data = {
   mainTitle: "../images/pages/sb-icons/phonics-sent-build.png",
   mainTitleIcon: "../images/pages/sb-icons/readwrite_main_title_icon.png",
   mainTitleIconPos: { right: "-38px" },
-  mainTitleAudio: "../audios/page_56/PHONICS_AND_SENTENCE_BUILDING.mp3",
+  mainTitleAudio: "../../../../../audios/PHONICS_and_Sentence_Building.mp3",
 
   subTitleAudio: "../audios/page_56/fill_in_the_missing_letters.mp3",
 
